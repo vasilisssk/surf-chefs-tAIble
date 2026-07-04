@@ -1,0 +1,28 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: chefs-table-postgres
+    environment:
+      POSTGRES_DB: chefs_table
+      POSTGRES_USER: chefs_table
+      POSTGRES_PASSWORD: chefs_table
+    ports:
+      - "5432:5432"
+    volumes:
+      - chefs_table_pgdata:/var/lib/postgresql/data
+
+  backend:
+    build: .
+    container_name: chefs-table-backend
+    depends_on:
+      - postgres
+    environment:
+      DB_URL: jdbc:postgresql://postgres:5432/chefs_table
+      DB_USERNAME: chefs_table
+      DB_PASSWORD: chefs_table
+      JWT_SECRET: 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
+    ports:
+      - "8080:8080"
+
+volumes:
+  chefs_table_pgdata:
