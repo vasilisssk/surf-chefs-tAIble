@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Brand colors -->
+    <color name="primary">#E74C3C</color>
+    <color name="primary_dark">#C0392B</color>
+    <color name="primary_light">#FF6B5A</color>
+    <color name="accent">#3498DB</color>
+    <color name="accent_dark">#2980B9</color>
+    <color name="bg_white">#FFFFFF</color>
+    <color name="text_dark">#2C3E50</color>
+    <color name="text_light">#7F8C8D</color>
+    <color name="text_hint">#BDC3C7</color>
+
+    <!-- Status colors -->
+    <color name="status_confirmed">#27AE60</color>
+    <color name="status_cancelled">#E74C3C</color>
+    <color name="status_attended">#3498DB</color>
+    <color name="status_no_show">#F39C12</color>
+
+    <!-- Legacy -->
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
@@ -7,4 +25,6 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="divider">#E0E0E0</color>
+    <color name="surface">#F5F5F5</color>
 </resources>

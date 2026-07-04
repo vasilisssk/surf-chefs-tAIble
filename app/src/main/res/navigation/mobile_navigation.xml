@@ -12,14 +12,38 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.example.chefstable.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/navigation_schedule"
+        android:name="com.example.chefstable.ui.schedule.ScheduleFragment"
+        android:label="@string/title_schedule"
+        tools:layout="@layout/fragment_schedule" />
+
+    <fragment
+        android:id="@+id/navigation_bookings"
+        android:name="com.example.chefstable.ui.mybookings.MyBookingsFragment"
+        android:label="@string/title_bookings"
+        tools:layout="@layout/fragment_my_bookings" />
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.example.chefstable.ui.profile.ProfileFragment"
+        android:label="@string/title_profile"
+        tools:layout="@layout/fragment_profile" />
 
     <fragment
         android:id="@+id/navigation_notifications"
         android:name="com.example.chefstable.ui.notifications.NotificationsFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
+
+    <fragment
+        android:id="@+id/navigation_class_detail"
+        android:name="com.example.chefstable.ui.classdetail.ClassDetailFragment"
+        android:label="@string/class_detail_title"
+        tools:layout="@layout/fragment_class_detail" />
+
+    <fragment
+        android:id="@+id/navigation_booking_confirmation"
+        android:name="com.example.chefstable.ui.booking.BookingConfirmationFragment"
+        android:label="@string/booking_title"
+        tools:layout="@layout/fragment_booking" />
 </navigation>

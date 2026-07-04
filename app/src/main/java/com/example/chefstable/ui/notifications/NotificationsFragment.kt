@@ -4,35 +4,72 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import com.example.chefstable.R
 import com.example.chefstable.databinding.FragmentNotificationsBinding
+import com.example.chefstable.ui.common.NotificationAdapter
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class NotificationsFragment : Fragment() {
 
     private var _binding: FragmentNotificationsBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
+
+    private val viewModel: NotificationsViewModel by viewModel()
+
+    private lateinit var adapter: NotificationAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val notificationsViewModel =
-            ViewModelProvider(this).get(NotificationsViewModel::class.java)
-
         _binding = FragmentNotificationsBinding.inflate(inflater, container, false)
-        val root: View = binding.root
+        return binding.root
+    }
 
-        val textView: TextView = binding.textNotifications
-        notificationsViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        setupRecyclerView()
+        setupListeners()
+        observeViewModel()
+    }
+
+    private fun setupRecyclerView() {
+        adapter = NotificationAdapter { notification ->
+            if (!notification.isRead) {
+                viewModel.markAsRead(notification.id)
+            }
         }
-        return root
+        binding.rvNotifications.adapter = adapter
+    }
+
+    private fun setupListeners() {
+        binding.chipGroupFilter.setOnCheckedStateChangeListener { _, checkedIds ->
+            if (checkedIds.isEmpty()) return@setOnCheckedStateChangeListener
+            when (checkedIds[0]) {
+                R.id.chip_all -> viewModel.setFilter(NotificationFilter.ALL)
+                R.id.chip_unread -> viewModel.setFilter(NotificationFilter.UNREAD)
+                R.id.chip_read -> viewModel.setFilter(NotificationFilter.READ)
+            }
+        }
+
+        binding.btnClear.setOnClickListener {
+            viewModel.clearAll()
+        }
+    }
+
+    private fun observeViewModel() {
+        viewModel.notifications.observe(viewLifecycleOwner) { notifications ->
+            adapter.submitList(notifications)
+            if (notifications.isEmpty()) {
+                binding.layoutEmpty.visibility = View.VISIBLE
+                binding.rvNotifications.visibility = View.GONE
+            } else {
+                binding.layoutEmpty.visibility = View.GONE
+                binding.rvNotifications.visibility = View.VISIBLE
+            }
+        }
     }
 
     override fun onDestroyView() {

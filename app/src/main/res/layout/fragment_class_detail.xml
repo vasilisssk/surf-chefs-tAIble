@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.classdetail.ClassDetailFragment">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/spacing_md">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="@dimen/card_radius"
+                app:cardElevation="@dimen/card_elevation">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/spacing_md">
+
+                    <TextView
+                        android:id="@+id/tv_class_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/text_dark"
+                        android:textSize="@dimen/text_title"
+                        android:textStyle="bold"
+                        tools:text="Итальянская паста с нуля" />
+
+                    <TextView
+                        android:id="@+id/tv_class_datetime"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_sm"
+                        android:textColor="@color/text_light"
+                        android:textSize="@dimen/text_body"
+                        tools:text="15 июля 2026, 18:00" />
+
+                    <TextView
+                        android:id="@+id/tv_class_duration"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_xs"
+                        android:textColor="@color/text_light"
+                        android:textSize="@dimen/text_caption"
+                        tools:text="Длительность: 3 ч" />
+
+                    <TextView
+                        android:id="@+id/tv_class_seats"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_xs"
+                        android:textColor="@color/status_confirmed"
+                        android:textSize="@dimen/text_caption"
+                        tools:text="Свободно мест: 5 / 10" />
+
+                    <TextView
+                        android:id="@+id/tv_class_description"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_md"
+                        android:textColor="@color/text_dark"
+                        android:textSize="@dimen/text_body"
+                        tools:text="На этом классе вы научитесь готовить настоящую итальянскую пасту с нуля." />
+
+                    <TextView
+                        android:id="@+id/tv_class_price"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_md"
+                        android:textColor="@color/primary"
+                        android:textSize="@dimen/text_subtitle"
+                        android:textStyle="bold"
+                        tools:text="3500 руб" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_sm"
+                app:cardCornerRadius="@dimen/card_radius"
+                app:cardElevation="@dimen/card_elevation">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/spacing_md">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/class_detail_chef_reviews"
+                        android:textColor="@color/text_dark"
+                        android:textSize="@dimen/text_subtitle"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_chef_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_sm"
+                        android:textColor="@color/accent"
+                        android:textSize="@dimen/text_body"
+                        tools:text="Шеф: Марио Росси" />
+
+                    <TextView
+                        android:id="@+id/tv_chef_specialization"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_xs"
+                        android:textColor="@color/text_light"
+                        android:textSize="@dimen/text_caption"
+                        tools:text="Итальянская кухня" />
+
+                    <TextView
+                        android:id="@+id/tv_chef_rating"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_xs"
+                        android:textColor="@color/text_light"
+                        android:textSize="@dimen/text_caption"
+                        tools:text="Рейтинг: 4.8 (32 отзыва)" />
+
+                    <TextView
+                        android:id="@+id/tv_chef_bio"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_sm"
+                        android:textColor="@color/text_dark"
+                        android:textSize="@dimen/text_body"
+                        tools:text="Опытный шеф-повар с 15-летним стажем." />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_book"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_lg"
+                android:text="@string/class_detail_book" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/layout_error"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="@dimen/spacing_lg"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tv_error_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textColor="@color/text_light"
+            android:textSize="@dimen/text_body"
+            tools:text="Произошла ошибка" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_retry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_md"
+            android:text="@string/retry" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_not_found"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="@dimen/spacing_lg"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/error_generic"
+            android:textAlignment="center"
+            android:textColor="@color/text_light"
+            android:textSize="@dimen/text_body" />
+    </LinearLayout>
+</FrameLayout>
