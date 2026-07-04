@@ -57,7 +57,7 @@ class ProfileViewModel(
         }
     }
 
-    fun saveProfile(firstName: String, phone: String, allergies: String?) {
+    fun saveProfile(firstName: String, lastName: String, phone: String, allergies: String?) {
         val nameError = Validator.validateName(firstName)
         if (nameError != null) {
             _message.value = nameError
@@ -73,7 +73,6 @@ class ProfileViewModel(
         _isSaving.value = true
 
         viewModelScope.launch {
-            val lastName = currentClient?.lastName
             val result = profileRepository.updateProfile(firstName, lastName, phone, allergies)
             _isSaving.value = false
 

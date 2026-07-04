@@ -43,9 +43,10 @@ class ProfileFragment : Fragment() {
     private fun setupListeners() {
         binding.btnSave.setOnClickListener {
             val firstName = binding.etFirstName.text.toString().trim()
+            val lastName = binding.etLastName.text.toString().trim()
             val phone = binding.etPhone.text.toString().trim()
             val allergies = binding.etAllergies.text?.toString()?.trim()?.takeIf { it.isNotEmpty() }
-            viewModel.saveProfile(firstName, phone, allergies)
+            viewModel.saveProfile(firstName, lastName, phone, allergies)
         }
 
         binding.btnLogout.setOnClickListener {
@@ -82,6 +83,7 @@ class ProfileFragment : Fragment() {
 
                     val client = state.client
                     binding.etFirstName.setText(client.firstName)
+                    binding.etLastName.setText(client.lastName ?: "")
                     binding.etEmail.setText(client.email)
                     binding.etPhone.setText(client.phone)
                     binding.etAllergies.setText(client.allergies ?: "")

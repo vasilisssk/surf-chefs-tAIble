@@ -57,6 +57,10 @@ class BookingConfirmationFragment : Fragment() {
     }
 
     private fun setupListeners() {
+        binding.btnBack.setOnClickListener {
+            findNavController().popBackStack()
+        }
+
         binding.actvRentalPackage.setOnItemClickListener { _, _, position, _ ->
             if (position < rentalPackages.size) {
                 selectedPackage = rentalPackages[position]

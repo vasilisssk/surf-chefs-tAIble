@@ -1,4 +1,4 @@
-## Использованные инструменты: Android Studio | Codex
+## Использованные инструменты: Android Studio | Codex | Qoder
 
 ## Промпты:
 1. [src](app/src/) .gitignore [build.gradle.kts](app/build.gradle.kts) [proguard-rules.pro](app/proguard-rules.pro)  [conclusion](01-analysis/conclusion/) [er-model-mermaid-final.md](01-analysis/er-model/er-model-mermaid-final.md) [AndroidManifest.xml](app/src/main/AndroidManifest.xml) [build.gradle.kts](build.gradle.kts) [settings.gradle.kts](settings.gradle.kts) .gitignore [02-development](02-development/) можешь проанализировать ТЗ и описать доменные сущности
@@ -13,3 +13,4 @@
 9. <код ошибки> ошибка при валидации схемы Hibernate, можешь исправить, что необходимо. И как мне заново пересобрать Image и контейнеры если нужно
 10. работает отлично. есть пара вопросов: 1. при запуске контейнеров проходят ли тесты из папки test 2. как мне открыть порт на котором находится бэк, потому что при открытии ссылки из докера http://localhost:8080/ ошибка 404, а при открытии http://localhost:8080/v1 ошибка 403, то же самое при открытии http://localhost:8080/v1/swagger-ui.html
 11. в папке [frontend](02-development/frontend)  лежит чеклист с тем, что нужно реализовать и как. в папке [conclusion](01-analysis/conclusion) лежат логика и экрана приложения. в папке [backend](02-development/backend/src/main/java/com/chefstable/backend) лежит backend часть приложения, поднятая в докере. мне нужно чтобы ты реализовал клиентскую часть приложения, обязательно пометь, что ты выполнил в чек листе 
+12. [main](app/src/main) в приложении есть несколько багов в активностях регистрации и входа: поля ввода сливаются с задним фоном - все белое, цвет текста тоже сливается, ни вход, ни регистрация не работают - Ошибка сети: <-- HTTP FAILED: java.net.SocketTimeoutException: failed to connect to (port 8080) from (port 48960) after 30000ms
