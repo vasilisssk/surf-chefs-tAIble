@@ -1,0 +1,782 @@
+openapi: 3.0.3
+info:
+  title: Culinary Studio API
+  description: API for the culinary studio mobile application
+  version: 1.0.0
+  contact:
+    name: Culinary Studio Support
+    email: support@culinarystudio.example.com
+
+servers:
+  - url: https://api.culinarystudio.example.com/v1
+    description: Production server
+
+paths:
+  /auth/register:
+    post:
+      summary: Register a new client
+      tags:
+        - Authentication
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RegistrationRequest'
+      responses:
+        '201':
+          description: Client registered successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthResponse'
+        '400':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /auth/login:
+    post:
+      summary: Login client
+      tags:
+        - Authentication
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoginRequest'
+      responses:
+        '200':
+          description: Login successful
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthResponse'
+        '401':
+          description: Invalid credentials
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /auth/logout:
+    post:
+      summary: Logout client
+      tags:
+        - Authentication
+      security:
+        - BearerAuth: []
+      responses:
+        '200':
+          description: Logout successful
+        '401':
+          description: Unauthorized
+
+  /profile:
+    get:
+      summary: Get client profile
+      tags:
+        - Profile
+      security:
+        - BearerAuth: []
+      responses:
+        '200':
+          description: Client profile retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Client'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    put:
+      summary: Update client profile
+      tags:
+        - Profile
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateProfileRequest'
+      responses:
+        '200':
+          description: Profile updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Client'
+        '400':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          description: Unauthorized
+
+  /classes:
+    get:
+      summary: Get available cooking classes
+      tags:
+        - Classes
+      parameters:
+        - name: date_from
+          in: query
+          required: false
+          schema:
+            type: string
+            format: date
+          description: Start date for filtering classes (default - today)
+        - name: date_to
+          in: query
+          required: false
+          schema:
+            type: string
+            format: date
+          description: End date for filtering classes (default - 7 days from today)
+        - name: chef_id
+          in: query
+          required: false
+          schema:
+            type: string
+          description: Filter by chef ID
+        - name: class_type
+          in: query
+          required: false
+          schema:
+            type: string
+          description: Filter by class type
+      responses:
+        '200':
+          description: List of available classes
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  classes:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/CookingClass'
+        '400':
+          description: Invalid parameters
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /classes/{classId}:
+    get:
+      summary: Get details of a specific cooking class
+      tags:
+        - Classes
+      parameters:
+        - name: classId
+          in: path
+          required: true
+          schema:
+            type: string
+          description: Cooking class ID
+      responses:
+        '200':
+          description: Cooking class details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CookingClass'
+        '404':
+          description: Class not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /bookings:
+    get:
+      summary: Get client's bookings
+      tags:
+        - Bookings
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: status
+          in: query
+          required: false
+          schema:
+            type: string
+            enum: [all, upcoming, past, cancelled]
+          description: Filter by booking status (default - all)
+      responses:
+        '200':
+          description: List of client's bookings
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  bookings:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Booking'
+        '401':
+          description: Unauthorized
+    post:
+      summary: Create a new booking
+      tags:
+        - Bookings
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateBookingRequest'
+      responses:
+        '201':
+          description: Booking created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Booking'
+        '400':
+          description: Invalid input or no available seats
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          description: Unauthorized
+        '409':
+          description: Booking conflict (double booking attempt)
+
+  /bookings/{bookingId}:
+    get:
+      summary: Get details of a specific booking
+      tags:
+        - Bookings
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: bookingId
+          in: path
+          required: true
+          schema:
+            type: string
+          description: Booking ID
+      responses:
+        '200':
+          description: Booking details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Booking'
+        '401':
+          description: Unauthorized
+        '404':
+          description: Booking not found
+    put:
+      summary: Update a booking (cancel)
+      tags:
+        - Bookings
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: bookingId
+          in: path
+          required: true
+          schema:
+            type: string
+          description: Booking ID
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateBookingRequest'
+      responses:
+        '200':
+          description: Booking updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Booking'
+        '400':
+          description: Invalid request (e.g., cancellation too close to class time)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          description: Unauthorized
+        '404':
+          description: Booking not found
+
+  /reviews:
+    post:
+      summary: Create a review for a chef
+      tags:
+        - Reviews
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateReviewRequest'
+      responses:
+        '201':
+          description: Review created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Review'
+        '400':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          description: Unauthorized
+        '409':
+          description: Review already exists for this booking
+
+  /chefs:
+    get:
+      summary: Get all chefs
+      tags:
+        - Chefs
+      responses:
+        '200':
+          description: List of chefs
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  chefs:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Chef'
+
+  /chefs/{chefId}:
+    get:
+      summary: Get details of a specific chef
+      tags:
+        - Chefs
+      parameters:
+        - name: chefId
+          in: path
+          required: true
+          schema:
+            type: string
+          description: Chef ID
+      responses:
+        '200':
+          description: Chef details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Chef'
+        '404':
+          description: Chef not found
+
+  /rental-packages:
+    get:
+      summary: Get available rental packages
+      tags:
+        - Rental
+      responses:
+        '200':
+          description: List of rental packages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  packages:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/RentalPackage'
+
+components:
+  schemas:
+    RegistrationRequest:
+      type: object
+      required:
+        - firstName
+        - email
+        - phone
+        - password
+      properties:
+        firstName:
+          type: string
+          example: "Иван"
+        email:
+          type: string
+          format: email
+          example: "ivan.petrov@example.com"
+        phone:
+          type: string
+          example: "+79991234567"
+        password:
+          type: string
+          format: password
+          example: "securePassword123"
+
+    LoginRequest:
+      type: object
+      required:
+        - email
+        - password
+      properties:
+        email:
+          type: string
+          format: email
+          example: "ivan.petrov@example.com"
+        password:
+          type: string
+          format: password
+          example: "securePassword123"
+
+    AuthResponse:
+      type: object
+      required:
+        - token
+        - client
+      properties:
+        token:
+          type: string
+          description: JWT token for authentication
+          example: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+        client:
+          $ref: '#/components/schemas/Client'
+
+    Client:
+      type: object
+      required:
+        - id
+        - firstName
+        - email
+        - phone
+        - registrationDate
+        - totalClassesAttended
+        - isPermanentClient
+      properties:
+        id:
+          type: string
+          example: "client_123"
+        firstName:
+          type: string
+          example: "Иван"
+        lastName:
+          type: string
+          example: "Петров"
+          nullable: true
+        email:
+          type: string
+          format: email
+          example: "ivan.petrov@example.com"
+        phone:
+          type: string
+          example: "+79991234567"
+        registrationDate:
+          type: string
+          format: date-time
+          example: "2023-01-15T10:30:00Z"
+        totalClassesAttended:
+          type: integer
+          example: 5
+        allergies:
+          type: string
+          example: "Орехи, молочные продукты"
+          nullable: true
+        isPermanentClient:
+          type: boolean
+          example: true
+
+    UpdateProfileRequest:
+      type: object
+      properties:
+        firstName:
+          type: string
+          example: "Иван"
+        lastName:
+          type: string
+          example: "Петров"
+        phone:
+          type: string
+          example: "+79991234567"
+        allergies:
+          type: string
+          example: "Орехи, молочные продукты"
+          nullable: true
+
+    CookingClass:
+      type: object
+      required:
+        - id
+        - title
+        - description
+        - dateTime
+        - duration
+        - maxParticipants
+        - availableSeats
+        - chefId
+        - classType
+        - price
+      properties:
+        id:
+          type: string
+          example: "class_456"
+        title:
+          type: string
+          example: "Итальянская паста"
+        description:
+          type: string
+          example: "Изучите основы приготовления различных видов итальянской пасты"
+        dateTime:
+          type: string
+          format: date-time
+          example: "2023-06-15T18:00:00Z"
+        duration:
+          type: integer
+          description: Duration in hours
+          example: 3
+        maxParticipants:
+          type: integer
+          example: 12
+        availableSeats:
+          type: integer
+          example: 8
+        chef:
+          $ref: '#/components/schemas/Chef'
+        classType:
+          type: string
+          example: "novice"
+        price:
+          type: number
+          format: decimal
+          example: 2500.00
+
+    Chef:
+      type: object
+      required:
+        - id
+        - name
+        - specialization
+        - rating
+        - totalReviews
+      properties:
+        id:
+          type: string
+          example: "chef_789"
+        name:
+          type: string
+          example: "Анна Смирнова"
+        specialization:
+          type: string
+          example: "Итальянская кухня"
+        rating:
+          type: number
+          format: float
+          minimum: 0
+          maximum: 5
+          example: 4.7
+        totalReviews:
+          type: integer
+          example: 42
+        bio:
+          type: string
+          example: "Профессиональный шеф-повар с 8-летним опытом"
+
+    Booking:
+      type: object
+      required:
+        - id
+        - bookingDate
+        - status
+      properties:
+        id:
+          type: string
+          example: "booking_101"
+        client:
+          $ref: '#/components/schemas/Client'
+        class:
+          $ref: '#/components/schemas/CookingClass'
+        bookingDate:
+          type: string
+          format: date-time
+          example: "2023-06-10T14:30:00Z"
+        status:
+          type: string
+          enum: [CONFIRMED, CANCELLED_BY_CLIENT, CANCELLED_BY_STUDIO, ATTENDED, NO_SHOW]
+          example: "CONFIRMED"
+        rentalPackage:
+          $ref: '#/components/schemas/RentalPackage'
+        cancellationDate:
+          type: string
+          format: date-time
+          nullable: true
+          example: null
+        penaltyPoints:
+          type: integer
+          description: Number of penalty points for late cancellations
+          example: 0
+
+    RentalPackage:
+      type: object
+      required:
+        - id
+        - packageName
+        - description
+        - price
+        - availableCount
+      properties:
+        id:
+          type: string
+          example: "pkg_basic"
+        packageName:
+          type: string
+          enum: [Basic, Standard, Premium]
+          example: "Standard"
+        description:
+          type: string
+          example: "Фартук + набор ножей"
+        price:
+          type: number
+          format: decimal
+          example: 500.00
+        availableCount:
+          type: integer
+          example: 15
+
+    CreateBookingRequest:
+      type: object
+      required:
+        - classId
+        - rentalPackageId
+      properties:
+        classId:
+          type: string
+          example: "class_456"
+        rentalPackageId:
+          type: string
+          example: "pkg_standard"
+        allergies:
+          type: string
+          example: "Орехи"
+          nullable: true
+
+    UpdateBookingRequest:
+      type: object
+      required:
+        - action
+      properties:
+        action:
+          type: string
+          enum: [cancel]
+          example: "cancel"
+        reason:
+          type: string
+          nullable: true
+
+    CreateReviewRequest:
+      type: object
+      required:
+        - bookingId
+        - chefId
+        - rating
+      properties:
+        bookingId:
+          type: string
+          example: "booking_101"
+        chefId:
+          type: string
+          example: "chef_789"
+        rating:
+          type: integer
+          minimum: 1
+          maximum: 5
+          example: 5
+        comment:
+          type: string
+          maxLength: 500
+          nullable: true
+
+    Review:
+      type: object
+      required:
+        - id
+        - rating
+        - reviewDate
+      properties:
+        id:
+          type: string
+          example: "review_202"
+        client:
+          $ref: '#/components/schemas/Client'
+        chef:
+          $ref: '#/components/schemas/Chef'
+        rating:
+          type: integer
+          minimum: 1
+          maximum: 5
+          example: 5
+        comment:
+          type: string
+          maxLength: 500
+          nullable: true
+        reviewDate:
+          type: string
+          format: date-time
+          example: "2023-06-16T10:00:00Z"
+
+    ErrorResponse:
+      type: object
+      required:
+        - error
+        - message
+      properties:
+        error:
+          type: string
+          example: "VALIDATION_ERROR"
+        message:
+          type: string
+          example: "Invalid input parameters"
+
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+security:
+  - BearerAuth: []
+
+tags:
+  - name: Authentication
+    description: Authentication endpoints
+  - name: Profile
+    description: Client profile management
+  - name: Classes
+    description: Cooking classes endpoints
+  - name: Bookings
+    description: Booking management endpoints
+  - name: Reviews
+    description: Review and rating endpoints
+  - name: Chefs
+    description: Chef information endpoints
+  - name: Rental
+    description: Rental equipment endpoints
