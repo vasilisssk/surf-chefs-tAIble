@@ -1,5 +1,6 @@
 package com.example.chefstable.ui.auth
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -7,6 +8,7 @@ import androidx.lifecycle.viewModelScope
 import com.example.chefstable.data.repository.AuthRepository
 import com.example.chefstable.util.Validator
 import kotlinx.coroutines.launch
+import org.json.JSONObject
 import retrofit2.HttpException
 import java.io.IOException
 
@@ -55,12 +57,20 @@ class RegistrationViewModel(
     }
 
     private fun handleError(e: Throwable) {
+        Log.e("RegistrationViewModel", "Registration error", e)
         _errorMessage.value = when (e) {
             is IOException -> "Нет соединения. Проверьте подключение"
-            is HttpException -> when (e.code()) {
-                400 -> "Проверьте введенные данные"
-                in 500..599 -> "Произошла ошибка. Попробуйте позже"
-                else -> "Произошла ошибка. Попробуйте позже"
+            is HttpException -> {
+                val errorBody = e.response()?.errorBody()?.string()
+                val serverMessage = try {
+                    JSONObject(errorBody ?: "").optString("message", "")
+                } catch (ex: Exception) { "" }
+                when (e.code()) {
+                    400 -> serverMessage.ifEmpty { "Проверьте введенные данные" }
+                    409 -> serverMessage.ifEmpty { "Email или телефон уже зарегистрированы" }
+                    in 500..599 -> "Произошла ошибка. Попробуйте позже"
+                    else -> serverMessage.ifEmpty { "Произошла ошибка (${e.code()})" }
+                }
             }
             else -> "Произошла ошибка. Попробуйте позже"
         }

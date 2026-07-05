@@ -80,7 +80,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="phone"
-                android:maxLength="12"
+                android:maxLength="18"
                 android:textColor="@color/text_dark"
                 android:textColorHint="@color/text_hint" />
         </com.google.android.material.textfield.TextInputLayout>

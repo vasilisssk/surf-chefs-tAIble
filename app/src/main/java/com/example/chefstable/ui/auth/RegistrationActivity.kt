@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.chefstable.MainActivity
 import com.example.chefstable.R
 import com.example.chefstable.databinding.ActivityRegistrationBinding
+import com.example.chefstable.util.PhoneMaskWatcher
 import com.google.android.material.snackbar.Snackbar
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -19,6 +20,8 @@ class RegistrationActivity : AppCompatActivity() {
         binding = ActivityRegistrationBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        PhoneMaskWatcher.applyTo(binding.etPhone)
+
         setupListeners()
         observeViewModel()
     }
@@ -27,7 +30,7 @@ class RegistrationActivity : AppCompatActivity() {
         binding.btnRegister.setOnClickListener {
             val firstName = binding.etFirstName.text.toString().trim()
             val email = binding.etEmail.text.toString().trim()
-            val phone = binding.etPhone.text.toString().trim()
+            val phone = PhoneMaskWatcher.extractRawNumber(binding.etPhone.text.toString())
             val password = binding.etPassword.text.toString().trim()
             viewModel.register(firstName, email, phone, password)
         }

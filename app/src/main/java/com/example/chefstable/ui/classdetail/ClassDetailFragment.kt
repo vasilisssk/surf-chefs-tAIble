@@ -40,10 +40,6 @@ class ClassDetailFragment : Fragment() {
     }
 
     private fun setupListeners() {
-        binding.btnBack.setOnClickListener {
-            findNavController().popBackStack()
-        }
-
         binding.btnBook.setOnClickListener {
             val cid = classId ?: return@setOnClickListener
             val state = viewModel.state.value

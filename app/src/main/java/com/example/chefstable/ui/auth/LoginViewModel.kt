@@ -20,6 +20,9 @@ class LoginViewModel(
     private val _errorMessage = MutableLiveData<String?>()
     val errorMessage: LiveData<String?> = _errorMessage
 
+    private val _fieldErrors = MutableLiveData<Map<String, String?>>(emptyMap())
+    val fieldErrors: LiveData<Map<String, String?>> = _fieldErrors
+
     private val _loginSuccess = MutableLiveData(false)
     val loginSuccess: LiveData<Boolean> = _loginSuccess
 
@@ -27,12 +30,13 @@ class LoginViewModel(
         val emailError = Validator.validateEmail(email)
         val passwordError = Validator.validateLoginPassword(password)
 
-        if (emailError != null) {
-            _errorMessage.value = emailError
-            return
-        }
-        if (passwordError != null) {
-            _errorMessage.value = passwordError
+        val errors = mutableMapOf<String, String?>()
+        errors["email"] = emailError
+        errors["password"] = passwordError
+
+        _fieldErrors.value = errors
+
+        if (emailError != null || passwordError != null) {
             return
         }
 

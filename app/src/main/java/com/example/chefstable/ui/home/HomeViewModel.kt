@@ -49,7 +49,8 @@ class HomeViewModel(
             } else if (bookings.isEmpty() && classes.isEmpty()) {
                 _state.value = HomeState.Empty
             } else {
-                _state.value = HomeState.Content(bookings, classes)
+                val sortedBookings = bookings.sortedBy { it.bookingDate }
+                _state.value = HomeState.Content(sortedBookings, classes)
             }
         }
     }

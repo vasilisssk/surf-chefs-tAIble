@@ -45,6 +45,11 @@ class LoginActivity : AppCompatActivity() {
             binding.etPassword.isEnabled = !isLoading
         }
 
+        viewModel.fieldErrors.observe(this) { errors ->
+            errors["email"]?.let { binding.tilEmail.error = it } ?: run { binding.tilEmail.error = null }
+            errors["password"]?.let { binding.tilPassword.error = it } ?: run { binding.tilPassword.error = null }
+        }
+
         viewModel.errorMessage.observe(this) { message ->
             message?.let {
                 Snackbar.make(binding.root, it, Snackbar.LENGTH_LONG).show()

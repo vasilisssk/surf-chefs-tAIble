@@ -62,6 +62,10 @@ class ScheduleFragment : Fragment() {
             viewModel.resetFilters()
         }
 
+        binding.actvChefFilter.setOnClickListener {
+            binding.actvChefFilter.showDropDown()
+        }
+
         binding.actvChefFilter.setOnItemClickListener { _, _, position, _ ->
             if (position < chefs.size) {
                 selectedChef = chefs[position]

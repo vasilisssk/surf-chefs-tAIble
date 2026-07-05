@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import com.example.chefstable.R
 import com.example.chefstable.databinding.FragmentProfileBinding
 import com.example.chefstable.ui.auth.LoginActivity
+import com.example.chefstable.util.PhoneMaskWatcher
 import com.google.android.material.snackbar.Snackbar
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -31,6 +32,7 @@ class ProfileFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        PhoneMaskWatcher.applyTo(binding.etPhone)
         setupListeners()
         observeViewModel()
     }
@@ -44,7 +46,7 @@ class ProfileFragment : Fragment() {
         binding.btnSave.setOnClickListener {
             val firstName = binding.etFirstName.text.toString().trim()
             val lastName = binding.etLastName.text.toString().trim()
-            val phone = binding.etPhone.text.toString().trim()
+            val phone = PhoneMaskWatcher.extractRawNumber(binding.etPhone.text.toString())
             val allergies = binding.etAllergies.text?.toString()?.trim()?.takeIf { it.isNotEmpty() }
             viewModel.saveProfile(firstName, lastName, phone, allergies)
         }

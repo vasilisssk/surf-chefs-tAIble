@@ -1,6 +1,7 @@
 package com.example.chefstable.ui.profile
 
 import android.content.Intent
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -10,6 +11,7 @@ import com.example.chefstable.data.repository.AuthRepository
 import com.example.chefstable.data.repository.ProfileRepository
 import com.example.chefstable.util.Validator
 import kotlinx.coroutines.launch
+import org.json.JSONObject
 import retrofit2.HttpException
 import java.io.IOException
 
@@ -99,13 +101,21 @@ class ProfileViewModel(
     }
 
     private fun mapError(e: Throwable): String {
+        Log.e("ProfileViewModel", "Error", e)
         return when (e) {
             is IOException -> "Нет соединения. Проверьте подключение"
-            is HttpException -> when (e.code()) {
-                400 -> "Проверьте введенные данные"
-                401 -> "Необходима авторизация"
-                in 500..599 -> "Произошла ошибка. Попробуйте позже"
-                else -> "Произошла ошибка. Попробуйте позже"
+            is HttpException -> {
+                val errorBody = e.response()?.errorBody()?.string()
+                val serverMessage = try {
+                    JSONObject(errorBody ?: "").optString("message", "")
+                } catch (ex: Exception) { "" }
+                when (e.code()) {
+                    400 -> serverMessage.ifEmpty { "Проверьте введенные данные" }
+                    401 -> "Необходима авторизация"
+                    409 -> serverMessage.ifEmpty { "Email или телефон уже заняты" }
+                    in 500..599 -> "Произошла ошибка. Попробуйте позже"
+                    else -> serverMessage.ifEmpty { "Произошла ошибка (${e.code()})" }
+                }
             }
             else -> "Произошла ошибка. Попробуйте позже"
         }
