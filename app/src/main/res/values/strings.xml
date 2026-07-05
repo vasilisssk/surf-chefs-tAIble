@@ -92,6 +92,8 @@
     <string name="my_bookings_cancel_confirm">Отменить это бронирование?</string>
     <string name="my_bookings_cancel_yes">Да</string>
     <string name="my_bookings_cancel_no">Нет</string>
+    <string name="booking_total_price">Итого: %1$d руб</string>
+    <string name="booking_rental_package_label">Пакет проката: %1$s</string>
 
     <!-- Profile -->
     <string name="profile_title">Профиль</string>

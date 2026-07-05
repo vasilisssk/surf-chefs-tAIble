@@ -68,6 +68,18 @@ class BookingAdapter(
             binding.tvBookingClassTitle.text = cls.title
             binding.tvBookingDate.text = formatDate(cls.dateTime)
             binding.tvBookingChef.text = "Шеф: ${cls.chef.name}"
+            binding.tvBookingTotalPrice.text = binding.root.context.getString(R.string.booking_total_price, booking.totalPrice.toInt())
+
+            val pkg = booking.rentalPackage
+            if (pkg != null) {
+                binding.tvBookingRentalPackage.text = binding.root.context.getString(R.string.booking_rental_package_label, pkg.packageName)
+                binding.tvBookingRentalPackage.visibility = View.VISIBLE
+                binding.tvBookingRentalDescription.text = pkg.description
+                binding.tvBookingRentalDescription.visibility = View.VISIBLE
+            } else {
+                binding.tvBookingRentalPackage.visibility = View.GONE
+                binding.tvBookingRentalDescription.visibility = View.GONE
+            }
 
             val statusText = when (booking.status) {
                 "CONFIRMED" -> "Подтверждено"

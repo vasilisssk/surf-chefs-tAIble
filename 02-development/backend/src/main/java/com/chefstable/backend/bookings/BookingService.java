@@ -18,6 +18,7 @@ import com.chefstable.backend.domain.repository.ClientRepository;
 import com.chefstable.backend.domain.repository.CookingClassRepository;
 import com.chefstable.backend.domain.repository.RentalPackageRepository;
 import com.chefstable.backend.domain.model.CookingClassStatus;
+import java.math.BigDecimal;
 import java.time.OffsetDateTime;
 import java.util.List;
 import org.springframework.stereotype.Service;
@@ -87,13 +88,15 @@ public class BookingService {
             throw new ConflictException("Client already has a booking for this class");
         }
         cookingClass.reserveSeat();
+        BigDecimal totalPrice = cookingClass.getPrice().add(rentalPackage.getPrice());
         BookingEntity booking = new BookingEntity(
                 idGenerator.prefixed("booking"),
                 client,
                 cookingClass,
                 rentalPackage,
                 request.allergies(),
-                OffsetDateTime.now()
+                OffsetDateTime.now(),
+                totalPrice
         );
         return bookingMapper.toResponse(bookingRepository.save(booking));
     }

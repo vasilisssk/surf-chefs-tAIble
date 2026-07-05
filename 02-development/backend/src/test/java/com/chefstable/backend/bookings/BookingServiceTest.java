@@ -64,7 +64,7 @@ class BookingServiceTest {
     void lateCancellationAddsPenaltyPoint() {
         ClientEntity client = new ClientEntity("client_1", "Ivan", "ivan@example.com", "+79990000000", "hash", OffsetDateTime.now());
         CookingClassEntity cookingClass = cookingClass("class_1", 1, OffsetDateTime.now().plusHours(2));
-        BookingEntity booking = new BookingEntity("booking_1", client, cookingClass, rentalPackage(), null, OffsetDateTime.now());
+        BookingEntity booking = new BookingEntity("booking_1", client, cookingClass, rentalPackage(), null, OffsetDateTime.now(), BigDecimal.valueOf(2800));
 
         when(bookingRepository.findDetailedByIdAndClientId("booking_1", "client_1")).thenReturn(Optional.of(booking));
 

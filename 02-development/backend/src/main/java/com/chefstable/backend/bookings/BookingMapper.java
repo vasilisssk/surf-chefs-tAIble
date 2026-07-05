@@ -29,7 +29,8 @@ public class BookingMapper {
                 booking.getStatus().name(),
                 rentalPackageMapper.toResponse(booking.getRentalPackage()),
                 booking.getCancellationDate(),
-                booking.getPenaltyPoints()
+                booking.getPenaltyPoints(),
+                booking.getTotalPrice()
         );
     }
 }

@@ -8,5 +8,6 @@ data class BookingDto(
     val status: String,
     val rentalPackage: RentalPackageDto?,
     val cancellationDate: String?,
-    val penaltyPoints: Int
+    val penaltyPoints: Int,
+    val totalPrice: Double
 )

@@ -52,6 +52,16 @@
                     android:textColor="@color/accent"
                     android:textSize="@dimen/text_caption"
                     tools:text="Шеф: Марио Росси" />
+
+                <TextView
+                    android:id="@+id/tv_booking_total_price"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_xs"
+                    android:textColor="@color/primary"
+                    android:textSize="@dimen/text_body"
+                    android:textStyle="bold"
+                    tools:text="Итого: 3200 руб" />
             </LinearLayout>
 
             <TextView
@@ -65,6 +75,29 @@
                 tools:text="Подтверждено"
                 tools:textColor="@color/status_confirmed" />
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_booking_rental_package"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_sm"
+            android:textColor="@color/text_dark"
+            android:textSize="@dimen/text_caption"
+            android:textStyle="bold"
+            android:visibility="gone"
+            tools:text="Пакет проката: Standard"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/tv_booking_rental_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_xs"
+            android:textColor="@color/text_light"
+            android:textSize="@dimen/text_caption"
+            android:visibility="gone"
+            tools:text="Фартук + набор ножей"
+            tools:visibility="visible" />
 
         <LinearLayout
             android:layout_width="match_parent"

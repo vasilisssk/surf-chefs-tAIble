@@ -3,6 +3,7 @@ package com.chefstable.backend.bookings.dto;
 import com.chefstable.backend.classes.dto.CookingClassResponse;
 import com.chefstable.backend.profile.dto.ClientResponse;
 import com.chefstable.backend.rental.dto.RentalPackageResponse;
+import java.math.BigDecimal;
 import java.time.OffsetDateTime;
 
 public record BookingResponse(
@@ -13,6 +14,7 @@ public record BookingResponse(
         String status,
         RentalPackageResponse rentalPackage,
         OffsetDateTime cancellationDate,
-        int penaltyPoints
+        int penaltyPoints,
+        BigDecimal totalPrice
 ) {
 }

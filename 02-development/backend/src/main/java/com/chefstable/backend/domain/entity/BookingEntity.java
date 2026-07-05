@@ -10,6 +10,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import java.math.BigDecimal;
 import java.time.OffsetDateTime;
 
 @Entity
@@ -45,16 +46,20 @@ public class BookingEntity {
 
     private String allergies;
 
+    @Column(name = "total_price", nullable = false)
+    private BigDecimal totalPrice;
+
     protected BookingEntity() {
     }
 
-    public BookingEntity(String id, ClientEntity client, CookingClassEntity cookingClass, RentalPackageEntity rentalPackage, String allergies, OffsetDateTime bookingDate) {
+    public BookingEntity(String id, ClientEntity client, CookingClassEntity cookingClass, RentalPackageEntity rentalPackage, String allergies, OffsetDateTime bookingDate, BigDecimal totalPrice) {
         this.id = id;
         this.client = client;
         this.cookingClass = cookingClass;
         this.rentalPackage = rentalPackage;
         this.allergies = allergies;
         this.bookingDate = bookingDate;
+        this.totalPrice = totalPrice;
         this.status = BookingStatus.CONFIRMED;
     }
 
@@ -92,6 +97,10 @@ public class BookingEntity {
 
     public String getAllergies() {
         return allergies;
+    }
+
+    public BigDecimal getTotalPrice() {
+        return totalPrice;
     }
 
     public void cancelByClient(OffsetDateTime now, boolean lateCancellation) {
