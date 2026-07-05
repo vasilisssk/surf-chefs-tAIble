@@ -70,8 +70,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/spacing_sm"
+            android:layout_marginBottom="0dp"
             android:orientation="horizontal"
             android:visibility="visible"
+            android:layout_gravity="center"
+            android:gravity="center"
             android:id="@+id/layout_booking_actions">
 
             <com.google.android.material.button.MaterialButton
@@ -81,17 +84,32 @@
                 android:layout_height="wrap_content"
                 android:text="@string/my_bookings_cancel"
                 android:textColor="@color/primary"
-                android:textSize="@dimen/text_caption" />
+                android:textSize="@dimen/text_caption"
+                android:padding="0dp"
+                android:visibility="gone" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_go_to_bookings"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/home_go_to_bookings"
+                android:textColor="@color/primary"
+                android:textSize="@dimen/text_caption"
+                android:padding="0dp"
+                android:visibility="gone" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_rate_chef"
                 style="@style/Widget.MaterialComponents.Button.TextButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:padding="0dp"
                 android:text="@string/my_bookings_rate_chef"
                 android:textColor="@color/accent"
                 android:textSize="@dimen/text_caption"
-                android:visibility="gone" />
+                android:visibility="visible"
+                android:minHeight="0dp"/>
         </LinearLayout>
     </LinearLayout>
 </com.google.android.material.card.MaterialCardView>

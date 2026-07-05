@@ -15,7 +15,8 @@ import java.util.Locale
 class BookingAdapter(
     private val onCancelClick: (BookingDto) -> Unit,
     private val onRateClick: (BookingDto) -> Unit,
-    private val onBookingClick: (BookingDto) -> Unit = {}
+    private val onBookingClick: (BookingDto) -> Unit = {},
+    private val onGoToBookingsClick: ((BookingDto) -> Unit)? = null
 ) : ListAdapter<BookingDto, BookingAdapter.BookingViewHolder>(DIFF_CALLBACK) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BookingViewHolder {
@@ -46,6 +47,12 @@ class BookingAdapter(
                 val position = bindingAdapterPosition
                 if (position != RecyclerView.NO_POSITION) {
                     onCancelClick(getItem(position))
+                }
+            }
+            binding.btnGoToBookings.setOnClickListener {
+                val position = bindingAdapterPosition
+                if (position != RecyclerView.NO_POSITION) {
+                    onGoToBookingsClick?.invoke(getItem(position))
                 }
             }
             binding.btnRateChef.setOnClickListener {
@@ -85,11 +92,18 @@ class BookingAdapter(
 
             when (booking.status) {
                 "CONFIRMED" -> {
-                    binding.btnCancelBooking.visibility = View.VISIBLE
+                    if (onGoToBookingsClick != null) {
+                        binding.btnCancelBooking.visibility = View.GONE
+                        binding.btnGoToBookings.visibility = View.VISIBLE
+                    } else {
+                        binding.btnCancelBooking.visibility = View.VISIBLE
+                        binding.btnGoToBookings.visibility = View.GONE
+                    }
                     binding.btnRateChef.visibility = View.GONE
                 }
                 "ATTENDED" -> {
                     binding.btnCancelBooking.visibility = View.GONE
+                    binding.btnGoToBookings.visibility = View.GONE
                     binding.btnRateChef.visibility = View.VISIBLE
                 }
                 else -> {

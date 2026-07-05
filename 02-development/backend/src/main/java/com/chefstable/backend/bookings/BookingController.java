@@ -48,4 +48,9 @@ public class BookingController {
     BookingResponse updateBooking(@PathVariable String bookingId, @Valid @RequestBody UpdateBookingRequest request) {
         return bookingService.updateBooking(currentClient.id(), bookingId, request);
     }
+
+    @PostMapping("/studio/cancel-class/{classId}")
+    ResponseEntity<BookingListResponse> cancelClassByStudio(@PathVariable String classId) {
+        return ResponseEntity.ok(bookingService.cancelClassByStudio(classId));
+    }
 }

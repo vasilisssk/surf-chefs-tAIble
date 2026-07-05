@@ -14,6 +14,7 @@ open class AuthRepository(
         return try {
             val response = apiService!!.login(LoginRequestDto(email, password))
             sessionManager!!.saveToken(response.token)
+            sessionManager!!.saveRefreshToken(response.refreshToken)
             Result.success(response)
         } catch (e: Exception) {
             Result.failure(e)
@@ -31,6 +32,7 @@ open class AuthRepository(
                 RegistrationRequestDto(firstName, email, phone, password)
             )
             sessionManager!!.saveToken(response.token)
+            sessionManager!!.saveRefreshToken(response.refreshToken)
             Result.success(response)
         } catch (e: Exception) {
             Result.failure(e)
@@ -39,7 +41,8 @@ open class AuthRepository(
 
     open suspend fun logout(): Result<Unit> {
         return try {
-            apiService!!.logout()
+            val refreshToken = sessionManager!!.getRefreshToken() ?: ""
+            apiService!!.logout(refreshToken)
             sessionManager!!.clearToken()
             Result.success(Unit)
         } catch (e: Exception) {

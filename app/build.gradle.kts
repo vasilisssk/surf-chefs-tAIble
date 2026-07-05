@@ -52,6 +52,7 @@ dependencies {
     implementation(libs.androidx.navigation.ui.ktx)
     implementation(libs.androidx.fragment.ktx)
     implementation(libs.androidx.swiperefresh)
+    implementation(libs.androidx.security.crypto)
 
     implementation(libs.retrofit)
     implementation(libs.retrofit.gson)

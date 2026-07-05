@@ -11,7 +11,13 @@ import java.util.concurrent.TimeUnit
 
 object NetworkModule {
 
-    fun createOkHttpClient(sessionManager: SessionManager): OkHttpClient {
+    data class NetworkStack(
+        val okHttpClient: OkHttpClient,
+        val retrofit: Retrofit,
+        val apiService: ApiService
+    )
+
+    fun createNetworkStack(sessionManager: SessionManager): NetworkStack {
         val loggingInterceptor = HttpLoggingInterceptor().apply {
             level = if (BuildConfig.DEBUG) {
                 HttpLoggingInterceptor.Level.BODY
@@ -20,13 +26,23 @@ object NetworkModule {
             }
         }
 
-        return OkHttpClient.Builder()
+        // Lazy factory to break circular dependency (Authenticator -> Retrofit -> OkHttpClient)
+        lateinit var apiService: ApiService
+        val authenticator = TokenAuthenticator(sessionManager) { apiService }
+
+        val client = OkHttpClient.Builder()
+            .authenticator(authenticator)
             .addInterceptor(AuthInterceptor(sessionManager))
             .addInterceptor(loggingInterceptor)
             .connectTimeout(30, TimeUnit.SECONDS)
             .readTimeout(30, TimeUnit.SECONDS)
             .writeTimeout(30, TimeUnit.SECONDS)
             .build()
+
+        val retrofit = createRetrofit(client)
+        apiService = createApiService(retrofit)
+
+        return NetworkStack(client, retrofit, apiService)
     }
 
     fun createRetrofit(client: OkHttpClient): Retrofit {

@@ -14,6 +14,7 @@ import com.example.chefstable.data.remote.dto.CookingClassDto
 import com.example.chefstable.databinding.FragmentHomeBinding
 import com.example.chefstable.ui.common.BookingAdapter
 import com.example.chefstable.ui.common.ClassAdapter
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class HomeFragment : Fragment() {
@@ -47,7 +48,8 @@ class HomeFragment : Fragment() {
         bookingAdapter = BookingAdapter(
             onCancelClick = {},
             onRateClick = {},
-            onBookingClick = {}
+            onBookingClick = {},
+            onGoToBookingsClick = { navigateToMyBookings() }
         )
         binding.rvUpcomingBookings.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
@@ -121,6 +123,11 @@ class HomeFragment : Fragment() {
             R.id.navigation_class_detail,
             bundleOf("classId" to classId)
         )
+    }
+
+    private fun navigateToMyBookings() {
+        val navView = requireActivity().findViewById<BottomNavigationView>(R.id.nav_view)
+        navView.selectedItemId = R.id.navigation_bookings
     }
 
     override fun onDestroyView() {

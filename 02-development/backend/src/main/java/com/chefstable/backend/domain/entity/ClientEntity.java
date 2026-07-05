@@ -38,6 +38,9 @@ public class ClientEntity {
     @Column(name = "is_permanent_client", nullable = false)
     private boolean permanentClient;
 
+    @Column(name = "refresh_token")
+    private String refreshToken;
+
     protected ClientEntity() {
     }
 
@@ -108,5 +111,13 @@ public class ClientEntity {
 
     public void refreshPermanentStatus() {
         this.permanentClient = totalClassesAttended >= 5;
+    }
+
+    public String getRefreshToken() {
+        return refreshToken;
+    }
+
+    public void setRefreshToken(String refreshToken) {
+        this.refreshToken = refreshToken;
     }
 }

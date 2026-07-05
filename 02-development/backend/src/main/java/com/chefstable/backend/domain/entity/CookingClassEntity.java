@@ -115,4 +115,8 @@ public class CookingClassEntity {
             availableSeats += 1;
         }
     }
+
+    public void cancelByStudio() {
+        this.status = CookingClassStatus.CANCELLED;
+    }
 }

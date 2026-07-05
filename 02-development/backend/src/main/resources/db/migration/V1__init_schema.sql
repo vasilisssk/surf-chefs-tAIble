@@ -82,4 +82,5 @@ insert into cooking_classes (id, title, description, date_time, duration, max_pa
 ('class_pasta_basics', 'Итальянская паста', 'Основы приготовления пасты и двух классических соусов.', now() + interval '1 day', 3, 12, 12, 'chef_anna', 'novice', 2500.00),
 ('class_risotto', 'Ризотто без ошибок', 'Техника ризотто, бульон, текстура и подача.', now() + interval '3 days', 3, 10, 10, 'chef_anna', 'intermediate', 2900.00),
 ('class_french_sauces', 'Французские соусы', 'Базовые соусы и работа с температурой.', now() + interval '5 days', 3, 8, 8, 'chef_ivan', 'advanced', 3200.00),
-('class_wok', 'Вок и азиатская лапша', 'Подготовка ингредиентов и быстрые техники жарки.', now() + interval '6 days', 3, 12, 12, 'chef_maria', 'novice', 2700.00);
+('class_wok', 'Вок и азиатская лапша', 'Подготовка ингредиентов и быстрые техники жарки.', now() + interval '6 days', 3, 12, 12, 'chef_maria', 'novice', 2700.00),
+('class_tiramisu', 'Тирамису', 'Классический итальянский десерт: один слот для теста.', now() + interval '7 days', 2, 1, 1, 'chef_anna', 'novice', 1800.00);

@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.chefstable.R
@@ -57,12 +58,17 @@ class BookingConfirmationFragment : Fragment() {
     }
 
     private fun setupListeners() {
-        binding.actvRentalPackage.setOnItemClickListener { _, _, position, _ ->
-            if (position < rentalPackages.size) {
-                selectedPackage = rentalPackages[position]
-                val pkg = selectedPackage!!
+        binding.actvRentalPackage.doOnTextChanged { text, _, _, _ ->
+            val textStr = text?.toString() ?: ""
+            val matchedPackage = rentalPackages.find { pkg ->
+                "${pkg.packageName} (+${pkg.price.toInt()} руб)" == textStr
+            }
+            if (matchedPackage != null && matchedPackage.id != selectedPackage?.id) {
+                selectedPackage = matchedPackage
+                binding.tvPackageDescription.text = matchedPackage.description
+                binding.tvPackageDescription.visibility = View.VISIBLE
                 binding.tvPackagePrice.visibility = View.VISIBLE
-                binding.tvPackagePrice.text = "+${pkg.price.toInt()} руб"
+                binding.tvPackagePrice.text = if (matchedPackage.price == 0.0) "Бесплатно" else "+${matchedPackage.price.toInt()} руб"
                 updateTotal()
             }
         }
@@ -129,8 +135,10 @@ class BookingConfirmationFragment : Fragment() {
             if (packages.isNotEmpty()) {
                 binding.actvRentalPackage.setText(packageNames[0], false)
                 selectedPackage = packages[0]
+                binding.tvPackageDescription.text = packages[0].description
+                binding.tvPackageDescription.visibility = View.VISIBLE
                 binding.tvPackagePrice.visibility = View.VISIBLE
-                binding.tvPackagePrice.text = "+${packages[0].price.toInt()} руб"
+                binding.tvPackagePrice.text = if (packages[0].price == 0.0) "Бесплатно" else "+${packages[0].price.toInt()} руб"
                 updateTotal()
             }
         }

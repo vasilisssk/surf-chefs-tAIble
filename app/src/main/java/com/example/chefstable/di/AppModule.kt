@@ -1,7 +1,6 @@
 package com.example.chefstable.di
 
 import com.example.chefstable.data.SessionManager
-import com.example.chefstable.data.remote.ApiService
 import com.example.chefstable.data.remote.NetworkModule
 import com.example.chefstable.data.repository.AuthRepository
 import com.example.chefstable.data.repository.BookingRepository
@@ -20,21 +19,22 @@ import com.example.chefstable.ui.notifications.NotificationsViewModel
 import com.example.chefstable.ui.profile.ProfileViewModel
 import com.example.chefstable.ui.review.ReviewViewModel
 import com.example.chefstable.ui.schedule.ScheduleViewModel
-import okhttp3.OkHttpClient
 import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
-import retrofit2.Retrofit
 
 val appModule = module {
 
     single { SessionManager(androidContext()) }
 
-    single { NetworkModule.createOkHttpClient(get()) }
+    single {
+        val stack = NetworkModule.createNetworkStack(get())
+        stack
+    }
 
-    single { NetworkModule.createRetrofit(get<OkHttpClient>()) }
-
-    single { NetworkModule.createApiService(get<Retrofit>()) }
+    single { get<NetworkModule.NetworkStack>().okHttpClient }
+    single { get<NetworkModule.NetworkStack>().retrofit }
+    single { get<NetworkModule.NetworkStack>().apiService }
 
     single { AuthRepository(get(), get()) }
     single { ProfileRepository(get()) }

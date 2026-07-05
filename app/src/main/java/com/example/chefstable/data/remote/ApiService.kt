@@ -13,6 +13,7 @@ import com.example.chefstable.data.remote.dto.CreateReviewRequestDto
 import com.example.chefstable.data.remote.dto.LoginRequestDto
 import com.example.chefstable.data.remote.dto.RegistrationRequestDto
 import com.example.chefstable.data.remote.dto.RentalPackageListDto
+import com.example.chefstable.data.remote.dto.RefreshTokenRequestDto
 import com.example.chefstable.data.remote.dto.ReviewDto
 import com.example.chefstable.data.remote.dto.UpdateBookingRequestDto
 import com.example.chefstable.data.remote.dto.UpdateProfileRequestDto
@@ -32,7 +33,10 @@ interface ApiService {
     suspend fun login(@Body request: LoginRequestDto): AuthResponseDto
 
     @POST("auth/logout")
-    suspend fun logout(): retrofit2.Response<Unit>
+    suspend fun logout(@retrofit2.http.Header("X-Refresh-Token") refreshToken: String): retrofit2.Response<Unit>
+
+    @POST("auth/refresh")
+    suspend fun refresh(@Body request: RefreshTokenRequestDto): AuthResponseDto
 
     @GET("profile")
     suspend fun getProfile(): ClientDto

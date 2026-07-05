@@ -99,4 +99,10 @@ public class BookingEntity {
         cancellationDate = now;
         penaltyPoints = lateCancellation ? 1 : 0;
     }
+
+    public void cancelByStudio(OffsetDateTime now) {
+        status = BookingStatus.CANCELLED_BY_STUDIO;
+        cancellationDate = now;
+        penaltyPoints = 0;
+    }
 }

@@ -31,5 +31,27 @@ public interface BookingRepository extends JpaRepository<BookingEntity, String> 
             """)
     Optional<BookingEntity> findDetailedByIdAndClientId(@Param("id") String id, @Param("clientId") String clientId);
 
+    @Query("""
+            select b from BookingEntity b
+            join fetch b.client
+            join fetch b.cookingClass c
+            join fetch c.chef
+            join fetch b.rentalPackage
+            where b.id = :id
+            """)
+    Optional<BookingEntity> findDetailedById(@Param("id") String id);
+
+    @Query("""
+            select b from BookingEntity b
+            join fetch b.client
+            join fetch b.cookingClass c
+            join fetch c.chef
+            join fetch b.rentalPackage
+            where b.cookingClass.id = :classId and b.status = 'CONFIRMED'
+            """)
+    List<BookingEntity> findAllConfirmedByClassId(@Param("classId") String classId);
+
     boolean existsByClientIdAndCookingClassIdAndStatus(String clientId, String classId, BookingStatus status);
+
+    boolean existsByClientIdAndCookingClassId(String clientId, String classId);
 }

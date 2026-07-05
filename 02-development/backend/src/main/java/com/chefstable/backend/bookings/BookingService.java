@@ -17,6 +17,7 @@ import com.chefstable.backend.domain.repository.BookingRepository;
 import com.chefstable.backend.domain.repository.ClientRepository;
 import com.chefstable.backend.domain.repository.CookingClassRepository;
 import com.chefstable.backend.domain.repository.RentalPackageRepository;
+import com.chefstable.backend.domain.model.CookingClassStatus;
 import java.time.OffsetDateTime;
 import java.util.List;
 import org.springframework.stereotype.Service;
@@ -76,11 +77,14 @@ public class BookingService {
                 .orElseThrow(() -> new NotFoundException("Class not found"));
         RentalPackageEntity rentalPackage = rentalPackageRepository.findById(request.rentalPackageId())
                 .orElseThrow(() -> new NotFoundException("Rental package not found"));
+        if (cookingClass.getStatus() == CookingClassStatus.CANCELLED) {
+            throw new ConflictException("Booking is forbidden: class has been cancelled by the studio");
+        }
         if (!cookingClass.canBeBooked()) {
             throw new ConflictException("Class has no available seats");
         }
-        if (bookingRepository.existsByClientIdAndCookingClassIdAndStatus(clientId, cookingClass.getId(), BookingStatus.CONFIRMED)) {
-            throw new ConflictException("Client already has an active booking for this class");
+        if (bookingRepository.existsByClientIdAndCookingClassId(clientId, cookingClass.getId())) {
+            throw new ConflictException("Client already has a booking for this class");
         }
         cookingClass.reserveSeat();
         BookingEntity booking = new BookingEntity(
@@ -109,6 +113,21 @@ public class BookingService {
         booking.cancelByClient(now, lateCancellation);
         booking.getCookingClass().releaseSeat();
         return bookingMapper.toResponse(booking);
+    }
+
+    @Transactional
+    public BookingListResponse cancelClassByStudio(String classId) {
+        CookingClassEntity cookingClass = cookingClassRepository.findByIdForUpdate(classId)
+                .orElseThrow(() -> new NotFoundException("Class not found"));
+        if (cookingClass.getStatus() == CookingClassStatus.CANCELLED) {
+            throw new ConflictException("Class is already cancelled");
+        }
+        OffsetDateTime now = OffsetDateTime.now();
+        List<BookingEntity> bookings = bookingRepository.findAllConfirmedByClassId(classId);
+        bookings.forEach(booking -> booking.cancelByStudio(now));
+        cookingClass.cancelByStudio();
+        List<BookingResponse> responses = bookings.stream().map(bookingMapper::toResponse).toList();
+        return new BookingListResponse(responses);
     }
 
     private boolean matchesStatusFilter(BookingEntity booking, String statusFilter, OffsetDateTime now) {

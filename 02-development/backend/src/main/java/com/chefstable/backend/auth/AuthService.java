@@ -49,7 +49,7 @@ public class AuthService {
                 OffsetDateTime.now()
         );
         ClientEntity saved = clientRepository.save(client);
-        return new AuthResponse(jwtService.generateToken(saved.getId()), clientMapper.toResponse(saved));
+        return buildAuthResponse(saved);
     }
 
     @Transactional(readOnly = true)
@@ -60,6 +60,30 @@ public class AuthService {
         if (!passwordEncoder.matches(request.password(), client.getPasswordHash())) {
             throw new UnauthorizedException("Invalid credentials");
         }
-        return new AuthResponse(jwtService.generateToken(client.getId()), clientMapper.toResponse(client));
+        return buildAuthResponse(client);
+    }
+
+    @Transactional
+    public AuthResponse refresh(String refreshToken) {
+        ClientEntity client = clientRepository.findByRefreshToken(refreshToken)
+                .orElseThrow(() -> new UnauthorizedException("Invalid refresh token"));
+        return buildAuthResponse(client);
+    }
+
+    @Transactional
+    public void logout(String refreshToken) {
+        clientRepository.findByRefreshToken(refreshToken)
+                .ifPresent(client -> {
+                    client.setRefreshToken(null);
+                    clientRepository.save(client);
+                });
+    }
+
+    private AuthResponse buildAuthResponse(ClientEntity client) {
+        String accessToken = jwtService.generateToken(client.getId());
+        String refreshToken = jwtService.generateRefreshToken(client.getId());
+        client.setRefreshToken(refreshToken);
+        clientRepository.save(client);
+        return new AuthResponse(accessToken, refreshToken, clientMapper.toResponse(client));
     }
 }

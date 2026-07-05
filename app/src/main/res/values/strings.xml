@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Culinary Studio</string>
+    <string name="app_name">Chefs tAIble</string>
 
     <!-- Bottom navigation -->
     <string name="title_home">Главная</string>
@@ -46,11 +46,12 @@
     <string name="error_review_exists">Отзыв уже оставлен для этого бронирования</string>
 
     <!-- Home -->
-    <string name="home_upcoming_bookings">Ближайшие бронирования</string>
+    <string name="home_upcoming_bookings">Ближайшее бронирование</string>
     <string name="home_recommended_classes">Рекомендуемые классы</string>
     <string name="home_no_bookings">Нет предстоящих бронирований</string>
     <string name="home_no_classes">Нет доступных классов</string>
     <string name="home_view_all_classes">Посмотреть все классы</string>
+    <string name="home_go_to_bookings">Мои бронирования</string>
 
     <!-- Schedule -->
     <string name="schedule_title">Расписание</string>
