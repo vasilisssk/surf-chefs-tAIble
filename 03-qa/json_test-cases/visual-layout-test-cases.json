@@ -1,0 +1,3858 @@
+[
+  {
+    "id": "VL-001",
+    "description": "[Все экраны] BottomNavigationView: Видна на 5 табах авторизованной части; иконки и подписи соответствуют bottom_nav_menu.xml; активный таб подсвечен",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "все-экраны",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «BottomNavigationView» на экране «Все экраны»",
+    "attached_files": [
+      "app/src/main/res/menu/bottom_nav_menu.xml",
+      "app/src/main/res/values/themes.xml",
+      "app/src/main/res/values-night/themes.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Все экраны» в приложении Chefs tAIble",
+      "Найти компонент «BottomNavigationView»",
+      "Проверить: Видна на 5 табах авторизованной части; иконки и подписи соответствуют bottom_nav_menu.xml; активный таб подсвечен",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Все экраны",
+      "component": "BottomNavigationView",
+      "expected": "Видна на 5 табах авторизованной части; иконки и подписи соответствуют bottom_nav_menu.xml; активный таб подсвечен"
+    }
+  },
+  {
+    "id": "VL-002",
+    "description": "[Все экраны] Контент фрагментов: Не обрезается под BottomNavigationView и статус-баром",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "все-экраны",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «Контент фрагментов» на экране «Все экраны»",
+    "attached_files": [
+      "app/src/main/res/menu/bottom_nav_menu.xml",
+      "app/src/main/res/values/themes.xml",
+      "app/src/main/res/values-night/themes.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Все экраны» в приложении Chefs tAIble",
+      "Найти компонент «Контент фрагментов»",
+      "Проверить: Не обрезается под BottomNavigationView и статус-баром",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Все экраны",
+      "component": "Контент фрагментов",
+      "expected": "Не обрезается под BottomNavigationView и статус-баром"
+    }
+  },
+  {
+    "id": "VL-003",
+    "description": "[Все экраны] Клавиатура: Не перекрывает активное текстовое поле (ScrollView / fillViewport)",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "все-экраны",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «Клавиатура» на экране «Все экраны»",
+    "attached_files": [
+      "app/src/main/res/menu/bottom_nav_menu.xml",
+      "app/src/main/res/values/themes.xml",
+      "app/src/main/res/values-night/themes.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Все экраны» в приложении Chefs tAIble",
+      "Найти компонент «Клавиатура»",
+      "Проверить: Не перекрывает активное текстовое поле (ScrollView / fillViewport)",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Все экраны",
+      "component": "Клавиатура",
+      "expected": "Не перекрывает активное текстовое поле (ScrollView / fillViewport)"
+    }
+  },
+  {
+    "id": "VL-004",
+    "description": "[Все экраны] Тёмная тема: Все экраны читаемы, цвета корректны (values-night/themes.xml)",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "все-экраны",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «Тёмная тема» на экране «Все экраны»",
+    "attached_files": [
+      "app/src/main/res/menu/bottom_nav_menu.xml",
+      "app/src/main/res/values/themes.xml",
+      "app/src/main/res/values-night/themes.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "medium",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Все экраны» в приложении Chefs tAIble",
+      "Найти компонент «Тёмная тема»",
+      "Проверить: Все экраны читаемы, цвета корректны (values-night/themes.xml)",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Все экраны",
+      "component": "Тёмная тема",
+      "expected": "Все экраны читаемы, цвета корректны (values-night/themes.xml)"
+    }
+  },
+  {
+    "id": "VL-005",
+    "description": "[Все экраны] Локализация: Все строки из strings.xml, захардкоженных нет",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "все-экраны",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «Локализация» на экране «Все экраны»",
+    "attached_files": [
+      "app/src/main/res/menu/bottom_nav_menu.xml",
+      "app/src/main/res/values/themes.xml",
+      "app/src/main/res/values-night/themes.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "medium",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Все экраны» в приложении Chefs tAIble",
+      "Найти компонент «Локализация»",
+      "Проверить: Все строки из strings.xml, захардкоженных нет",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Все экраны",
+      "component": "Локализация",
+      "expected": "Все строки из strings.xml, захардкоженных нет"
+    }
+  },
+  {
+    "id": "VL-006",
+    "description": "[Все экраны] ProgressBar: Отображается по центру экрана (layout_gravity=center), контент скрыт",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "все-экраны",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «ProgressBar» на экране «Все экраны»",
+    "attached_files": [
+      "app/src/main/res/menu/bottom_nav_menu.xml",
+      "app/src/main/res/values/themes.xml",
+      "app/src/main/res/values-night/themes.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Все экраны» в приложении Chefs tAIble",
+      "Найти компонент «ProgressBar»",
+      "Проверить: Отображается по центру экрана (layout_gravity=center), контент скрыт",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Все экраны",
+      "component": "ProgressBar",
+      "expected": "Отображается по центру экрана (layout_gravity=center), контент скрыт"
+    }
+  },
+  {
+    "id": "VL-007",
+    "description": "[Все экраны] Состояние ошибки: Текст ошибки (center) + кнопка «Обновить» (marginTop=spacing_md)",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "все-экраны",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «Состояние ошибки» на экране «Все экраны»",
+    "attached_files": [
+      "app/src/main/res/menu/bottom_nav_menu.xml",
+      "app/src/main/res/values/themes.xml",
+      "app/src/main/res/values-night/themes.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Все экраны» в приложении Chefs tAIble",
+      "Найти компонент «Состояние ошибки»",
+      "Проверить: Текст ошибки (center) + кнопка «Обновить» (marginTop=spacing_md)",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Все экраны",
+      "component": "Состояние ошибки",
+      "expected": "Текст ошибки (center) + кнопка «Обновить» (marginTop=spacing_md)"
+    }
+  },
+  {
+    "id": "VL-008",
+    "description": "[Все экраны] Пустое состояние: Информационный текст по центру (gravity=center), visibility=gone при наличии данных",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "все-экраны",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «Пустое состояние» на экране «Все экраны»",
+    "attached_files": [
+      "app/src/main/res/menu/bottom_nav_menu.xml",
+      "app/src/main/res/values/themes.xml",
+      "app/src/main/res/values-night/themes.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "medium",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Все экраны» в приложении Chefs tAIble",
+      "Найти компонент «Пустое состояние»",
+      "Проверить: Информационный текст по центру (gravity=center), visibility=gone при наличии данных",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Все экраны",
+      "component": "Пустое состояние",
+      "expected": "Информационный текст по центру (gravity=center), visibility=gone при наличии данных"
+    }
+  },
+  {
+    "id": "VL-009",
+    "description": "[Логин] Заголовок «Вход»: 24sp, bold, primary, marginBottom=spacing_xl",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "логин",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «Заголовок «Вход»» на экране «Логин»",
+    "attached_files": [
+      "app/src/main/res/layout/activity_login.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Логин» в приложении Chefs tAIble",
+      "Найти компонент «Заголовок «Вход»»",
+      "Проверить: 24sp, bold, primary, marginBottom=spacing_xl",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Логин",
+      "component": "Заголовок «Вход»",
+      "expected": "24sp, bold, primary, marginBottom=spacing_xl"
+    }
+  },
+  {
+    "id": "VL-010",
+    "description": "[Логин] TextInputLayout — Email: OutlinedBox, hint «Email», inputType=textEmailAddress, maxLength=100, boxStrokeColor=selector_box_stroke",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "логин",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «TextInputLayout — Email» на экране «Логин»",
+    "attached_files": [
+      "app/src/main/res/layout/activity_login.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Логин» в приложении Chefs tAIble",
+      "Найти компонент «TextInputLayout — Email»",
+      "Проверить: OutlinedBox, hint «Email», inputType=textEmailAddress, maxLength=100, boxStrokeColor=selector_box_stroke",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Логин",
+      "component": "TextInputLayout — Email",
+      "expected": "OutlinedBox, hint «Email», inputType=textEmailAddress, maxLength=100, boxStrokeColor=selector_box_stroke"
+    }
+  },
+  {
+    "id": "VL-011",
+    "description": "[Логин] TextInputLayout — Пароль: OutlinedBox, hint «Пароль», inputType=textPassword, maxLength=100, passwordToggleEnabled=true",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "логин",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «TextInputLayout — Пароль» на экране «Логин»",
+    "attached_files": [
+      "app/src/main/res/layout/activity_login.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Логин» в приложении Chefs tAIble",
+      "Найти компонент «TextInputLayout — Пароль»",
+      "Проверить: OutlinedBox, hint «Пароль», inputType=textPassword, maxLength=100, passwordToggleEnabled=true",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Логин",
+      "component": "TextInputLayout — Пароль",
+      "expected": "OutlinedBox, hint «Пароль», inputType=textPassword, maxLength=100, passwordToggleEnabled=true"
+    }
+  },
+  {
+    "id": "VL-012",
+    "description": "[Логин] Отступ Email → Пароль: marginBottom=spacing_md у tilEmail",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "логин",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «Отступ Email → Пароль» на экране «Логин»",
+    "attached_files": [
+      "app/src/main/res/layout/activity_login.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Логин» в приложении Chefs tAIble",
+      "Найти компонент «Отступ Email → Пароль»",
+      "Проверить: marginBottom=spacing_md у tilEmail",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Логин",
+      "component": "Отступ Email → Пароль",
+      "expected": "marginBottom=spacing_md у tilEmail"
+    }
+  },
+  {
+    "id": "VL-013",
+    "description": "[Логин] Отступ Пароль → Кнопка: marginBottom=spacing_lg у tilPassword",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "логин",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «Отступ Пароль → Кнопка» на экране «Логин»",
+    "attached_files": [
+      "app/src/main/res/layout/activity_login.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Логин» в приложении Chefs tAIble",
+      "Найти компонент «Отступ Пароль → Кнопка»",
+      "Проверить: marginBottom=spacing_lg у tilPassword",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Логин",
+      "component": "Отступ Пароль → Кнопка",
+      "expected": "marginBottom=spacing_lg у tilPassword"
+    }
+  },
+  {
+    "id": "VL-014",
+    "description": "[Логин] MaterialButton «Войти»: match_parent по ширине, marginBottom=spacing_lg",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "логин",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «MaterialButton «Войти»» на экране «Логин»",
+    "attached_files": [
+      "app/src/main/res/layout/activity_login.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Логин» в приложении Chefs tAIble",
+      "Найти компонент «MaterialButton «Войти»»",
+      "Проверить: match_parent по ширине, marginBottom=spacing_lg",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Логин",
+      "component": "MaterialButton «Войти»",
+      "expected": "match_parent по ширине, marginBottom=spacing_lg"
+    }
+  },
+  {
+    "id": "VL-015",
+    "description": "[Логин] Ссылка «Регистрация»: accent, bold, marginStart=spacing_sm от текста «Нет аккаунта?»",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "логин",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «Ссылка «Регистрация»» на экране «Логин»",
+    "attached_files": [
+      "app/src/main/res/layout/activity_login.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "medium",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Логин» в приложении Chefs tAIble",
+      "Найти компонент «Ссылка «Регистрация»»",
+      "Проверить: accent, bold, marginStart=spacing_sm от текста «Нет аккаунта?»",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Логин",
+      "component": "Ссылка «Регистрация»",
+      "expected": "accent, bold, marginStart=spacing_sm от текста «Нет аккаунта?»"
+    }
+  },
+  {
+    "id": "VL-016",
+    "description": "[Логин] ScrollView (маленький экран): На 320×480 контент прокручивается, ничего не обрезается",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "логин",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «ScrollView (маленький экран)» на экране «Логин»",
+    "attached_files": [
+      "app/src/main/res/layout/activity_login.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "medium",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Логин» в приложении Chefs tAIble",
+      "Найти компонент «ScrollView (маленький экран)»",
+      "Проверить: На 320×480 контент прокручивается, ничего не обрезается",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Логин",
+      "component": "ScrollView (маленький экран)",
+      "expected": "На 320×480 контент прокручивается, ничего не обрезается"
+    }
+  },
+  {
+    "id": "VL-017",
+    "description": "[Логин] boxStrokeColor при фокусе: Меняет цвет на primary (selector_box_stroke)",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "логин",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «boxStrokeColor при фокусе» на экране «Логин»",
+    "attached_files": [
+      "app/src/main/res/layout/activity_login.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "low",
+    "estimated_minutes": 7,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Логин» в приложении Chefs tAIble",
+      "Найти компонент «boxStrokeColor при фокусе»",
+      "Проверить: Меняет цвет на primary (selector_box_stroke)",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Логин",
+      "component": "boxStrokeColor при фокусе",
+      "expected": "Меняет цвет на primary (selector_box_stroke)"
+    }
+  },
+  {
+    "id": "VL-018",
+    "description": "[Регистрация] Заголовок «Регистрация»: 24sp, bold, primary, marginBottom=spacing_xl",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "регистрация",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «Заголовок «Регистрация»» на экране «Регистрация»",
+    "attached_files": [
+      "app/src/main/res/layout/activity_registration.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Регистрация» в приложении Chefs tAIble",
+      "Найти компонент «Заголовок «Регистрация»»",
+      "Проверить: 24sp, bold, primary, marginBottom=spacing_xl",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Регистрация",
+      "component": "Заголовок «Регистрация»",
+      "expected": "24sp, bold, primary, marginBottom=spacing_xl"
+    }
+  },
+  {
+    "id": "VL-019",
+    "description": "[Регистрация] TextInputLayout — Имя: textPersonName, maxLength=25, marginBottom=spacing_md",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "регистрация",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «TextInputLayout — Имя» на экране «Регистрация»",
+    "attached_files": [
+      "app/src/main/res/layout/activity_registration.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Регистрация» в приложении Chefs tAIble",
+      "Найти компонент «TextInputLayout — Имя»",
+      "Проверить: textPersonName, maxLength=25, marginBottom=spacing_md",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Регистрация",
+      "component": "TextInputLayout — Имя",
+      "expected": "textPersonName, maxLength=25, marginBottom=spacing_md"
+    }
+  },
+  {
+    "id": "VL-020",
+    "description": "[Регистрация] TextInputLayout — Email: textEmailAddress, maxLength=100, marginBottom=spacing_md",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "регистрация",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «TextInputLayout — Email» на экране «Регистрация»",
+    "attached_files": [
+      "app/src/main/res/layout/activity_registration.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Регистрация» в приложении Chefs tAIble",
+      "Найти компонент «TextInputLayout — Email»",
+      "Проверить: textEmailAddress, maxLength=100, marginBottom=spacing_md",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Регистрация",
+      "component": "TextInputLayout — Email",
+      "expected": "textEmailAddress, maxLength=100, marginBottom=spacing_md"
+    }
+  },
+  {
+    "id": "VL-021",
+    "description": "[Регистрация] TextInputLayout — Телефон: inputType=phone, maxLength=18, marginBottom=spacing_md",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "регистрация",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «TextInputLayout — Телефон» на экране «Регистрация»",
+    "attached_files": [
+      "app/src/main/res/layout/activity_registration.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Регистрация» в приложении Chefs tAIble",
+      "Найти компонент «TextInputLayout — Телефон»",
+      "Проверить: inputType=phone, maxLength=18, marginBottom=spacing_md",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Регистрация",
+      "component": "TextInputLayout — Телефон",
+      "expected": "inputType=phone, maxLength=18, marginBottom=spacing_md"
+    }
+  },
+  {
+    "id": "VL-022",
+    "description": "[Регистрация] TextInputLayout — Пароль: textPassword, maxLength=100, password toggle, marginBottom=spacing_lg",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "регистрация",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «TextInputLayout — Пароль» на экране «Регистрация»",
+    "attached_files": [
+      "app/src/main/res/layout/activity_registration.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Регистрация» в приложении Chefs tAIble",
+      "Найти компонент «TextInputLayout — Пароль»",
+      "Проверить: textPassword, maxLength=100, password toggle, marginBottom=spacing_lg",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Регистрация",
+      "component": "TextInputLayout — Пароль",
+      "expected": "textPassword, maxLength=100, password toggle, marginBottom=spacing_lg"
+    }
+  },
+  {
+    "id": "VL-023",
+    "description": "[Регистрация] MaterialButton «Зарегистрироваться»: match_parent, marginBottom=spacing_lg",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "регистрация",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «MaterialButton «Зарегистрироваться»» на экране «Регистрация»",
+    "attached_files": [
+      "app/src/main/res/layout/activity_registration.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Регистрация» в приложении Chefs tAIble",
+      "Найти компонент «MaterialButton «Зарегистрироваться»»",
+      "Проверить: match_parent, marginBottom=spacing_lg",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Регистрация",
+      "component": "MaterialButton «Зарегистрироваться»",
+      "expected": "match_parent, marginBottom=spacing_lg"
+    }
+  },
+  {
+    "id": "VL-024",
+    "description": "[Регистрация] Ссылка «Войти»: accent, bold, marginStart=spacing_sm от «Уже есть аккаунт?»",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "регистрация",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «Ссылка «Войти»» на экране «Регистрация»",
+    "attached_files": [
+      "app/src/main/res/layout/activity_registration.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "medium",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Регистрация» в приложении Chefs tAIble",
+      "Найти компонент «Ссылка «Войти»»",
+      "Проверить: accent, bold, marginStart=spacing_sm от «Уже есть аккаунт?»",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Регистрация",
+      "component": "Ссылка «Войти»",
+      "expected": "accent, bold, marginStart=spacing_sm от «Уже есть аккаунт?»"
+    }
+  },
+  {
+    "id": "VL-025",
+    "description": "[Регистрация] ScrollView (маленький экран): 4 поля + кнопка + ссылка — прокручивается на 320×480",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "регистрация",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «ScrollView (маленький экран)» на экране «Регистрация»",
+    "attached_files": [
+      "app/src/main/res/layout/activity_registration.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "medium",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Регистрация» в приложении Chefs tAIble",
+      "Найти компонент «ScrollView (маленький экран)»",
+      "Проверить: 4 поля + кнопка + ссылка — прокручивается на 320×480",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Регистрация",
+      "component": "ScrollView (маленький экран)",
+      "expected": "4 поля + кнопка + ссылка — прокручивается на 320×480"
+    }
+  },
+  {
+    "id": "VL-026",
+    "description": "[Главная] Заголовок «Ближайшее бронирование»: 18sp, bold, text_dark, paddingHorizontal=spacing_md, paddingTop=spacing_md",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "главная",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «Заголовок «Ближайшее бронирование»» на экране «Главная»",
+    "attached_files": [
+      "app/src/main/res/layout/fragment_home.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Главная» в приложении Chefs tAIble",
+      "Найти компонент «Заголовок «Ближайшее бронирование»»",
+      "Проверить: 18sp, bold, text_dark, paddingHorizontal=spacing_md, paddingTop=spacing_md",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Главная",
+      "component": "Заголовок «Ближайшее бронирование»",
+      "expected": "18sp, bold, text_dark, paddingHorizontal=spacing_md, paddingTop=spacing_md"
+    }
+  },
+  {
+    "id": "VL-027",
+    "description": "[Главная] RecyclerView — бронирования (горизонтальный): clipToPadding=false, paddingVertical=spacing_sm, layoutManager=LinearLayoutManager (horizontal)",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "главная",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «RecyclerView — бронирования (горизонтальный)» на экране «Главная»",
+    "attached_files": [
+      "app/src/main/res/layout/fragment_home.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Главная» в приложении Chefs tAIble",
+      "Найти компонент «RecyclerView — бронирования (горизонтальный)»",
+      "Проверить: clipToPadding=false, paddingVertical=spacing_sm, layoutManager=LinearLayoutManager (horizontal)",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Главная",
+      "component": "RecyclerView — бронирования (горизонтальный)",
+      "expected": "clipToPadding=false, paddingVertical=spacing_sm, layoutManager=LinearLayoutManager (horizontal)"
+    }
+  },
+  {
+    "id": "VL-028",
+    "description": "[Главная] TextView «Нет предстоящих бронирований»: textAlignment=center, text_light, visibility=gone при наличии данных",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "главная",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «TextView «Нет предстоящих бронирований»» на экране «Главная»",
+    "attached_files": [
+      "app/src/main/res/layout/fragment_home.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "medium",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Главная» в приложении Chefs tAIble",
+      "Найти компонент «TextView «Нет предстоящих бронирований»»",
+      "Проверить: textAlignment=center, text_light, visibility=gone при наличии данных",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Главная",
+      "component": "TextView «Нет предстоящих бронирований»",
+      "expected": "textAlignment=center, text_light, visibility=gone при наличии данных"
+    }
+  },
+  {
+    "id": "VL-029",
+    "description": "[Главная] Заголовок «Рекомендуемые классы»: 18sp, bold, text_dark, paddingHorizontal=spacing_md, paddingTop=spacing_md",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "главная",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «Заголовок «Рекомендуемые классы»» на экране «Главная»",
+    "attached_files": [
+      "app/src/main/res/layout/fragment_home.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Главная» в приложении Chefs tAIble",
+      "Найти компонент «Заголовок «Рекомендуемые классы»»",
+      "Проверить: 18sp, bold, text_dark, paddingHorizontal=spacing_md, paddingTop=spacing_md",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Главная",
+      "component": "Заголовок «Рекомендуемые классы»",
+      "expected": "18sp, bold, text_dark, paddingHorizontal=spacing_md, paddingTop=spacing_md"
+    }
+  },
+  {
+    "id": "VL-030",
+    "description": "[Главная] RecyclerView — классы (вертикальный): nestedScrollingEnabled=false, paddingVertical=spacing_sm, paddingBottom=spacing_lg",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "главная",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «RecyclerView — классы (вертикальный)» на экране «Главная»",
+    "attached_files": [
+      "app/src/main/res/layout/fragment_home.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Главная» в приложении Chefs tAIble",
+      "Найти компонент «RecyclerView — классы (вертикальный)»",
+      "Проверить: nestedScrollingEnabled=false, paddingVertical=spacing_sm, paddingBottom=spacing_lg",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Главная",
+      "component": "RecyclerView — классы (вертикальный)",
+      "expected": "nestedScrollingEnabled=false, paddingVertical=spacing_sm, paddingBottom=spacing_lg"
+    }
+  },
+  {
+    "id": "VL-031",
+    "description": "[Главная] TextView «Нет доступных классов»: textAlignment=center, text_light, visibility=gone при наличии данных",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "главная",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «TextView «Нет доступных классов»» на экране «Главная»",
+    "attached_files": [
+      "app/src/main/res/layout/fragment_home.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "medium",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Главная» в приложении Chefs tAIble",
+      "Найти компонент «TextView «Нет доступных классов»»",
+      "Проверить: textAlignment=center, text_light, visibility=gone при наличии данных",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Главная",
+      "component": "TextView «Нет доступных классов»",
+      "expected": "textAlignment=center, text_light, visibility=gone при наличии данных"
+    }
+  },
+  {
+    "id": "VL-032",
+    "description": "[Главная] SwipeRefreshLayout: Pull-to-refresh оборачивает NestedScrollView",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "главная",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «SwipeRefreshLayout» на экране «Главная»",
+    "attached_files": [
+      "app/src/main/res/layout/fragment_home.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Главная» в приложении Chefs tAIble",
+      "Найти компонент «SwipeRefreshLayout»",
+      "Проверить: Pull-to-refresh оборачивает NestedScrollView",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Главная",
+      "component": "SwipeRefreshLayout",
+      "expected": "Pull-to-refresh оборачивает NestedScrollView"
+    }
+  },
+  {
+    "id": "VL-033",
+    "description": "[Главная] ProgressBar: layout_gravity=center, visibility=gone при загрузке данных",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "главная",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «ProgressBar» на экране «Главная»",
+    "attached_files": [
+      "app/src/main/res/layout/fragment_home.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "medium",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Главная» в приложении Chefs tAIble",
+      "Найти компонент «ProgressBar»",
+      "Проверить: layout_gravity=center, visibility=gone при загрузке данных",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Главная",
+      "component": "ProgressBar",
+      "expected": "layout_gravity=center, visibility=gone при загрузке данных"
+    }
+  },
+  {
+    "id": "VL-034",
+    "description": "[Расписание] Панель фильтров (horizontal): paddingVertical=spacing_sm, paddingHorizontal=spacing_md, gravity=center",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "расписание",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «Панель фильтров (horizontal)» на экране «Расписание»",
+    "attached_files": [
+      "app/src/main/res/layout/fragment_schedule.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Расписание» в приложении Chefs tAIble",
+      "Найти компонент «Панель фильтров (horizontal)»",
+      "Проверить: paddingVertical=spacing_sm, paddingHorizontal=spacing_md, gravity=center",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Расписание",
+      "component": "Панель фильтров (horizontal)",
+      "expected": "paddingVertical=spacing_sm, paddingHorizontal=spacing_md, gravity=center"
+    }
+  },
+  {
+    "id": "VL-035",
+    "description": "[Расписание] MaterialAutoCompleteTextView — фильтр шефа: weight=1, inputType=none, completionThreshold=0, focusable=true, focusableInTouchMode=true, paddingHorizontal=16dp, paddingVertical=12dp",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "расписание",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «MaterialAutoCompleteTextView — фильтр шефа» на экране «Расписание»",
+    "attached_files": [
+      "app/src/main/res/layout/fragment_schedule.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Расписание» в приложении Chefs tAIble",
+      "Найти компонент «MaterialAutoCompleteTextView — фильтр шефа»",
+      "Проверить: weight=1, inputType=none, completionThreshold=0, focusable=true, focusableInTouchMode=true, paddingHorizontal=16dp, paddingVertical=12dp",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Расписание",
+      "component": "MaterialAutoCompleteTextView — фильтр шефа",
+      "expected": "weight=1, inputType=none, completionThreshold=0, focusable=true, focusableInTouchMode=true, paddingHorizontal=16dp, paddingVertical=12dp"
+    }
+  },
+  {
+    "id": "VL-036",
+    "description": "[Расписание] MaterialButton «Сбросить»: TextButton, accent, padding=0dp, layout_width=wrap_content",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "расписание",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «MaterialButton «Сбросить»» на экране «Расписание»",
+    "attached_files": [
+      "app/src/main/res/layout/fragment_schedule.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Расписание» в приложении Chefs tAIble",
+      "Найти компонент «MaterialButton «Сбросить»»",
+      "Проверить: TextButton, accent, padding=0dp, layout_width=wrap_content",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Расписание",
+      "component": "MaterialButton «Сбросить»",
+      "expected": "TextButton, accent, padding=0dp, layout_width=wrap_content"
+    }
+  },
+  {
+    "id": "VL-037",
+    "description": "[Расписание] RecyclerView — классы: paddingBottom=spacing_lg, clipToPadding=false",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "расписание",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «RecyclerView — классы» на экране «Расписание»",
+    "attached_files": [
+      "app/src/main/res/layout/fragment_schedule.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Расписание» в приложении Chefs tAIble",
+      "Найти компонент «RecyclerView — классы»",
+      "Проверить: paddingBottom=spacing_lg, clipToPadding=false",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Расписание",
+      "component": "RecyclerView — классы",
+      "expected": "paddingBottom=spacing_lg, clipToPadding=false"
+    }
+  },
+  {
+    "id": "VL-038",
+    "description": "[Расписание] SwipeRefreshLayout: Pull-to-refresh работает",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "расписание",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «SwipeRefreshLayout» на экране «Расписание»",
+    "attached_files": [
+      "app/src/main/res/layout/fragment_schedule.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Расписание» в приложении Chefs tAIble",
+      "Найти компонент «SwipeRefreshLayout»",
+      "Проверить: Pull-to-refresh работает",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Расписание",
+      "component": "SwipeRefreshLayout",
+      "expected": "Pull-to-refresh работает"
+    }
+  },
+  {
+    "id": "VL-039",
+    "description": "[Расписание] Пустое состояние: gravity=center, visibility=gone при наличии данных",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "расписание",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «Пустое состояние» на экране «Расписание»",
+    "attached_files": [
+      "app/src/main/res/layout/fragment_schedule.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "medium",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Расписание» в приложении Chefs tAIble",
+      "Найти компонент «Пустое состояние»",
+      "Проверить: gravity=center, visibility=gone при наличии данных",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Расписание",
+      "component": "Пустое состояние",
+      "expected": "gravity=center, visibility=gone при наличии данных"
+    }
+  },
+  {
+    "id": "VL-040",
+    "description": "[Мои брони] ChipGroup — фильтры: singleSelection=true, paddingHorizontal=spacing_md, paddingVertical=spacing_sm",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "мои-брони",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «ChipGroup — фильтры» на экране «Мои брони»",
+    "attached_files": [
+      "app/src/main/res/layout/fragment_my_bookings.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Мои брони» в приложении Chefs tAIble",
+      "Найти компонент «ChipGroup — фильтры»",
+      "Проверить: singleSelection=true, paddingHorizontal=spacing_md, paddingVertical=spacing_sm",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Мои брони",
+      "component": "ChipGroup — фильтры",
+      "expected": "singleSelection=true, paddingHorizontal=spacing_md, paddingVertical=spacing_sm"
+    }
+  },
+  {
+    "id": "VL-041",
+    "description": "[Мои брони] Chip «Все»: checked=true по умолчанию",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "мои-брони",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «Chip «Все»» на экране «Мои брони»",
+    "attached_files": [
+      "app/src/main/res/layout/fragment_my_bookings.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Мои брони» в приложении Chefs tAIble",
+      "Найти компонент «Chip «Все»»",
+      "Проверить: checked=true по умолчанию",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Мои брони",
+      "component": "Chip «Все»",
+      "expected": "checked=true по умолчанию"
+    }
+  },
+  {
+    "id": "VL-042",
+    "description": "[Мои брони] Chip «Предстоящие» / «Прошедшие» / «Отмененные»: Choice-стиль, горизонтальная прокрутка при переполнении",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "мои-брони",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «Chip «Предстоящие» / «Прошедшие» / «Отмененные»» на экране «Мои брони»",
+    "attached_files": [
+      "app/src/main/res/layout/fragment_my_bookings.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "medium",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Мои брони» в приложении Chefs tAIble",
+      "Найти компонент «Chip «Предстоящие» / «Прошедшие» / «Отмененные»»",
+      "Проверить: Choice-стиль, горизонтальная прокрутка при переполнении",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Мои брони",
+      "component": "Chip «Предстоящие» / «Прошедшие» / «Отмененные»",
+      "expected": "Choice-стиль, горизонтальная прокрутка при переполнении"
+    }
+  },
+  {
+    "id": "VL-043",
+    "description": "[Мои брони] RecyclerView — бронирования: paddingBottom=spacing_lg, clipToPadding=false",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "мои-брони",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «RecyclerView — бронирования» на экране «Мои брони»",
+    "attached_files": [
+      "app/src/main/res/layout/fragment_my_bookings.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Мои брони» в приложении Chefs tAIble",
+      "Найти компонент «RecyclerView — бронирования»",
+      "Проверить: paddingBottom=spacing_lg, clipToPadding=false",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Мои брони",
+      "component": "RecyclerView — бронирования",
+      "expected": "paddingBottom=spacing_lg, clipToPadding=false"
+    }
+  },
+  {
+    "id": "VL-044",
+    "description": "[Мои брони] SwipeRefreshLayout: Pull-to-refresh работает",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "мои-брони",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «SwipeRefreshLayout» на экране «Мои брони»",
+    "attached_files": [
+      "app/src/main/res/layout/fragment_my_bookings.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Мои брони» в приложении Chefs tAIble",
+      "Найти компонент «SwipeRefreshLayout»",
+      "Проверить: Pull-to-refresh работает",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Мои брони",
+      "component": "SwipeRefreshLayout",
+      "expected": "Pull-to-refresh работает"
+    }
+  },
+  {
+    "id": "VL-045",
+    "description": "[Профиль] Заголовок «Профиль»: 24sp, bold, text_dark, marginBottom=spacing_md",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "профиль",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «Заголовок «Профиль»» на экране «Профиль»",
+    "attached_files": [
+      "app/src/main/res/layout/fragment_profile.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Профиль» в приложении Chefs tAIble",
+      "Найти компонент «Заголовок «Профиль»»",
+      "Проверить: 24sp, bold, text_dark, marginBottom=spacing_md",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Профиль",
+      "component": "Заголовок «Профиль»",
+      "expected": "24sp, bold, text_dark, marginBottom=spacing_md"
+    }
+  },
+  {
+    "id": "VL-046",
+    "description": "[Профиль] TextInputLayout — Имя: textPersonName, boxStrokeColor=primary",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "профиль",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «TextInputLayout — Имя» на экране «Профиль»",
+    "attached_files": [
+      "app/src/main/res/layout/fragment_profile.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Профиль» в приложении Chefs tAIble",
+      "Найти компонент «TextInputLayout — Имя»",
+      "Проверить: textPersonName, boxStrokeColor=primary",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Профиль",
+      "component": "TextInputLayout — Имя",
+      "expected": "textPersonName, boxStrokeColor=primary"
+    }
+  },
+  {
+    "id": "VL-047",
+    "description": "[Профиль] TextInputLayout — Фамилия: textPersonName, marginTop=spacing_sm",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "профиль",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «TextInputLayout — Фамилия» на экране «Профиль»",
+    "attached_files": [
+      "app/src/main/res/layout/fragment_profile.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Профиль» в приложении Chefs tAIble",
+      "Найти компонент «TextInputLayout — Фамилия»",
+      "Проверить: textPersonName, marginTop=spacing_sm",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Профиль",
+      "component": "TextInputLayout — Фамилия",
+      "expected": "textPersonName, marginTop=spacing_sm"
+    }
+  },
+  {
+    "id": "VL-048",
+    "description": "[Профиль] TextInputLayout — Email: textEmailAddress, enabled=false (визуально заблокировано, серый текст)",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "профиль",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «TextInputLayout — Email» на экране «Профиль»",
+    "attached_files": [
+      "app/src/main/res/layout/fragment_profile.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Профиль» в приложении Chefs tAIble",
+      "Найти компонент «TextInputLayout — Email»",
+      "Проверить: textEmailAddress, enabled=false (визуально заблокировано, серый текст)",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Профиль",
+      "component": "TextInputLayout — Email",
+      "expected": "textEmailAddress, enabled=false (визуально заблокировано, серый текст)"
+    }
+  },
+  {
+    "id": "VL-049",
+    "description": "[Профиль] TextInputLayout — Телефон: inputType=phone, marginTop=spacing_sm",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "профиль",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «TextInputLayout — Телефон» на экране «Профиль»",
+    "attached_files": [
+      "app/src/main/res/layout/fragment_profile.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Профиль» в приложении Chefs tAIble",
+      "Найти компонент «TextInputLayout — Телефон»",
+      "Проверить: inputType=phone, marginTop=spacing_sm",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Профиль",
+      "component": "TextInputLayout — Телефон",
+      "expected": "inputType=phone, marginTop=spacing_sm"
+    }
+  },
+  {
+    "id": "VL-050",
+    "description": "[Профиль] TextInputLayout — Аллергии: textMultiLine, minLines=2, gravity=top, marginTop=spacing_sm",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "профиль",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «TextInputLayout — Аллергии» на экране «Профиль»",
+    "attached_files": [
+      "app/src/main/res/layout/fragment_profile.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "medium",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Профиль» в приложении Chefs tAIble",
+      "Найти компонент «TextInputLayout — Аллергии»",
+      "Проверить: textMultiLine, minLines=2, gravity=top, marginTop=spacing_sm",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Профиль",
+      "component": "TextInputLayout — Аллергии",
+      "expected": "textMultiLine, minLines=2, gravity=top, marginTop=spacing_sm"
+    }
+  },
+  {
+    "id": "VL-051",
+    "description": "[Профиль] TextView «Постоянный клиент»: text_light, marginTop=spacing_md, 14sp",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "профиль",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «TextView «Постоянный клиент»» на экране «Профиль»",
+    "attached_files": [
+      "app/src/main/res/layout/fragment_profile.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "medium",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Профиль» в приложении Chefs tAIble",
+      "Найти компонент «TextView «Постоянный клиент»»",
+      "Проверить: text_light, marginTop=spacing_md, 14sp",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Профиль",
+      "component": "TextView «Постоянный клиент»",
+      "expected": "text_light, marginTop=spacing_md, 14sp"
+    }
+  },
+  {
+    "id": "VL-052",
+    "description": "[Профиль] TextView «Посещено классов»: text_light, marginTop=spacing_xs, 14sp",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "профиль",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «TextView «Посещено классов»» на экране «Профиль»",
+    "attached_files": [
+      "app/src/main/res/layout/fragment_profile.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "medium",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Профиль» в приложении Chefs tAIble",
+      "Найти компонент «TextView «Посещено классов»»",
+      "Проверить: text_light, marginTop=spacing_xs, 14sp",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Профиль",
+      "component": "TextView «Посещено классов»",
+      "expected": "text_light, marginTop=spacing_xs, 14sp"
+    }
+  },
+  {
+    "id": "VL-053",
+    "description": "[Профиль] MaterialButton «Сохранить»: match_parent, marginTop=spacing_lg",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "профиль",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «MaterialButton «Сохранить»» на экране «Профиль»",
+    "attached_files": [
+      "app/src/main/res/layout/fragment_profile.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Профиль» в приложении Chefs tAIble",
+      "Найти компонент «MaterialButton «Сохранить»»",
+      "Проверить: match_parent, marginTop=spacing_lg",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Профиль",
+      "component": "MaterialButton «Сохранить»",
+      "expected": "match_parent, marginTop=spacing_lg"
+    }
+  },
+  {
+    "id": "VL-054",
+    "description": "[Профиль] MaterialButton «Выйти из аккаунта»: OutlinedButton, match_parent, marginTop=spacing_sm, textColor=primary",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "профиль",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «MaterialButton «Выйти из аккаунта»» на экране «Профиль»",
+    "attached_files": [
+      "app/src/main/res/layout/fragment_profile.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Профиль» в приложении Chefs tAIble",
+      "Найти компонент «MaterialButton «Выйти из аккаунта»»",
+      "Проверить: OutlinedButton, match_parent, marginTop=spacing_sm, textColor=primary",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Профиль",
+      "component": "MaterialButton «Выйти из аккаунта»",
+      "expected": "OutlinedButton, match_parent, marginTop=spacing_sm, textColor=primary"
+    }
+  },
+  {
+    "id": "VL-055",
+    "description": "[Профиль] NestedScrollView (scroll_content): visibility=gone до загрузки, visible после",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "профиль",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «NestedScrollView (scroll_content)» на экране «Профиль»",
+    "attached_files": [
+      "app/src/main/res/layout/fragment_profile.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Профиль» в приложении Chefs tAIble",
+      "Найти компонент «NestedScrollView (scroll_content)»",
+      "Проверить: visibility=gone до загрузки, visible после",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Профиль",
+      "component": "NestedScrollView (scroll_content)",
+      "expected": "visibility=gone до загрузки, visible после"
+    }
+  },
+  {
+    "id": "VL-056",
+    "description": "[Уведомления] ChipGroup — фильтры: singleSelection=true, layout_weight=1",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "уведомления",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «ChipGroup — фильтры» на экране «Уведомления»",
+    "attached_files": [
+      "app/src/main/res/layout/fragment_notifications.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Уведомления» в приложении Chefs tAIble",
+      "Найти компонент «ChipGroup — фильтры»",
+      "Проверить: singleSelection=true, layout_weight=1",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Уведомления",
+      "component": "ChipGroup — фильтры",
+      "expected": "singleSelection=true, layout_weight=1"
+    }
+  },
+  {
+    "id": "VL-057",
+    "description": "[Уведомления] Chip «Все»: checked=true по умолчанию",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "уведомления",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «Chip «Все»» на экране «Уведомления»",
+    "attached_files": [
+      "app/src/main/res/layout/fragment_notifications.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Уведомления» в приложении Chefs tAIble",
+      "Найти компонент «Chip «Все»»",
+      "Проверить: checked=true по умолчанию",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Уведомления",
+      "component": "Chip «Все»",
+      "expected": "checked=true по умолчанию"
+    }
+  },
+  {
+    "id": "VL-058",
+    "description": "[Уведомления] MaterialButton «Очистить уведомления»: TextButton, primary, textSize=text_caption (12sp), layout_width=wrap_content",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "уведомления",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «MaterialButton «Очистить уведомления»» на экране «Уведомления»",
+    "attached_files": [
+      "app/src/main/res/layout/fragment_notifications.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "medium",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Уведомления» в приложении Chefs tAIble",
+      "Найти компонент «MaterialButton «Очистить уведомления»»",
+      "Проверить: TextButton, primary, textSize=text_caption (12sp), layout_width=wrap_content",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Уведомления",
+      "component": "MaterialButton «Очистить уведомления»",
+      "expected": "TextButton, primary, textSize=text_caption (12sp), layout_width=wrap_content"
+    }
+  },
+  {
+    "id": "VL-059",
+    "description": "[Уведомления] RecyclerView — уведомления: paddingBottom=spacing_lg, clipToPadding=false",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "уведомления",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «RecyclerView — уведомления» на экране «Уведомления»",
+    "attached_files": [
+      "app/src/main/res/layout/fragment_notifications.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Уведомления» в приложении Chefs tAIble",
+      "Найти компонент «RecyclerView — уведомления»",
+      "Проверить: paddingBottom=spacing_lg, clipToPadding=false",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Уведомления",
+      "component": "RecyclerView — уведомления",
+      "expected": "paddingBottom=spacing_lg, clipToPadding=false"
+    }
+  },
+  {
+    "id": "VL-060",
+    "description": "[Уведомления] Пустое состояние: gravity=center, «Нет уведомлений», без ProgressBar и layout_error",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "уведомления",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «Пустое состояние» на экране «Уведомления»",
+    "attached_files": [
+      "app/src/main/res/layout/fragment_notifications.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "medium",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Уведомления» в приложении Chefs tAIble",
+      "Найти компонент «Пустое состояние»",
+      "Проверить: gravity=center, «Нет уведомлений», без ProgressBar и layout_error",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Уведомления",
+      "component": "Пустое состояние",
+      "expected": "gravity=center, «Нет уведомлений», без ProgressBar и layout_error"
+    }
+  },
+  {
+    "id": "VL-061",
+    "description": "[Детали класса] MaterialCardView — карточка класса: cardCornerRadius=card_radius, cardElevation=card_elevation, padding=spacing_md",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "детали-класса",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «MaterialCardView — карточка класса» на экране «Детали класса»",
+    "attached_files": [
+      "app/src/main/res/layout/fragment_class_detail.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Детали класса» в приложении Chefs tAIble",
+      "Найти компонент «MaterialCardView — карточка класса»",
+      "Проверить: cardCornerRadius=card_radius, cardElevation=card_elevation, padding=spacing_md",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Детали класса",
+      "component": "MaterialCardView — карточка класса",
+      "expected": "cardCornerRadius=card_radius, cardElevation=card_elevation, padding=spacing_md"
+    }
+  },
+  {
+    "id": "VL-062",
+    "description": "[Детали класса] Название класса: 24sp, bold, text_dark",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "детали-класса",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «Название класса» на экране «Детали класса»",
+    "attached_files": [
+      "app/src/main/res/layout/fragment_class_detail.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Детали класса» в приложении Chefs tAIble",
+      "Найти компонент «Название класса»",
+      "Проверить: 24sp, bold, text_dark",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Детали класса",
+      "component": "Название класса",
+      "expected": "24sp, bold, text_dark"
+    }
+  },
+  {
+    "id": "VL-063",
+    "description": "[Детали класса] Дата/время: 14sp, text_light, marginTop=spacing_sm",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "детали-класса",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «Дата/время» на экране «Детали класса»",
+    "attached_files": [
+      "app/src/main/res/layout/fragment_class_detail.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Детали класса» в приложении Chefs tAIble",
+      "Найти компонент «Дата/время»",
+      "Проверить: 14sp, text_light, marginTop=spacing_sm",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Детали класса",
+      "component": "Дата/время",
+      "expected": "14sp, text_light, marginTop=spacing_sm"
+    }
+  },
+  {
+    "id": "VL-064",
+    "description": "[Детали класса] Длительность: 12sp, text_light, marginTop=spacing_xs",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "детали-класса",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «Длительность» на экране «Детали класса»",
+    "attached_files": [
+      "app/src/main/res/layout/fragment_class_detail.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "medium",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Детали класса» в приложении Chefs tAIble",
+      "Найти компонент «Длительность»",
+      "Проверить: 12sp, text_light, marginTop=spacing_xs",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Детали класса",
+      "component": "Длительность",
+      "expected": "12sp, text_light, marginTop=spacing_xs"
+    }
+  },
+  {
+    "id": "VL-065",
+    "description": "[Детали класса] Свободные места: 12sp, status_confirmed, marginTop=spacing_xs",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "детали-класса",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «Свободные места» на экране «Детали класса»",
+    "attached_files": [
+      "app/src/main/res/layout/fragment_class_detail.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Детали класса» в приложении Chefs tAIble",
+      "Найти компонент «Свободные места»",
+      "Проверить: 12sp, status_confirmed, marginTop=spacing_xs",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Детали класса",
+      "component": "Свободные места",
+      "expected": "12sp, status_confirmed, marginTop=spacing_xs"
+    }
+  },
+  {
+    "id": "VL-066",
+    "description": "[Детали класса] Описание: 14sp, text_dark, marginTop=spacing_md",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "детали-класса",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «Описание» на экране «Детали класса»",
+    "attached_files": [
+      "app/src/main/res/layout/fragment_class_detail.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Детали класса» в приложении Chefs tAIble",
+      "Найти компонент «Описание»",
+      "Проверить: 14sp, text_dark, marginTop=spacing_md",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Детали класса",
+      "component": "Описание",
+      "expected": "14sp, text_dark, marginTop=spacing_md"
+    }
+  },
+  {
+    "id": "VL-067",
+    "description": "[Детали класса] Цена: 18sp, bold, primary, marginTop=spacing_md",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "детали-класса",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «Цена» на экране «Детали класса»",
+    "attached_files": [
+      "app/src/main/res/layout/fragment_class_detail.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Детали класса» в приложении Chefs tAIble",
+      "Найти компонент «Цена»",
+      "Проверить: 18sp, bold, primary, marginTop=spacing_md",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Детали класса",
+      "component": "Цена",
+      "expected": "18sp, bold, primary, marginTop=spacing_md"
+    }
+  },
+  {
+    "id": "VL-068",
+    "description": "[Детали класса] MaterialCardView — карточка шефа: marginTop=spacing_sm, те же cardCornerRadius и cardElevation, что и карточка класса",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "детали-класса",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «MaterialCardView — карточка шефа» на экране «Детали класса»",
+    "attached_files": [
+      "app/src/main/res/layout/fragment_class_detail.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Детали класса» в приложении Chefs tAIble",
+      "Найти компонент «MaterialCardView — карточка шефа»",
+      "Проверить: marginTop=spacing_sm, те же cardCornerRadius и cardElevation, что и карточка класса",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Детали класса",
+      "component": "MaterialCardView — карточка шефа",
+      "expected": "marginTop=spacing_sm, те же cardCornerRadius и cardElevation, что и карточка класса"
+    }
+  },
+  {
+    "id": "VL-069",
+    "description": "[Детали класса] Заголовок «Отзывы о шефе»: 18sp, bold, text_dark",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "детали-класса",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «Заголовок «Отзывы о шефе»» на экране «Детали класса»",
+    "attached_files": [
+      "app/src/main/res/layout/fragment_class_detail.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Детали класса» в приложении Chefs tAIble",
+      "Найти компонент «Заголовок «Отзывы о шефе»»",
+      "Проверить: 18sp, bold, text_dark",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Детали класса",
+      "component": "Заголовок «Отзывы о шефе»",
+      "expected": "18sp, bold, text_dark"
+    }
+  },
+  {
+    "id": "VL-070",
+    "description": "[Детали класса] Имя шефа: 14sp, accent, marginTop=spacing_sm",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "детали-класса",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «Имя шефа» на экране «Детали класса»",
+    "attached_files": [
+      "app/src/main/res/layout/fragment_class_detail.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Детали класса» в приложении Chefs tAIble",
+      "Найти компонент «Имя шефа»",
+      "Проверить: 14sp, accent, marginTop=spacing_sm",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Детали класса",
+      "component": "Имя шефа",
+      "expected": "14sp, accent, marginTop=spacing_sm"
+    }
+  },
+  {
+    "id": "VL-071",
+    "description": "[Детали класса] Специализация шефа: 12sp, text_light, marginTop=spacing_xs",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "детали-класса",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «Специализация шефа» на экране «Детали класса»",
+    "attached_files": [
+      "app/src/main/res/layout/fragment_class_detail.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "medium",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Детали класса» в приложении Chefs tAIble",
+      "Найти компонент «Специализация шефа»",
+      "Проверить: 12sp, text_light, marginTop=spacing_xs",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Детали класса",
+      "component": "Специализация шефа",
+      "expected": "12sp, text_light, marginTop=spacing_xs"
+    }
+  },
+  {
+    "id": "VL-072",
+    "description": "[Детали класса] Рейтинг шефа: 12sp, text_light, marginTop=spacing_xs",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "детали-класса",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «Рейтинг шефа» на экране «Детали класса»",
+    "attached_files": [
+      "app/src/main/res/layout/fragment_class_detail.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "medium",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Детали класса» в приложении Chefs tAIble",
+      "Найти компонент «Рейтинг шефа»",
+      "Проверить: 12sp, text_light, marginTop=spacing_xs",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Детали класса",
+      "component": "Рейтинг шефа",
+      "expected": "12sp, text_light, marginTop=spacing_xs"
+    }
+  },
+  {
+    "id": "VL-073",
+    "description": "[Детали класса] Био шефа: 14sp, text_dark, marginTop=spacing_sm",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "детали-класса",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «Био шефа» на экране «Детали класса»",
+    "attached_files": [
+      "app/src/main/res/layout/fragment_class_detail.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "medium",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Детали класса» в приложении Chefs tAIble",
+      "Найти компонент «Био шефа»",
+      "Проверить: 14sp, text_dark, marginTop=spacing_sm",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Детали класса",
+      "component": "Био шефа",
+      "expected": "14sp, text_dark, marginTop=spacing_sm"
+    }
+  },
+  {
+    "id": "VL-074",
+    "description": "[Детали класса] MaterialButton «Забронировать»: match_parent, marginTop=spacing_lg",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "детали-класса",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «MaterialButton «Забронировать»» на экране «Детали класса»",
+    "attached_files": [
+      "app/src/main/res/layout/fragment_class_detail.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Детали класса» в приложении Chefs tAIble",
+      "Найти компонент «MaterialButton «Забронировать»»",
+      "Проверить: match_parent, marginTop=spacing_lg",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Детали класса",
+      "component": "MaterialButton «Забронировать»",
+      "expected": "match_parent, marginTop=spacing_lg"
+    }
+  },
+  {
+    "id": "VL-075",
+    "description": "[Детали класса] Layout «не найдено»: Отдельный LinearLayout, gravity=center, текст error_generic, visibility=gone",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "детали-класса",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «Layout «не найдено»» на экране «Детали класса»",
+    "attached_files": [
+      "app/src/main/res/layout/fragment_class_detail.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "medium",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Детали класса» в приложении Chefs tAIble",
+      "Найти компонент «Layout «не найдено»»",
+      "Проверить: Отдельный LinearLayout, gravity=center, текст error_generic, visibility=gone",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Детали класса",
+      "component": "Layout «не найдено»",
+      "expected": "Отдельный LinearLayout, gravity=center, текст error_generic, visibility=gone"
+    }
+  },
+  {
+    "id": "VL-076",
+    "description": "[Подтверждение бронирования] Заголовок «Подтверждение бронирования»: 24sp, bold, text_dark, marginBottom=spacing_md",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "подтверждение-бронирования",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «Заголовок «Подтверждение бронирования»» на экране «Подтверждение бронирования»",
+    "attached_files": [
+      "app/src/main/res/layout/fragment_booking.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Подтверждение бронирования» в приложении Chefs tAIble",
+      "Найти компонент «Заголовок «Подтверждение бронирования»»",
+      "Проверить: 24sp, bold, text_dark, marginBottom=spacing_md",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Подтверждение бронирования",
+      "component": "Заголовок «Подтверждение бронирования»",
+      "expected": "24sp, bold, text_dark, marginBottom=spacing_md"
+    }
+  },
+  {
+    "id": "VL-077",
+    "description": "[Подтверждение бронирования] MaterialCardView — карточка класса: Компактная: название (18sp, bold), дата (14sp, text_light), шеф (12sp, accent), цена (14sp, bold, primary)",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "подтверждение-бронирования",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «MaterialCardView — карточка класса» на экране «Подтверждение бронирования»",
+    "attached_files": [
+      "app/src/main/res/layout/fragment_booking.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Подтверждение бронирования» в приложении Chefs tAIble",
+      "Найти компонент «MaterialCardView — карточка класса»",
+      "Проверить: Компактная: название (18sp, bold), дата (14sp, text_light), шеф (12sp, accent), цена (14sp, bold, primary)",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Подтверждение бронирования",
+      "component": "MaterialCardView — карточка класса",
+      "expected": "Компактная: название (18sp, bold), дата (14sp, text_light), шеф (12sp, accent), цена (14sp, bold, primary)"
+    }
+  },
+  {
+    "id": "VL-078",
+    "description": "[Подтверждение бронирования] Заголовок «Пакет проката»: 18sp, bold, marginTop=spacing_lg, marginBottom=spacing_xs",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "подтверждение-бронирования",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «Заголовок «Пакет проката»» на экране «Подтверждение бронирования»",
+    "attached_files": [
+      "app/src/main/res/layout/fragment_booking.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Подтверждение бронирования» в приложении Chefs tAIble",
+      "Найти компонент «Заголовок «Пакет проката»»",
+      "Проверить: 18sp, bold, marginTop=spacing_lg, marginBottom=spacing_xs",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Подтверждение бронирования",
+      "component": "Заголовок «Пакет проката»",
+      "expected": "18sp, bold, marginTop=spacing_lg, marginBottom=spacing_xs"
+    }
+  },
+  {
+    "id": "VL-079",
+    "description": "[Подтверждение бронирования] AutoCompleteTextView — пакет проката: ExposedDropdownMenu стиль, inputType=none",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "подтверждение-бронирования",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «AutoCompleteTextView — пакет проката» на экране «Подтверждение бронирования»",
+    "attached_files": [
+      "app/src/main/res/layout/fragment_booking.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Подтверждение бронирования» в приложении Chefs tAIble",
+      "Найти компонент «AutoCompleteTextView — пакет проката»",
+      "Проверить: ExposedDropdownMenu стиль, inputType=none",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Подтверждение бронирования",
+      "component": "AutoCompleteTextView — пакет проката",
+      "expected": "ExposedDropdownMenu стиль, inputType=none"
+    }
+  },
+  {
+    "id": "VL-080",
+    "description": "[Подтверждение бронирования] Описание пакета (TextView): 12sp, text_light, marginTop=spacing_xs, visibility=gone до выбора",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "подтверждение-бронирования",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «Описание пакета (TextView)» на экране «Подтверждение бронирования»",
+    "attached_files": [
+      "app/src/main/res/layout/fragment_booking.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "medium",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Подтверждение бронирования» в приложении Chefs tAIble",
+      "Найти компонент «Описание пакета (TextView)»",
+      "Проверить: 12sp, text_light, marginTop=spacing_xs, visibility=gone до выбора",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Подтверждение бронирования",
+      "component": "Описание пакета (TextView)",
+      "expected": "12sp, text_light, marginTop=spacing_xs, visibility=gone до выбора"
+    }
+  },
+  {
+    "id": "VL-081",
+    "description": "[Подтверждение бронирования] Цена пакета (TextView): 12sp, text_light, marginTop=spacing_xs, visibility=gone до выбора",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "подтверждение-бронирования",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «Цена пакета (TextView)» на экране «Подтверждение бронирования»",
+    "attached_files": [
+      "app/src/main/res/layout/fragment_booking.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "medium",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Подтверждение бронирования» в приложении Chefs tAIble",
+      "Найти компонент «Цена пакета (TextView)»",
+      "Проверить: 12sp, text_light, marginTop=spacing_xs, visibility=gone до выбора",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Подтверждение бронирования",
+      "component": "Цена пакета (TextView)",
+      "expected": "12sp, text_light, marginTop=spacing_xs, visibility=gone до выбора"
+    }
+  },
+  {
+    "id": "VL-082",
+    "description": "[Подтверждение бронирования] Заголовок «Аллергии»: 18sp, bold, marginTop=spacing_lg, marginBottom=spacing_xs",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "подтверждение-бронирования",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «Заголовок «Аллергии»» на экране «Подтверждение бронирования»",
+    "attached_files": [
+      "app/src/main/res/layout/fragment_booking.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Подтверждение бронирования» в приложении Chefs tAIble",
+      "Найти компонент «Заголовок «Аллергии»»",
+      "Проверить: 18sp, bold, marginTop=spacing_lg, marginBottom=spacing_xs",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Подтверждение бронирования",
+      "component": "Заголовок «Аллергии»",
+      "expected": "18sp, bold, marginTop=spacing_lg, marginBottom=spacing_xs"
+    }
+  },
+  {
+    "id": "VL-083",
+    "description": "[Подтверждение бронирования] TextInputEditText — аллергии: textMultiLine, minLines=2, gravity=top",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "подтверждение-бронирования",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «TextInputEditText — аллергии» на экране «Подтверждение бронирования»",
+    "attached_files": [
+      "app/src/main/res/layout/fragment_booking.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "medium",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Подтверждение бронирования» в приложении Chefs tAIble",
+      "Найти компонент «TextInputEditText — аллергии»",
+      "Проверить: textMultiLine, minLines=2, gravity=top",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Подтверждение бронирования",
+      "component": "TextInputEditText — аллергии",
+      "expected": "textMultiLine, minLines=2, gravity=top"
+    }
+  },
+  {
+    "id": "VL-084",
+    "description": "[Подтверждение бронирования] Заголовок «Оплата»: 18sp, bold, marginTop=spacing_lg, marginBottom=spacing_xs",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "подтверждение-бронирования",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «Заголовок «Оплата»» на экране «Подтверждение бронирования»",
+    "attached_files": [
+      "app/src/main/res/layout/fragment_booking.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "medium",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Подтверждение бронирования» в приложении Chefs tAIble",
+      "Найти компонент «Заголовок «Оплата»»",
+      "Проверить: 18sp, bold, marginTop=spacing_lg, marginBottom=spacing_xs",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Подтверждение бронирования",
+      "component": "Заголовок «Оплата»",
+      "expected": "18sp, bold, marginTop=spacing_lg, marginBottom=spacing_xs"
+    }
+  },
+  {
+    "id": "VL-085",
+    "description": "[Подтверждение бронирования] «Оплата на месте»: 14sp, text_light",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "подтверждение-бронирования",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента ««Оплата на месте»» на экране «Подтверждение бронирования»",
+    "attached_files": [
+      "app/src/main/res/layout/fragment_booking.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "medium",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Подтверждение бронирования» в приложении Chefs tAIble",
+      "Найти компонент ««Оплата на месте»»",
+      "Проверить: 14sp, text_light",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Подтверждение бронирования",
+      "component": "«Оплата на месте»",
+      "expected": "14sp, text_light"
+    }
+  },
+  {
+    "id": "VL-086",
+    "description": "[Подтверждение бронирования] Итого (TextView): 18sp, bold, primary, marginTop=spacing_lg",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "подтверждение-бронирования",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «Итого (TextView)» на экране «Подтверждение бронирования»",
+    "attached_files": [
+      "app/src/main/res/layout/fragment_booking.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Подтверждение бронирования» в приложении Chefs tAIble",
+      "Найти компонент «Итого (TextView)»",
+      "Проверить: 18sp, bold, primary, marginTop=spacing_lg",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Подтверждение бронирования",
+      "component": "Итого (TextView)",
+      "expected": "18sp, bold, primary, marginTop=spacing_lg"
+    }
+  },
+  {
+    "id": "VL-087",
+    "description": "[Подтверждение бронирования] MaterialButton «Подтвердить бронирование»: match_parent, marginTop=spacing_lg",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "подтверждение-бронирования",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «MaterialButton «Подтвердить бронирование»» на экране «Подтверждение бронирования»",
+    "attached_files": [
+      "app/src/main/res/layout/fragment_booking.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Подтверждение бронирования» в приложении Chefs tAIble",
+      "Найти компонент «MaterialButton «Подтвердить бронирование»»",
+      "Проверить: match_parent, marginTop=spacing_lg",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Подтверждение бронирования",
+      "component": "MaterialButton «Подтвердить бронирование»",
+      "expected": "match_parent, marginTop=spacing_lg"
+    }
+  },
+  {
+    "id": "VL-088",
+    "description": "[Диалог отзыва] Заголовок «Оценить шефа»: 18sp, bold, text_dark, marginBottom=spacing_md",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "диалог-отзыва",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «Заголовок «Оценить шефа»» на экране «Диалог отзыва»",
+    "attached_files": [
+      "app/src/main/res/layout/dialog_review.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Диалог отзыва» в приложении Chefs tAIble",
+      "Найти компонент «Заголовок «Оценить шефа»»",
+      "Проверить: 18sp, bold, text_dark, marginBottom=spacing_md",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Диалог отзыва",
+      "component": "Заголовок «Оценить шефа»",
+      "expected": "18sp, bold, text_dark, marginBottom=spacing_md"
+    }
+  },
+  {
+    "id": "VL-089",
+    "description": "[Диалог отзыва] TextView «Оценка»: 14sp, text_dark, marginBottom=spacing_xs",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "диалог-отзыва",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «TextView «Оценка»» на экране «Диалог отзыва»",
+    "attached_files": [
+      "app/src/main/res/layout/dialog_review.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Диалог отзыва» в приложении Chefs tAIble",
+      "Найти компонент «TextView «Оценка»»",
+      "Проверить: 14sp, text_dark, marginBottom=spacing_xs",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Диалог отзыва",
+      "component": "TextView «Оценка»",
+      "expected": "14sp, text_dark, marginBottom=spacing_xs"
+    }
+  },
+  {
+    "id": "VL-090",
+    "description": "[Диалог отзыва] RatingBar: numStars=5, stepSize=1, rating=5 по умолчанию",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "диалог-отзыва",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «RatingBar» на экране «Диалог отзыва»",
+    "attached_files": [
+      "app/src/main/res/layout/dialog_review.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Диалог отзыва» в приложении Chefs tAIble",
+      "Найти компонент «RatingBar»",
+      "Проверить: numStars=5, stepSize=1, rating=5 по умолчанию",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Диалог отзыва",
+      "component": "RatingBar",
+      "expected": "numStars=5, stepSize=1, rating=5 по умолчанию"
+    }
+  },
+  {
+    "id": "VL-091",
+    "description": "[Диалог отзыва] TextInputEditText — комментарий: textMultiLine, minLines=3, gravity=top, marginTop=spacing_md",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "диалог-отзыва",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «TextInputEditText — комментарий» на экране «Диалог отзыва»",
+    "attached_files": [
+      "app/src/main/res/layout/dialog_review.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Диалог отзыва» в приложении Chefs tAIble",
+      "Найти компонент «TextInputEditText — комментарий»",
+      "Проверить: textMultiLine, minLines=3, gravity=top, marginTop=spacing_md",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Диалог отзыва",
+      "component": "TextInputEditText — комментарий",
+      "expected": "textMultiLine, minLines=3, gravity=top, marginTop=spacing_md"
+    }
+  },
+  {
+    "id": "VL-092",
+    "description": "[Диалог отзыва] ProgressBar: layout_gravity=center, marginTop=spacing_md, visibility=gone",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "диалог-отзыва",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «ProgressBar» на экране «Диалог отзыва»",
+    "attached_files": [
+      "app/src/main/res/layout/dialog_review.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "medium",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Диалог отзыва» в приложении Chefs tAIble",
+      "Найти компонент «ProgressBar»",
+      "Проверить: layout_gravity=center, marginTop=spacing_md, visibility=gone",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Диалог отзыва",
+      "component": "ProgressBar",
+      "expected": "layout_gravity=center, marginTop=spacing_md, visibility=gone"
+    }
+  },
+  {
+    "id": "VL-093",
+    "description": "[Диалог отзыва] MaterialButton «Отправить отзыв»: match_parent, marginTop=spacing_md",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "диалог-отзыва",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «MaterialButton «Отправить отзыв»» на экране «Диалог отзыва»",
+    "attached_files": [
+      "app/src/main/res/layout/dialog_review.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Диалог отзыва» в приложении Chefs tAIble",
+      "Найти компонент «MaterialButton «Отправить отзыв»»",
+      "Проверить: match_parent, marginTop=spacing_md",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Диалог отзыва",
+      "component": "MaterialButton «Отправить отзыв»",
+      "expected": "match_parent, marginTop=spacing_md"
+    }
+  },
+  {
+    "id": "VL-094",
+    "description": "[Диалог отзыва] Клавиатура: Диалог не перекрывается (корректный resize окна)",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "диалог-отзыва",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «Клавиатура» на экране «Диалог отзыва»",
+    "attached_files": [
+      "app/src/main/res/layout/dialog_review.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "medium",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Диалог отзыва» в приложении Chefs tAIble",
+      "Найти компонент «Клавиатура»",
+      "Проверить: Диалог не перекрывается (корректный resize окна)",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Диалог отзыва",
+      "component": "Клавиатура",
+      "expected": "Диалог не перекрывается (корректный resize окна)"
+    }
+  },
+  {
+    "id": "VL-095",
+    "description": "[item_booking] MaterialCardView: marginHorizontal=spacing_md, marginVertical=spacing_xs, cardCornerRadius=card_radius, cardElevation=card_elevation",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "item_booking",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «MaterialCardView» на экране «item_booking»",
+    "attached_files": [
+      "app/src/main/res/layout/item_booking.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «item_booking» в приложении Chefs tAIble",
+      "Найти компонент «MaterialCardView»",
+      "Проверить: marginHorizontal=spacing_md, marginVertical=spacing_xs, cardCornerRadius=card_radius, cardElevation=card_elevation",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "item_booking",
+      "component": "MaterialCardView",
+      "expected": "marginHorizontal=spacing_md, marginVertical=spacing_xs, cardCornerRadius=card_radius, cardElevation=card_elevation"
+    }
+  },
+  {
+    "id": "VL-096",
+    "description": "[item_booking] Название класса: 18sp, bold, text_dark",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "item_booking",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «Название класса» на экране «item_booking»",
+    "attached_files": [
+      "app/src/main/res/layout/item_booking.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «item_booking» в приложении Chefs tAIble",
+      "Найти компонент «Название класса»",
+      "Проверить: 18sp, bold, text_dark",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "item_booking",
+      "component": "Название класса",
+      "expected": "18sp, bold, text_dark"
+    }
+  },
+  {
+    "id": "VL-097",
+    "description": "[item_booking] Дата: 12sp, text_light, marginTop=spacing_xs",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "item_booking",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «Дата» на экране «item_booking»",
+    "attached_files": [
+      "app/src/main/res/layout/item_booking.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «item_booking» в приложении Chefs tAIble",
+      "Найти компонент «Дата»",
+      "Проверить: 12sp, text_light, marginTop=spacing_xs",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "item_booking",
+      "component": "Дата",
+      "expected": "12sp, text_light, marginTop=spacing_xs"
+    }
+  },
+  {
+    "id": "VL-098",
+    "description": "[item_booking] Шеф: 12sp, accent, marginTop=spacing_xs",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "item_booking",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «Шеф» на экране «item_booking»",
+    "attached_files": [
+      "app/src/main/res/layout/item_booking.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «item_booking» в приложении Chefs tAIble",
+      "Найти компонент «Шеф»",
+      "Проверить: 12sp, accent, marginTop=spacing_xs",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "item_booking",
+      "component": "Шеф",
+      "expected": "12sp, accent, marginTop=spacing_xs"
+    }
+  },
+  {
+    "id": "VL-099",
+    "description": "[item_booking] Статус-бейдж: 12sp, bold, layout_width=wrap_content, выровнен по правому краю",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "item_booking",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «Статус-бейдж» на экране «item_booking»",
+    "attached_files": [
+      "app/src/main/res/layout/item_booking.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «item_booking» в приложении Chefs tAIble",
+      "Найти компонент «Статус-бейдж»",
+      "Проверить: 12sp, bold, layout_width=wrap_content, выровнен по правому краю",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "item_booking",
+      "component": "Статус-бейдж",
+      "expected": "12sp, bold, layout_width=wrap_content, выровнен по правому краю"
+    }
+  },
+  {
+    "id": "VL-100",
+    "description": "[item_booking] Панель действий: gravity=center, marginTop=spacing_sm",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "item_booking",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «Панель действий» на экране «item_booking»",
+    "attached_files": [
+      "app/src/main/res/layout/item_booking.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «item_booking» в приложении Chefs tAIble",
+      "Найти компонент «Панель действий»",
+      "Проверить: gravity=center, marginTop=spacing_sm",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "item_booking",
+      "component": "Панель действий",
+      "expected": "gravity=center, marginTop=spacing_sm"
+    }
+  },
+  {
+    "id": "VL-101",
+    "description": "[item_booking] Кнопка «Отменить»: TextButton, primary, padding=0dp, gone по умолчанию",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "item_booking",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «Кнопка «Отменить»» на экране «item_booking»",
+    "attached_files": [
+      "app/src/main/res/layout/item_booking.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "medium",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «item_booking» в приложении Chefs tAIble",
+      "Найти компонент «Кнопка «Отменить»»",
+      "Проверить: TextButton, primary, padding=0dp, gone по умолчанию",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "item_booking",
+      "component": "Кнопка «Отменить»",
+      "expected": "TextButton, primary, padding=0dp, gone по умолчанию"
+    }
+  },
+  {
+    "id": "VL-102",
+    "description": "[item_booking] Кнопка «Оценить шефа»: TextButton, accent, minHeight=0dp, padding=0dp, visible",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "item_booking",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «Кнопка «Оценить шефа»» на экране «item_booking»",
+    "attached_files": [
+      "app/src/main/res/layout/item_booking.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «item_booking» в приложении Chefs tAIble",
+      "Найти компонент «Кнопка «Оценить шефа»»",
+      "Проверить: TextButton, accent, minHeight=0dp, padding=0dp, visible",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "item_booking",
+      "component": "Кнопка «Оценить шефа»",
+      "expected": "TextButton, accent, minHeight=0dp, padding=0dp, visible"
+    }
+  },
+  {
+    "id": "VL-103",
+    "description": "[item_cooking_class] MaterialCardView: marginHorizontal=spacing_md, marginVertical=spacing_xs, cardCornerRadius=card_radius, cardElevation=card_elevation",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "item_cooking_class",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «MaterialCardView» на экране «item_cooking_class»",
+    "attached_files": [
+      "app/src/main/res/layout/item_cooking_class.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «item_cooking_class» в приложении Chefs tAIble",
+      "Найти компонент «MaterialCardView»",
+      "Проверить: marginHorizontal=spacing_md, marginVertical=spacing_xs, cardCornerRadius=card_radius, cardElevation=card_elevation",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "item_cooking_class",
+      "component": "MaterialCardView",
+      "expected": "marginHorizontal=spacing_md, marginVertical=spacing_xs, cardCornerRadius=card_radius, cardElevation=card_elevation"
+    }
+  },
+  {
+    "id": "VL-104",
+    "description": "[item_cooking_class] Название класса: 18sp, bold, text_dark",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "item_cooking_class",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «Название класса» на экране «item_cooking_class»",
+    "attached_files": [
+      "app/src/main/res/layout/item_cooking_class.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «item_cooking_class» в приложении Chefs tAIble",
+      "Найти компонент «Название класса»",
+      "Проверить: 18sp, bold, text_dark",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "item_cooking_class",
+      "component": "Название класса",
+      "expected": "18sp, bold, text_dark"
+    }
+  },
+  {
+    "id": "VL-105",
+    "description": "[item_cooking_class] Дата/время: 12sp, text_light, marginTop=spacing_xs",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "item_cooking_class",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «Дата/время» на экране «item_cooking_class»",
+    "attached_files": [
+      "app/src/main/res/layout/item_cooking_class.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «item_cooking_class» в приложении Chefs tAIble",
+      "Найти компонент «Дата/время»",
+      "Проверить: 12sp, text_light, marginTop=spacing_xs",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "item_cooking_class",
+      "component": "Дата/время",
+      "expected": "12sp, text_light, marginTop=spacing_xs"
+    }
+  },
+  {
+    "id": "VL-106",
+    "description": "[item_cooking_class] Шеф: 14sp, accent, marginTop=spacing_xs",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "item_cooking_class",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «Шеф» на экране «item_cooking_class»",
+    "attached_files": [
+      "app/src/main/res/layout/item_cooking_class.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «item_cooking_class» в приложении Chefs tAIble",
+      "Найти компонент «Шеф»",
+      "Проверить: 14sp, accent, marginTop=spacing_xs",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "item_cooking_class",
+      "component": "Шеф",
+      "expected": "14sp, accent, marginTop=spacing_xs"
+    }
+  },
+  {
+    "id": "VL-107",
+    "description": "[item_cooking_class] Свободные места: 12sp, text_light, weight=1 (занимает оставшееся пространство)",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "item_cooking_class",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «Свободные места» на экране «item_cooking_class»",
+    "attached_files": [
+      "app/src/main/res/layout/item_cooking_class.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «item_cooking_class» в приложении Chefs tAIble",
+      "Найти компонент «Свободные места»",
+      "Проверить: 12sp, text_light, weight=1 (занимает оставшееся пространство)",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "item_cooking_class",
+      "component": "Свободные места",
+      "expected": "12sp, text_light, weight=1 (занимает оставшееся пространство)"
+    }
+  },
+  {
+    "id": "VL-108",
+    "description": "[item_cooking_class] Цена: 14sp, bold, primary, wrap_content, выровнена по правому краю",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "item_cooking_class",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «Цена» на экране «item_cooking_class»",
+    "attached_files": [
+      "app/src/main/res/layout/item_cooking_class.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «item_cooking_class» в приложении Chefs tAIble",
+      "Найти компонент «Цена»",
+      "Проверить: 14sp, bold, primary, wrap_content, выровнена по правому краю",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "item_cooking_class",
+      "component": "Цена",
+      "expected": "14sp, bold, primary, wrap_content, выровнена по правому краю"
+    }
+  },
+  {
+    "id": "VL-109",
+    "description": "[item_notification] MaterialCardView: marginHorizontal=spacing_md, marginVertical=spacing_xs, cardCornerRadius=card_radius, cardElevation=card_elevation",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "item_notification",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «MaterialCardView» на экране «item_notification»",
+    "attached_files": [
+      "app/src/main/res/layout/item_notification.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «item_notification» в приложении Chefs tAIble",
+      "Найти компонент «MaterialCardView»",
+      "Проверить: marginHorizontal=spacing_md, marginVertical=spacing_xs, cardCornerRadius=card_radius, cardElevation=card_elevation",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "item_notification",
+      "component": "MaterialCardView",
+      "expected": "marginHorizontal=spacing_md, marginVertical=spacing_xs, cardCornerRadius=card_radius, cardElevation=card_elevation"
+    }
+  },
+  {
+    "id": "VL-110",
+    "description": "[item_notification] Индикатор непрочитанного: View, 4dp шириной, background=primary, visibility=gone по умолчанию",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "item_notification",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «Индикатор непрочитанного» на экране «item_notification»",
+    "attached_files": [
+      "app/src/main/res/layout/item_notification.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «item_notification» в приложении Chefs tAIble",
+      "Найти компонент «Индикатор непрочитанного»",
+      "Проверить: View, 4dp шириной, background=primary, visibility=gone по умолчанию",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "item_notification",
+      "component": "Индикатор непрочитанного",
+      "expected": "View, 4dp шириной, background=primary, visibility=gone по умолчанию"
+    }
+  },
+  {
+    "id": "VL-111",
+    "description": "[item_notification] Текст (контейнер): marginStart=spacing_sm, weight=1",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "item_notification",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «Текст (контейнер)» на экране «item_notification»",
+    "attached_files": [
+      "app/src/main/res/layout/item_notification.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «item_notification» в приложении Chefs tAIble",
+      "Найти компонент «Текст (контейнер)»",
+      "Проверить: marginStart=spacing_sm, weight=1",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "item_notification",
+      "component": "Текст (контейнер)",
+      "expected": "marginStart=spacing_sm, weight=1"
+    }
+  },
+  {
+    "id": "VL-112",
+    "description": "[item_notification] Заголовок: 14sp, bold, text_dark",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "item_notification",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «Заголовок» на экране «item_notification»",
+    "attached_files": [
+      "app/src/main/res/layout/item_notification.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «item_notification» в приложении Chefs tAIble",
+      "Найти компонент «Заголовок»",
+      "Проверить: 14sp, bold, text_dark",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "item_notification",
+      "component": "Заголовок",
+      "expected": "14sp, bold, text_dark"
+    }
+  },
+  {
+    "id": "VL-113",
+    "description": "[item_notification] Сообщение: 12sp, text_light, marginTop=spacing_xs",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "item_notification",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «Сообщение» на экране «item_notification»",
+    "attached_files": [
+      "app/src/main/res/layout/item_notification.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "medium",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «item_notification» в приложении Chefs tAIble",
+      "Найти компонент «Сообщение»",
+      "Проверить: 12sp, text_light, marginTop=spacing_xs",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "item_notification",
+      "component": "Сообщение",
+      "expected": "12sp, text_light, marginTop=spacing_xs"
+    }
+  },
+  {
+    "id": "VL-114",
+    "description": "[item_notification] Время: 12sp, text_hint, marginTop=spacing_xs",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "item_notification",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «Время» на экране «item_notification»",
+    "attached_files": [
+      "app/src/main/res/layout/item_notification.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "medium",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «item_notification» в приложении Chefs tAIble",
+      "Найти компонент «Время»",
+      "Проверить: 12sp, text_hint, marginTop=spacing_xs",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "item_notification",
+      "component": "Время",
+      "expected": "12sp, text_hint, marginTop=spacing_xs"
+    }
+  },
+  {
+    "id": "VL-115",
+    "description": "[Все (авторизованные)] BottomNavigationView (кросс-экран): Контент фрагментов не перекрывается панелью навигации",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "все-(авторизованные)",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «BottomNavigationView (кросс-экран)» на экране «Все (авторизованные)»",
+    "attached_files": [
+      "app/src/main/res/layout/activity_main.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Все (авторизованные)» в приложении Chefs tAIble",
+      "Найти компонент «BottomNavigationView (кросс-экран)»",
+      "Проверить: Контент фрагментов не перекрывается панелью навигации",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Все (авторизованные)",
+      "component": "BottomNavigationView (кросс-экран)",
+      "expected": "Контент фрагментов не перекрывается панелью навигации"
+    }
+  },
+  {
+    "id": "VL-116",
+    "description": "[Все] MaterialCardView (кросс-экран): Единый стиль: cardCornerRadius=12dp, cardElevation=2dp на всех экранах",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "все",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «MaterialCardView (кросс-экран)» на экране «Все»",
+    "attached_files": [
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Все» в приложении Chefs tAIble",
+      "Найти компонент «MaterialCardView (кросс-экран)»",
+      "Проверить: Единый стиль: cardCornerRadius=12dp, cardElevation=2dp на всех экранах",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Все",
+      "component": "MaterialCardView (кросс-экран)",
+      "expected": "Единый стиль: cardCornerRadius=12dp, cardElevation=2dp на всех экранах"
+    }
+  },
+  {
+    "id": "VL-117",
+    "description": "[Все] MaterialButton (кросс-экран): Filled — на всех экранах; Outlined — только «Выйти из аккаунта»",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "все",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «MaterialButton (кросс-экран)» на экране «Все»",
+    "attached_files": [
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Все» в приложении Chefs tAIble",
+      "Найти компонент «MaterialButton (кросс-экран)»",
+      "Проверить: Filled — на всех экранах; Outlined — только «Выйти из аккаунта»",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Все",
+      "component": "MaterialButton (кросс-экран)",
+      "expected": "Filled — на всех экранах; Outlined — только «Выйти из аккаунта»"
+    }
+  },
+  {
+    "id": "VL-118",
+    "description": "[Все] TextInputLayout (кросс-экран): OutlinedBox — все поля; ExposedDropdownMenu — только dropdown",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "все",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «TextInputLayout (кросс-экран)» на экране «Все»",
+    "attached_files": [
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Все» в приложении Chefs tAIble",
+      "Найти компонент «TextInputLayout (кросс-экран)»",
+      "Проверить: OutlinedBox — все поля; ExposedDropdownMenu — только dropdown",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Все",
+      "component": "TextInputLayout (кросс-экран)",
+      "expected": "OutlinedBox — все поля; ExposedDropdownMenu — только dropdown"
+    }
+  },
+  {
+    "id": "VL-119",
+    "description": "[Главная → Детали → Бронирование] Навигация (сквозной): Тап по карточке класса → детали → «Забронировать» → подтверждение: layout не ломается",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "главная---детали---бронирование",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «Навигация (сквозной)» на экране «Главная → Детали → Бронирование»",
+    "attached_files": [
+      "app/src/main/res/layout/fragment_home.xml",
+      "app/src/main/res/layout/fragment_class_detail.xml",
+      "app/src/main/res/layout/fragment_booking.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Главная → Детали → Бронирование» в приложении Chefs tAIble",
+      "Найти компонент «Навигация (сквозной)»",
+      "Проверить: Тап по карточке класса → детали → «Забронировать» → подтверждение: layout не ломается",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Главная → Детали → Бронирование",
+      "component": "Навигация (сквозной)",
+      "expected": "Тап по карточке класса → детали → «Забронировать» → подтверждение: layout не ломается"
+    }
+  },
+  {
+    "id": "VL-120",
+    "description": "[Мои брони → Диалог отзыва] Навигация (сквозной): «Оценить шефа» → диалог: клавиатура не ломает layout",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "мои-брони---диалог-отзыва",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «Навигация (сквозной)» на экране «Мои брони → Диалог отзыва»",
+    "attached_files": [
+      "app/src/main/res/layout/item_booking.xml",
+      "app/src/main/res/layout/dialog_review.xml",
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Мои брони → Диалог отзыва» в приложении Chefs tAIble",
+      "Найти компонент «Навигация (сквозной)»",
+      "Проверить: «Оценить шефа» → диалог: клавиатура не ломает layout",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Мои брони → Диалог отзыва",
+      "component": "Навигация (сквозной)",
+      "expected": "«Оценить шефа» → диалог: клавиатура не ломает layout"
+    }
+  },
+  {
+    "id": "VL-121",
+    "description": "[Все] Системная кнопка «Назад»: Корректное восстановление стека, layout не ломается",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "все",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «Системная кнопка «Назад»» на экране «Все»",
+    "attached_files": [
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "medium",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Все» в приложении Chefs tAIble",
+      "Найти компонент «Системная кнопка «Назад»»",
+      "Проверить: Корректное восстановление стека, layout не ломается",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Все",
+      "component": "Системная кнопка «Назад»",
+      "expected": "Корректное восстановление стека, layout не ломается"
+    }
+  },
+  {
+    "id": "VL-122",
+    "description": "[Все] Поворот экрана: Состояние сохраняется, layout адаптируется",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "все",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «Поворот экрана» на экране «Все»",
+    "attached_files": [
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "medium",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Все» в приложении Chefs tAIble",
+      "Найти компонент «Поворот экрана»",
+      "Проверить: Состояние сохраняется, layout адаптируется",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Все",
+      "component": "Поворот экрана",
+      "expected": "Состояние сохраняется, layout адаптируется"
+    }
+  },
+  {
+    "id": "VL-123",
+    "description": "[Все] Маленький экран (320×480): Весь контент доступен через скролл",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "все",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «Маленький экран (320×480)» на экране «Все»",
+    "attached_files": [
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "medium",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Все» в приложении Chefs tAIble",
+      "Найти компонент «Маленький экран (320×480)»",
+      "Проверить: Весь контент доступен через скролл",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Все",
+      "component": "Маленький экран (320×480)",
+      "expected": "Весь контент доступен через скролл"
+    }
+  },
+  {
+    "id": "VL-124",
+    "description": "[Все] Крупный шрифт (accessibility): Текст не обрезается, layout адаптируется",
+    "labels": [
+      "ui-layout",
+      "visual-qa",
+      "все",
+      "android"
+    ],
+    "goal": "Проверить визуальную компоновку компонента «Крупный шрифт (accessibility)» на экране «Все»",
+    "attached_files": [
+      "app/src/main/res/values/dimens.xml",
+      "app/src/main/res/values/colors.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "low",
+    "estimated_minutes": 7,
+    "path": "03-qa/prompts/visual-layout-tests-prompt.md",
+    "steps": [
+      "Открыть экран «Все» в приложении Chefs tAIble",
+      "Найти компонент «Крупный шрифт (accessibility)»",
+      "Проверить: Текст не обрезается, layout адаптируется",
+      "Зафиксировать результат (pass/fail) со скриншотом"
+    ],
+    "data": {
+      "screen": "Все",
+      "component": "Крупный шрифт (accessibility)",
+      "expected": "Текст не обрезается, layout адаптируется"
+    }
+  }
+]

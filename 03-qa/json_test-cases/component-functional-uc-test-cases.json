@@ -1,0 +1,4203 @@
+[
+  {
+    "id": "BS-AUTH-01",
+    "description": "AuthService: Регистрация с уникальными данными проходит",
+    "labels": [
+      "backend",
+      "component-test",
+      "auth",
+      "spring-boot",
+      "junit5"
+    ],
+    "goal": "Проверить компонент AuthService — Регистрация с уникальными данными проходит",
+    "attached_files": [
+      "02-development/backend/src/test/java/com/chefstable/backend/auth/",
+      "02-development/backend/src/main/java/com/chefstable/backend/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Подготовить mock-данные: email=new@test.com, phone=+79990000000, password=password123",
+      "Вызвать метод сервиса",
+      "Проверить результат: Возвращает AuthResponse с accessToken, refreshToken, clientDto. Пароль в БД захеширован."
+    ],
+    "data": {
+      "service": "AuthService",
+      "input": "email=new@test.com, phone=+79990000000, password=password123",
+      "expected": "Возвращает AuthResponse с accessToken, refreshToken, clientDto. Пароль в БД захеширован."
+    }
+  },
+  {
+    "id": "BS-AUTH-02",
+    "description": "AuthService: Регистрация с существующим email отклоняется",
+    "labels": [
+      "backend",
+      "component-test",
+      "auth",
+      "spring-boot",
+      "junit5"
+    ],
+    "goal": "Проверить компонент AuthService — Регистрация с существующим email отклоняется",
+    "attached_files": [
+      "02-development/backend/src/test/java/com/chefstable/backend/auth/",
+      "02-development/backend/src/main/java/com/chefstable/backend/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Подготовить mock-данные: email уже в БД",
+      "Вызвать метод сервиса",
+      "Проверить результат: ConflictException('Email is already registered')"
+    ],
+    "data": {
+      "service": "AuthService",
+      "input": "email уже в БД",
+      "expected": "ConflictException('Email is already registered')"
+    }
+  },
+  {
+    "id": "BS-AUTH-03",
+    "description": "AuthService: Регистрация с существующим телефоном отклоняется",
+    "labels": [
+      "backend",
+      "component-test",
+      "auth",
+      "spring-boot",
+      "junit5"
+    ],
+    "goal": "Проверить компонент AuthService — Регистрация с существующим телефоном отклоняется",
+    "attached_files": [
+      "02-development/backend/src/test/java/com/chefstable/backend/auth/",
+      "02-development/backend/src/main/java/com/chefstable/backend/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Подготовить mock-данные: phone уже в БД",
+      "Вызвать метод сервиса",
+      "Проверить результат: ConflictException('Phone is already registered')"
+    ],
+    "data": {
+      "service": "AuthService",
+      "input": "phone уже в БД",
+      "expected": "ConflictException('Phone is already registered')"
+    }
+  },
+  {
+    "id": "BS-AUTH-04",
+    "description": "AuthService: Логин с верными данными проходит",
+    "labels": [
+      "backend",
+      "component-test",
+      "auth",
+      "spring-boot",
+      "junit5"
+    ],
+    "goal": "Проверить компонент AuthService — Логин с верными данными проходит",
+    "attached_files": [
+      "02-development/backend/src/test/java/com/chefstable/backend/auth/",
+      "02-development/backend/src/main/java/com/chefstable/backend/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Подготовить mock-данные: email + правильный пароль",
+      "Вызвать метод сервиса",
+      "Проверить результат: AuthResponse с токенами"
+    ],
+    "data": {
+      "service": "AuthService",
+      "input": "email + правильный пароль",
+      "expected": "AuthResponse с токенами"
+    }
+  },
+  {
+    "id": "BS-AUTH-05",
+    "description": "AuthService: Логин с неверным паролем отклоняется",
+    "labels": [
+      "backend",
+      "component-test",
+      "auth",
+      "spring-boot",
+      "junit5"
+    ],
+    "goal": "Проверить компонент AuthService — Логин с неверным паролем отклоняется",
+    "attached_files": [
+      "02-development/backend/src/test/java/com/chefstable/backend/auth/",
+      "02-development/backend/src/main/java/com/chefstable/backend/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Подготовить mock-данные: email + неверный пароль",
+      "Вызвать метод сервиса",
+      "Проверить результат: UnauthorizedException('Invalid credentials')"
+    ],
+    "data": {
+      "service": "AuthService",
+      "input": "email + неверный пароль",
+      "expected": "UnauthorizedException('Invalid credentials')"
+    }
+  },
+  {
+    "id": "BS-AUTH-06",
+    "description": "AuthService: Логин с несуществующим email отклоняется",
+    "labels": [
+      "backend",
+      "component-test",
+      "auth",
+      "spring-boot",
+      "junit5"
+    ],
+    "goal": "Проверить компонент AuthService — Логин с несуществующим email отклоняется",
+    "attached_files": [
+      "02-development/backend/src/test/java/com/chefstable/backend/auth/",
+      "02-development/backend/src/main/java/com/chefstable/backend/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Подготовить mock-данные: email не в БД",
+      "Вызвать метод сервиса",
+      "Проверить результат: UnauthorizedException('Invalid credentials')"
+    ],
+    "data": {
+      "service": "AuthService",
+      "input": "email не в БД",
+      "expected": "UnauthorizedException('Invalid credentials')"
+    }
+  },
+  {
+    "id": "BS-AUTH-07",
+    "description": "AuthService: Логин по телефону работает",
+    "labels": [
+      "backend",
+      "component-test",
+      "auth",
+      "spring-boot",
+      "junit5"
+    ],
+    "goal": "Проверить компонент AuthService — Логин по телефону работает",
+    "attached_files": [
+      "02-development/backend/src/test/java/com/chefstable/backend/auth/",
+      "02-development/backend/src/main/java/com/chefstable/backend/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Подготовить mock-данные: phone + правильный пароль",
+      "Вызвать метод сервиса",
+      "Проверить результат: AuthResponse с токенами"
+    ],
+    "data": {
+      "service": "AuthService",
+      "input": "phone + правильный пароль",
+      "expected": "AuthResponse с токенами"
+    }
+  },
+  {
+    "id": "BS-AUTH-08",
+    "description": "AuthService: Refresh с валидным токеном обновляет пару",
+    "labels": [
+      "backend",
+      "component-test",
+      "auth",
+      "spring-boot",
+      "junit5"
+    ],
+    "goal": "Проверить компонент AuthService — Refresh с валидным токеном обновляет пару",
+    "attached_files": [
+      "02-development/backend/src/test/java/com/chefstable/backend/auth/",
+      "02-development/backend/src/main/java/com/chefstable/backend/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Подготовить mock-данные: валидный refreshToken",
+      "Вызвать метод сервиса",
+      "Проверить результат: Новые accessToken + refreshToken"
+    ],
+    "data": {
+      "service": "AuthService",
+      "input": "валидный refreshToken",
+      "expected": "Новые accessToken + refreshToken"
+    }
+  },
+  {
+    "id": "BS-AUTH-09",
+    "description": "AuthService: Refresh с невалидным токеном отклоняется",
+    "labels": [
+      "backend",
+      "component-test",
+      "auth",
+      "spring-boot",
+      "junit5"
+    ],
+    "goal": "Проверить компонент AuthService — Refresh с невалидным токеном отклоняется",
+    "attached_files": [
+      "02-development/backend/src/test/java/com/chefstable/backend/auth/",
+      "02-development/backend/src/main/java/com/chefstable/backend/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Подготовить mock-данные: просроченный/несуществующий refreshToken",
+      "Вызвать метод сервиса",
+      "Проверить результат: UnauthorizedException"
+    ],
+    "data": {
+      "service": "AuthService",
+      "input": "просроченный/несуществующий refreshToken",
+      "expected": "UnauthorizedException"
+    }
+  },
+  {
+    "id": "BS-AUTH-10",
+    "description": "AuthService: Logout очищает refreshToken",
+    "labels": [
+      "backend",
+      "component-test",
+      "auth",
+      "spring-boot",
+      "junit5"
+    ],
+    "goal": "Проверить компонент AuthService — Logout очищает refreshToken",
+    "attached_files": [
+      "02-development/backend/src/test/java/com/chefstable/backend/auth/",
+      "02-development/backend/src/main/java/com/chefstable/backend/"
+    ],
+    "priority": "medium",
+    "estimated_minutes": 8,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Подготовить mock-данные: валидный refreshToken",
+      "Вызвать метод сервиса",
+      "Проверить результат: refreshToken в БД = null"
+    ],
+    "data": {
+      "service": "AuthService",
+      "input": "валидный refreshToken",
+      "expected": "refreshToken в БД = null"
+    }
+  },
+  {
+    "id": "BS-BOOK-01",
+    "description": "BookingService: Создание бронирования: места есть, клиент не дублируется",
+    "labels": [
+      "backend",
+      "component-test",
+      "bookings",
+      "spring-boot",
+      "junit5"
+    ],
+    "goal": "Проверить компонент BookingService — Создание бронирования: места есть, клиент не дублируется",
+    "attached_files": [
+      "02-development/backend/src/test/java/com/chefstable/backend/bookings/",
+      "02-development/backend/src/main/java/com/chefstable/backend/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Подготовить mock-данные: classId с availableSeats>0, новый клиент",
+      "Вызвать метод сервиса",
+      "Проверить результат: BookingResponse со статусом CONFIRMED, availableSeats уменьшен на 1"
+    ],
+    "data": {
+      "service": "BookingService",
+      "input": "classId с availableSeats>0, новый клиент",
+      "expected": "BookingResponse со статусом CONFIRMED, availableSeats уменьшен на 1"
+    }
+  },
+  {
+    "id": "BS-BOOK-02",
+    "description": "BookingService: Создание бронирования: мест нет",
+    "labels": [
+      "backend",
+      "component-test",
+      "bookings",
+      "spring-boot",
+      "junit5"
+    ],
+    "goal": "Проверить компонент BookingService — Создание бронирования: мест нет",
+    "attached_files": [
+      "02-development/backend/src/test/java/com/chefstable/backend/bookings/",
+      "02-development/backend/src/main/java/com/chefstable/backend/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Подготовить mock-данные: availableSeats=0",
+      "Вызвать метод сервиса",
+      "Проверить результат: ConflictException('Class has no available seats')"
+    ],
+    "data": {
+      "service": "BookingService",
+      "input": "availableSeats=0",
+      "expected": "ConflictException('Class has no available seats')"
+    }
+  },
+  {
+    "id": "BS-BOOK-03",
+    "description": "BookingService: Создание бронирования: клиент уже забронирован этот класс",
+    "labels": [
+      "backend",
+      "component-test",
+      "bookings",
+      "spring-boot",
+      "junit5"
+    ],
+    "goal": "Проверить компонент BookingService — Создание бронирования: клиент уже забронирован этот класс",
+    "attached_files": [
+      "02-development/backend/src/test/java/com/chefstable/backend/bookings/",
+      "02-development/backend/src/main/java/com/chefstable/backend/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Подготовить mock-данные: дублирующий clientId + classId",
+      "Вызвать метод сервиса",
+      "Проверить результат: ConflictException('Client already has a booking for this class')"
+    ],
+    "data": {
+      "service": "BookingService",
+      "input": "дублирующий clientId + classId",
+      "expected": "ConflictException('Client already has a booking for this class')"
+    }
+  },
+  {
+    "id": "BS-BOOK-04",
+    "description": "BookingService: Создание бронирования: класс отменён студией",
+    "labels": [
+      "backend",
+      "component-test",
+      "bookings",
+      "spring-boot",
+      "junit5"
+    ],
+    "goal": "Проверить компонент BookingService — Создание бронирования: класс отменён студией",
+    "attached_files": [
+      "02-development/backend/src/test/java/com/chefstable/backend/bookings/",
+      "02-development/backend/src/main/java/com/chefstable/backend/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Подготовить mock-данные: status=CANCELLED",
+      "Вызвать метод сервиса",
+      "Проверить результат: ConflictException('Booking is forbidden: class has been cancelled by the studio')"
+    ],
+    "data": {
+      "service": "BookingService",
+      "input": "status=CANCELLED",
+      "expected": "ConflictException('Booking is forbidden: class has been cancelled by the studio')"
+    }
+  },
+  {
+    "id": "BS-BOOK-05",
+    "description": "BookingService: Отмена бронирования: более 24 часов до начала",
+    "labels": [
+      "backend",
+      "component-test",
+      "bookings",
+      "spring-boot",
+      "junit5"
+    ],
+    "goal": "Проверить компонент BookingService — Отмена бронирования: более 24 часов до начала",
+    "attached_files": [
+      "02-development/backend/src/test/java/com/chefstable/backend/bookings/",
+      "02-development/backend/src/main/java/com/chefstable/backend/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Подготовить mock-данные: dateTime=now+48h, статус=CONFIRMED",
+      "Вызвать метод сервиса",
+      "Проверить результат: Статус → CANCELLED_BY_CLIENT, penaltyPoints=0, место освобождено"
+    ],
+    "data": {
+      "service": "BookingService",
+      "input": "dateTime=now+48h, статус=CONFIRMED",
+      "expected": "Статус → CANCELLED_BY_CLIENT, penaltyPoints=0, место освобождено"
+    }
+  },
+  {
+    "id": "BS-BOOK-06",
+    "description": "BookingService: Поздняя отмена: менее 24 часов до начала",
+    "labels": [
+      "backend",
+      "component-test",
+      "bookings",
+      "spring-boot",
+      "junit5"
+    ],
+    "goal": "Проверить компонент BookingService — Поздняя отмена: менее 24 часов до начала",
+    "attached_files": [
+      "02-development/backend/src/test/java/com/chefstable/backend/bookings/",
+      "02-development/backend/src/main/java/com/chefstable/backend/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Подготовить mock-данные: dateTime=now+2h, статус=CONFIRMED",
+      "Вызвать метод сервиса",
+      "Проверить результат: Статус → CANCELLED_BY_CLIENT, penaltyPoints=1, место освобождено"
+    ],
+    "data": {
+      "service": "BookingService",
+      "input": "dateTime=now+2h, статус=CONFIRMED",
+      "expected": "Статус → CANCELLED_BY_CLIENT, penaltyPoints=1, место освобождено"
+    }
+  },
+  {
+    "id": "BS-BOOK-07",
+    "description": "BookingService: Отмена уже отменённого бронирования",
+    "labels": [
+      "backend",
+      "component-test",
+      "bookings",
+      "spring-boot",
+      "junit5"
+    ],
+    "goal": "Проверить компонент BookingService — Отмена уже отменённого бронирования",
+    "attached_files": [
+      "02-development/backend/src/test/java/com/chefstable/backend/bookings/",
+      "02-development/backend/src/main/java/com/chefstable/backend/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Подготовить mock-данные: статус ≠ CONFIRMED",
+      "Вызвать метод сервиса",
+      "Проверить результат: ValidationException('Only confirmed bookings can be cancelled')"
+    ],
+    "data": {
+      "service": "BookingService",
+      "input": "статус ≠ CONFIRMED",
+      "expected": "ValidationException('Only confirmed bookings can be cancelled')"
+    }
+  },
+  {
+    "id": "BS-BOOK-08",
+    "description": "BookingService: Отмена с неподдерживаемым action",
+    "labels": [
+      "backend",
+      "component-test",
+      "bookings",
+      "spring-boot",
+      "junit5"
+    ],
+    "goal": "Проверить компонент BookingService — Отмена с неподдерживаемым action",
+    "attached_files": [
+      "02-development/backend/src/test/java/com/chefstable/backend/bookings/",
+      "02-development/backend/src/main/java/com/chefstable/backend/"
+    ],
+    "priority": "medium",
+    "estimated_minutes": 8,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Подготовить mock-данные: action='approve'",
+      "Вызвать метод сервиса",
+      "Проверить результат: ValidationException('Only cancel action is supported')"
+    ],
+    "data": {
+      "service": "BookingService",
+      "input": "action='approve'",
+      "expected": "ValidationException('Only cancel action is supported')"
+    }
+  },
+  {
+    "id": "BS-BOOK-09",
+    "description": "BookingService: Фильтр 'upcoming'",
+    "labels": [
+      "backend",
+      "component-test",
+      "bookings",
+      "spring-boot",
+      "junit5"
+    ],
+    "goal": "Проверить компонент BookingService — Фильтр 'upcoming'",
+    "attached_files": [
+      "02-development/backend/src/test/java/com/chefstable/backend/bookings/",
+      "02-development/backend/src/main/java/com/chefstable/backend/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Подготовить mock-данные: mix статусов и дат",
+      "Вызвать метод сервиса",
+      "Проверить результат: Только CONFIRMED с dateTime > now"
+    ],
+    "data": {
+      "service": "BookingService",
+      "input": "mix статусов и дат",
+      "expected": "Только CONFIRMED с dateTime > now"
+    }
+  },
+  {
+    "id": "BS-BOOK-10",
+    "description": "BookingService: Фильтр 'past'",
+    "labels": [
+      "backend",
+      "component-test",
+      "bookings",
+      "spring-boot",
+      "junit5"
+    ],
+    "goal": "Проверить компонент BookingService — Фильтр 'past'",
+    "attached_files": [
+      "02-development/backend/src/test/java/com/chefstable/backend/bookings/",
+      "02-development/backend/src/main/java/com/chefstable/backend/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Подготовить mock-данные: mix статусов и дат",
+      "Вызвать метод сервиса",
+      "Проверить результат: Только dateTime < now"
+    ],
+    "data": {
+      "service": "BookingService",
+      "input": "mix статусов и дат",
+      "expected": "Только dateTime < now"
+    }
+  },
+  {
+    "id": "BS-BOOK-11",
+    "description": "BookingService: Фильтр 'cancelled'",
+    "labels": [
+      "backend",
+      "component-test",
+      "bookings",
+      "spring-boot",
+      "junit5"
+    ],
+    "goal": "Проверить компонент BookingService — Фильтр 'cancelled'",
+    "attached_files": [
+      "02-development/backend/src/test/java/com/chefstable/backend/bookings/",
+      "02-development/backend/src/main/java/com/chefstable/backend/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Подготовить mock-данные: mix статусов",
+      "Вызвать метод сервиса",
+      "Проверить результат: Только CANCELLED_BY_CLIENT и CANCELLED_BY_STUDIO"
+    ],
+    "data": {
+      "service": "BookingService",
+      "input": "mix статусов",
+      "expected": "Только CANCELLED_BY_CLIENT и CANCELLED_BY_STUDIO"
+    }
+  },
+  {
+    "id": "BS-BOOK-12",
+    "description": "BookingService: Фильтр 'all' / null",
+    "labels": [
+      "backend",
+      "component-test",
+      "bookings",
+      "spring-boot",
+      "junit5"
+    ],
+    "goal": "Проверить компонент BookingService — Фильтр 'all' / null",
+    "attached_files": [
+      "02-development/backend/src/test/java/com/chefstable/backend/bookings/",
+      "02-development/backend/src/main/java/com/chefstable/backend/"
+    ],
+    "priority": "medium",
+    "estimated_minutes": 8,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Подготовить mock-данные: любые данные",
+      "Вызвать метод сервиса",
+      "Проверить результат: Все бронирования без фильтрации"
+    ],
+    "data": {
+      "service": "BookingService",
+      "input": "любые данные",
+      "expected": "Все бронирования без фильтрации"
+    }
+  },
+  {
+    "id": "BS-BOOK-13",
+    "description": "BookingService: Отмена класса студией: все подтверждённые бронирования отменяются",
+    "labels": [
+      "backend",
+      "component-test",
+      "bookings",
+      "spring-boot",
+      "junit5"
+    ],
+    "goal": "Проверить компонент BookingService — Отмена класса студией: все подтверждённые бронирования отменяются",
+    "attached_files": [
+      "02-development/backend/src/test/java/com/chefstable/backend/bookings/",
+      "02-development/backend/src/main/java/com/chefstable/backend/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Подготовить mock-данные: classId с 3 подтверждёнными бронированиями",
+      "Вызвать метод сервиса",
+      "Проверить результат: Все 3 → CANCELLED_BY_STUDIO, class status → CANCELLED"
+    ],
+    "data": {
+      "service": "BookingService",
+      "input": "classId с 3 подтверждёнными бронированиями",
+      "expected": "Все 3 → CANCELLED_BY_STUDIO, class status → CANCELLED"
+    }
+  },
+  {
+    "id": "BS-BOOK-14",
+    "description": "BookingService: Отмена класса студией: повторная отмена",
+    "labels": [
+      "backend",
+      "component-test",
+      "bookings",
+      "spring-boot",
+      "junit5"
+    ],
+    "goal": "Проверить компонент BookingService — Отмена класса студией: повторная отмена",
+    "attached_files": [
+      "02-development/backend/src/test/java/com/chefstable/backend/bookings/",
+      "02-development/backend/src/main/java/com/chefstable/backend/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Подготовить mock-данные: class уже CANCELLED",
+      "Вызвать метод сервиса",
+      "Проверить результат: ConflictException('Class is already cancelled')"
+    ],
+    "data": {
+      "service": "BookingService",
+      "input": "class уже CANCELLED",
+      "expected": "ConflictException('Class is already cancelled')"
+    }
+  },
+  {
+    "id": "BS-REV-01",
+    "description": "ReviewService: Создание отзыва после класса (статус ATTENDED)",
+    "labels": [
+      "backend",
+      "component-test",
+      "reviews",
+      "spring-boot",
+      "junit5"
+    ],
+    "goal": "Проверить компонент ReviewService — Создание отзыва после класса (статус ATTENDED)",
+    "attached_files": [
+      "02-development/backend/src/test/java/com/chefstable/backend/reviews/",
+      "02-development/backend/src/main/java/com/chefstable/backend/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Подготовить mock-данные: bookingId со статусом ATTENDED, rating=5",
+      "Вызвать метод сервиса",
+      "Проверить результат: ReviewResponse сохранён, рейтинг шефа обновлён"
+    ],
+    "data": {
+      "service": "ReviewService",
+      "input": "bookingId со статусом ATTENDED, rating=5",
+      "expected": "ReviewResponse сохранён, рейтинг шефа обновлён"
+    }
+  },
+  {
+    "id": "BS-REV-02",
+    "description": "ReviewService: Создание отзыва: класс ещё в будущем (не ATTENDED)",
+    "labels": [
+      "backend",
+      "component-test",
+      "reviews",
+      "spring-boot",
+      "junit5"
+    ],
+    "goal": "Проверить компонент ReviewService — Создание отзыва: класс ещё в будущем (не ATTENDED)",
+    "attached_files": [
+      "02-development/backend/src/test/java/com/chefstable/backend/reviews/",
+      "02-development/backend/src/main/java/com/chefstable/backend/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Подготовить mock-данные: dateTime=now+48h, статус=CONFIRMED",
+      "Вызвать метод сервиса",
+      "Проверить результат: ValidationException('Review is available only after the class')"
+    ],
+    "data": {
+      "service": "ReviewService",
+      "input": "dateTime=now+48h, статус=CONFIRMED",
+      "expected": "ValidationException('Review is available only after the class')"
+    }
+  },
+  {
+    "id": "BS-REV-03",
+    "description": "ReviewService: Повторный отзыв на то же бронирование",
+    "labels": [
+      "backend",
+      "component-test",
+      "reviews",
+      "spring-boot",
+      "junit5"
+    ],
+    "goal": "Проверить компонент ReviewService — Повторный отзыв на то же бронирование",
+    "attached_files": [
+      "02-development/backend/src/test/java/com/chefstable/backend/reviews/",
+      "02-development/backend/src/main/java/com/chefstable/backend/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Подготовить mock-данные: bookingId с существующим review",
+      "Вызвать метод сервиса",
+      "Проверить результат: ConflictException('Review already exists for this booking')"
+    ],
+    "data": {
+      "service": "ReviewService",
+      "input": "bookingId с существующим review",
+      "expected": "ConflictException('Review already exists for this booking')"
+    }
+  },
+  {
+    "id": "BS-REV-04",
+    "description": "ReviewService: Chef ID не совпадает с шефом класса",
+    "labels": [
+      "backend",
+      "component-test",
+      "reviews",
+      "spring-boot",
+      "junit5"
+    ],
+    "goal": "Проверить компонент ReviewService — Chef ID не совпадает с шефом класса",
+    "attached_files": [
+      "02-development/backend/src/test/java/com/chefstable/backend/reviews/",
+      "02-development/backend/src/main/java/com/chefstable/backend/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Подготовить mock-данные: chefId ≠ booking.cookingClass.chef.id",
+      "Вызвать метод сервиса",
+      "Проверить результат: ValidationException('Chef does not match booking class')"
+    ],
+    "data": {
+      "service": "ReviewService",
+      "input": "chefId ≠ booking.cookingClass.chef.id",
+      "expected": "ValidationException('Chef does not match booking class')"
+    }
+  },
+  {
+    "id": "BS-REV-05",
+    "description": "ReviewService: Рейтинг шефа обновляется корректно",
+    "labels": [
+      "backend",
+      "component-test",
+      "reviews",
+      "spring-boot",
+      "junit5"
+    ],
+    "goal": "Проверить компонент ReviewService — Рейтинг шефа обновляется корректно",
+    "attached_files": [
+      "02-development/backend/src/test/java/com/chefstable/backend/reviews/",
+      "02-development/backend/src/main/java/com/chefstable/backend/"
+    ],
+    "priority": "medium",
+    "estimated_minutes": 8,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Подготовить mock-данные: текущий rating=4.8 (10 отзывов), новый rating=5",
+      "Вызвать метод сервиса",
+      "Проверить результат: Новый rating = (4.8*10 + 5) / 11"
+    ],
+    "data": {
+      "service": "ReviewService",
+      "input": "текущий rating=4.8 (10 отзывов), новый rating=5",
+      "expected": "Новый rating = (4.8*10 + 5) / 11"
+    }
+  },
+  {
+    "id": "BS-PROF-01",
+    "description": "ProfileService: Получение профиля существующего клиента",
+    "labels": [
+      "backend",
+      "component-test",
+      "profile",
+      "spring-boot",
+      "junit5"
+    ],
+    "goal": "Проверить компонент ProfileService — Получение профиля существующего клиента",
+    "attached_files": [
+      "02-development/backend/src/test/java/com/chefstable/backend/profile/",
+      "02-development/backend/src/main/java/com/chefstable/backend/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Подготовить mock-данные: валидный clientId",
+      "Вызвать метод сервиса",
+      "Проверить результат: ClientResponse с заполненными полями"
+    ],
+    "data": {
+      "service": "ProfileService",
+      "input": "валидный clientId",
+      "expected": "ClientResponse с заполненными полями"
+    }
+  },
+  {
+    "id": "BS-PROF-02",
+    "description": "ProfileService: Получение профиля несуществующего клиента",
+    "labels": [
+      "backend",
+      "component-test",
+      "profile",
+      "spring-boot",
+      "junit5"
+    ],
+    "goal": "Проверить компонент ProfileService — Получение профиля несуществующего клиента",
+    "attached_files": [
+      "02-development/backend/src/test/java/com/chefstable/backend/profile/",
+      "02-development/backend/src/main/java/com/chefstable/backend/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Подготовить mock-данные: clientId не в БД",
+      "Вызвать метод сервиса",
+      "Проверить результат: NotFoundException('Client not found')"
+    ],
+    "data": {
+      "service": "ProfileService",
+      "input": "clientId не в БД",
+      "expected": "NotFoundException('Client not found')"
+    }
+  },
+  {
+    "id": "BS-PROF-03",
+    "description": "ProfileService: Обновление имени и телефона",
+    "labels": [
+      "backend",
+      "component-test",
+      "profile",
+      "spring-boot",
+      "junit5"
+    ],
+    "goal": "Проверить компонент ProfileService — Обновление имени и телефона",
+    "attached_files": [
+      "02-development/backend/src/test/java/com/chefstable/backend/profile/",
+      "02-development/backend/src/main/java/com/chefstable/backend/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Подготовить mock-данные: firstName='Иван', phone='+79991111111'",
+      "Вызвать метод сервиса",
+      "Проверить результат: Поля обновлены, остальные не изменены"
+    ],
+    "data": {
+      "service": "ProfileService",
+      "input": "firstName='Иван', phone='+79991111111'",
+      "expected": "Поля обновлены, остальные не изменены"
+    }
+  },
+  {
+    "id": "BS-PROF-04",
+    "description": "ProfileService: Обновление с null-полями",
+    "labels": [
+      "backend",
+      "component-test",
+      "profile",
+      "spring-boot",
+      "junit5"
+    ],
+    "goal": "Проверить компонент ProfileService — Обновление с null-полями",
+    "attached_files": [
+      "02-development/backend/src/test/java/com/chefstable/backend/profile/",
+      "02-development/backend/src/main/java/com/chefstable/backend/"
+    ],
+    "priority": "medium",
+    "estimated_minutes": 8,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Подготовить mock-данные: только firstName, остальные null",
+      "Вызвать метод сервиса",
+      "Проверить результат: Обновлён только firstName"
+    ],
+    "data": {
+      "service": "ProfileService",
+      "input": "только firstName, остальные null",
+      "expected": "Обновлён только firstName"
+    }
+  },
+  {
+    "id": "BS-PROF-05",
+    "description": "ProfileService: Обновление аллергий",
+    "labels": [
+      "backend",
+      "component-test",
+      "profile",
+      "spring-boot",
+      "junit5"
+    ],
+    "goal": "Проверить компонент ProfileService — Обновление аллергий",
+    "attached_files": [
+      "02-development/backend/src/test/java/com/chefstable/backend/profile/",
+      "02-development/backend/src/main/java/com/chefstable/backend/"
+    ],
+    "priority": "medium",
+    "estimated_minutes": 8,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Подготовить mock-данные: allergies='Глютен, орехи'",
+      "Вызвать метод сервиса",
+      "Проверить результат: Поле allergies сохранено"
+    ],
+    "data": {
+      "service": "ProfileService",
+      "input": "allergies='Глютен, орехи'",
+      "expected": "Поле allergies сохранено"
+    }
+  },
+  {
+    "id": "FE-LOGIN-01",
+    "description": "LoginViewModel: Валидные email + пароль → успешный логин",
+    "labels": [
+      "frontend",
+      "component-test",
+      "viewmodel",
+      "login",
+      "junit4",
+      "mockito"
+    ],
+    "goal": "Проверить ViewModel LoginViewModel — Валидные email + пароль → успешный логин",
+    "attached_files": [
+      "app/src/test/java/com/example/chefstable/ui/auth/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Создать mock репозитория: email=test@mail.com, password=password123, repo → success",
+      "Вызвать метод ViewModel",
+      "Проверить LiveData состояние: loginSuccess=true, isLoading=false"
+    ],
+    "data": {
+      "viewmodel": "LoginViewModel",
+      "input": "email=test@mail.com, password=password123, repo → success",
+      "expected": "loginSuccess=true, isLoading=false"
+    }
+  },
+  {
+    "id": "FE-LOGIN-02",
+    "description": "LoginViewModel: Пустой email → ошибка поля",
+    "labels": [
+      "frontend",
+      "component-test",
+      "viewmodel",
+      "login",
+      "junit4",
+      "mockito"
+    ],
+    "goal": "Проверить ViewModel LoginViewModel — Пустой email → ошибка поля",
+    "attached_files": [
+      "app/src/test/java/com/example/chefstable/ui/auth/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Создать mock репозитория: email=''",
+      "Вызвать метод ViewModel",
+      "Проверить LiveData состояние: fieldErrors['email']='Email обязателен', запрос не отправляется"
+    ],
+    "data": {
+      "viewmodel": "LoginViewModel",
+      "input": "email=''",
+      "expected": "fieldErrors['email']='Email обязателен', запрос не отправляется"
+    }
+  },
+  {
+    "id": "FE-LOGIN-03",
+    "description": "LoginViewModel: Некорректный email → ошибка поля",
+    "labels": [
+      "frontend",
+      "component-test",
+      "viewmodel",
+      "login",
+      "junit4",
+      "mockito"
+    ],
+    "goal": "Проверить ViewModel LoginViewModel — Некорректный email → ошибка поля",
+    "attached_files": [
+      "app/src/test/java/com/example/chefstable/ui/auth/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Создать mock репозитория: email='abc'",
+      "Вызвать метод ViewModel",
+      "Проверить LiveData состояние: fieldErrors['email']='Email имеет неверный формат'"
+    ],
+    "data": {
+      "viewmodel": "LoginViewModel",
+      "input": "email='abc'",
+      "expected": "fieldErrors['email']='Email имеет неверный формат'"
+    }
+  },
+  {
+    "id": "FE-LOGIN-04",
+    "description": "LoginViewModel: Пустой пароль → ошибка поля",
+    "labels": [
+      "frontend",
+      "component-test",
+      "viewmodel",
+      "login",
+      "junit4",
+      "mockito"
+    ],
+    "goal": "Проверить ViewModel LoginViewModel — Пустой пароль → ошибка поля",
+    "attached_files": [
+      "app/src/test/java/com/example/chefstable/ui/auth/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Создать mock репозитория: password=''",
+      "Вызвать метод ViewModel",
+      "Проверить LiveData состояние: fieldErrors['password']='Пароль не может быть пустым'"
+    ],
+    "data": {
+      "viewmodel": "LoginViewModel",
+      "input": "password=''",
+      "expected": "fieldErrors['password']='Пароль не может быть пустым'"
+    }
+  },
+  {
+    "id": "FE-LOGIN-05",
+    "description": "LoginViewModel: Неверные учётные данные (401)",
+    "labels": [
+      "frontend",
+      "component-test",
+      "viewmodel",
+      "login",
+      "junit4",
+      "mockito"
+    ],
+    "goal": "Проверить ViewModel LoginViewModel — Неверные учётные данные (401)",
+    "attached_files": [
+      "app/src/test/java/com/example/chefstable/ui/auth/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Создать mock репозитория: repo → HttpException(401)",
+      "Вызвать метод ViewModel",
+      "Проверить LiveData состояние: errorMessage='Неверный email или пароль'"
+    ],
+    "data": {
+      "viewmodel": "LoginViewModel",
+      "input": "repo → HttpException(401)",
+      "expected": "errorMessage='Неверный email или пароль'"
+    }
+  },
+  {
+    "id": "FE-LOGIN-06",
+    "description": "LoginViewModel: Ошибка сети",
+    "labels": [
+      "frontend",
+      "component-test",
+      "viewmodel",
+      "login",
+      "junit4",
+      "mockito"
+    ],
+    "goal": "Проверить ViewModel LoginViewModel — Ошибка сети",
+    "attached_files": [
+      "app/src/test/java/com/example/chefstable/ui/auth/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Создать mock репозитория: repo → IOException",
+      "Вызвать метод ViewModel",
+      "Проверить LiveData состояние: errorMessage='Нет соединения. Проверьте подключение'"
+    ],
+    "data": {
+      "viewmodel": "LoginViewModel",
+      "input": "repo → IOException",
+      "expected": "errorMessage='Нет соединения. Проверьте подключение'"
+    }
+  },
+  {
+    "id": "FE-LOGIN-07",
+    "description": "LoginViewModel: Ошибка сервера (500)",
+    "labels": [
+      "frontend",
+      "component-test",
+      "viewmodel",
+      "login",
+      "junit4",
+      "mockito"
+    ],
+    "goal": "Проверить ViewModel LoginViewModel — Ошибка сервера (500)",
+    "attached_files": [
+      "app/src/test/java/com/example/chefstable/ui/auth/"
+    ],
+    "priority": "medium",
+    "estimated_minutes": 8,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Создать mock репозитория: repo → HttpException(500)",
+      "Вызвать метод ViewModel",
+      "Проверить LiveData состояние: errorMessage='Произошла ошибка. Попробуйте позже'"
+    ],
+    "data": {
+      "viewmodel": "LoginViewModel",
+      "input": "repo → HttpException(500)",
+      "expected": "errorMessage='Произошла ошибка. Попробуйте позже'"
+    }
+  },
+  {
+    "id": "FE-LOGIN-08",
+    "description": "LoginViewModel: Loading state во время запроса",
+    "labels": [
+      "frontend",
+      "component-test",
+      "viewmodel",
+      "login",
+      "junit4",
+      "mockito"
+    ],
+    "goal": "Проверить ViewModel LoginViewModel — Loading state во время запроса",
+    "attached_files": [
+      "app/src/test/java/com/example/chefstable/ui/auth/"
+    ],
+    "priority": "medium",
+    "estimated_minutes": 8,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Создать mock репозитория: валидные данные",
+      "Вызвать метод ViewModel",
+      "Проверить LiveData состояние: isLoading=true до завершения, затем false"
+    ],
+    "data": {
+      "viewmodel": "LoginViewModel",
+      "input": "валидные данные",
+      "expected": "isLoading=true до завершения, затем false"
+    }
+  },
+  {
+    "id": "FE-REG-01",
+    "description": "RegistrationViewModel: Все поля валидны → успешная регистрация",
+    "labels": [
+      "frontend",
+      "component-test",
+      "viewmodel",
+      "registration",
+      "junit4",
+      "mockito"
+    ],
+    "goal": "Проверить ViewModel RegistrationViewModel — Все поля валидны → успешная регистрация",
+    "attached_files": [
+      "app/src/test/java/com/example/chefstable/ui/auth/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Создать mock репозитория: firstName=Иван, email=test@mail.com, phone=+79990000000, password=password123",
+      "Вызвать метод ViewModel",
+      "Проверить LiveData состояние: registrationSuccess=true"
+    ],
+    "data": {
+      "viewmodel": "RegistrationViewModel",
+      "input": "firstName=Иван, email=test@mail.com, phone=+79990000000, password=password123",
+      "expected": "registrationSuccess=true"
+    }
+  },
+  {
+    "id": "FE-REG-02",
+    "description": "RegistrationViewModel: Имя с цифрами → ошибка поля",
+    "labels": [
+      "frontend",
+      "component-test",
+      "viewmodel",
+      "registration",
+      "junit4",
+      "mockito"
+    ],
+    "goal": "Проверить ViewModel RegistrationViewModel — Имя с цифрами → ошибка поля",
+    "attached_files": [
+      "app/src/test/java/com/example/chefstable/ui/auth/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Создать mock репозитория: firstName='Иван123'",
+      "Вызвать метод ViewModel",
+      "Проверить LiveData состояние: fieldErrors['firstName']='Имя имеет неверный формат'"
+    ],
+    "data": {
+      "viewmodel": "RegistrationViewModel",
+      "input": "firstName='Иван123'",
+      "expected": "fieldErrors['firstName']='Имя имеет неверный формат'"
+    }
+  },
+  {
+    "id": "FE-REG-03",
+    "description": "RegistrationViewModel: Имя из 1 символа → ошибка поля",
+    "labels": [
+      "frontend",
+      "component-test",
+      "viewmodel",
+      "registration",
+      "junit4",
+      "mockito"
+    ],
+    "goal": "Проверить ViewModel RegistrationViewModel — Имя из 1 символа → ошибка поля",
+    "attached_files": [
+      "app/src/test/java/com/example/chefstable/ui/auth/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Создать mock репозитория: firstName='А'",
+      "Вызвать метод ViewModel",
+      "Проверить LiveData состояние: fieldErrors['firstName']='Имя имеет неверный формат'"
+    ],
+    "data": {
+      "viewmodel": "RegistrationViewModel",
+      "input": "firstName='А'",
+      "expected": "fieldErrors['firstName']='Имя имеет неверный формат'"
+    }
+  },
+  {
+    "id": "FE-REG-04",
+    "description": "RegistrationViewModel: Телефон без +7 → ошибка поля",
+    "labels": [
+      "frontend",
+      "component-test",
+      "viewmodel",
+      "registration",
+      "junit4",
+      "mockito"
+    ],
+    "goal": "Проверить ViewModel RegistrationViewModel — Телефон без +7 → ошибка поля",
+    "attached_files": [
+      "app/src/test/java/com/example/chefstable/ui/auth/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Создать mock репозитория: phone='89990000000'",
+      "Вызвать метод ViewModel",
+      "Проверить LiveData состояние: fieldErrors['phone']='Телефон имеет неверный формат'"
+    ],
+    "data": {
+      "viewmodel": "RegistrationViewModel",
+      "input": "phone='89990000000'",
+      "expected": "fieldErrors['phone']='Телефон имеет неверный формат'"
+    }
+  },
+  {
+    "id": "FE-REG-05",
+    "description": "RegistrationViewModel: Пароль < 8 символов → ошибка поля",
+    "labels": [
+      "frontend",
+      "component-test",
+      "viewmodel",
+      "registration",
+      "junit4",
+      "mockito"
+    ],
+    "goal": "Проверить ViewModel RegistrationViewModel — Пароль < 8 символов → ошибка поля",
+    "attached_files": [
+      "app/src/test/java/com/example/chefstable/ui/auth/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Создать mock репозитория: password='1234567'",
+      "Вызвать метод ViewModel",
+      "Проверить LiveData состояние: fieldErrors['password']='Пароль слишком короткий'"
+    ],
+    "data": {
+      "viewmodel": "RegistrationViewModel",
+      "input": "password='1234567'",
+      "expected": "fieldErrors['password']='Пароль слишком короткий'"
+    }
+  },
+  {
+    "id": "FE-REG-06",
+    "description": "RegistrationViewModel: Все поля невалидны → все ошибки показаны",
+    "labels": [
+      "frontend",
+      "component-test",
+      "viewmodel",
+      "registration",
+      "junit4",
+      "mockito"
+    ],
+    "goal": "Проверить ViewModel RegistrationViewModel — Все поля невалидны → все ошибки показаны",
+    "attached_files": [
+      "app/src/test/java/com/example/chefstable/ui/auth/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Создать mock репозитория: все поля некорректны",
+      "Вызвать метод ViewModel",
+      "Проверить LiveData состояние: 4 записи в fieldErrors, запрос не отправляется"
+    ],
+    "data": {
+      "viewmodel": "RegistrationViewModel",
+      "input": "все поля некорректны",
+      "expected": "4 записи в fieldErrors, запрос не отправляется"
+    }
+  },
+  {
+    "id": "FE-REG-07",
+    "description": "RegistrationViewModel: Дубликат email (409)",
+    "labels": [
+      "frontend",
+      "component-test",
+      "viewmodel",
+      "registration",
+      "junit4",
+      "mockito"
+    ],
+    "goal": "Проверить ViewModel RegistrationViewModel — Дубликат email (409)",
+    "attached_files": [
+      "app/src/test/java/com/example/chefstable/ui/auth/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Создать mock репозитория: repo → HttpException(409)",
+      "Вызвать метод ViewModel",
+      "Проверить LiveData состояние: errorMessage содержит 'уже зарегистрированы'"
+    ],
+    "data": {
+      "viewmodel": "RegistrationViewModel",
+      "input": "repo → HttpException(409)",
+      "expected": "errorMessage содержит 'уже зарегистрированы'"
+    }
+  },
+  {
+    "id": "FE-REG-08",
+    "description": "RegistrationViewModel: Ошибка сети",
+    "labels": [
+      "frontend",
+      "component-test",
+      "viewmodel",
+      "registration",
+      "junit4",
+      "mockito"
+    ],
+    "goal": "Проверить ViewModel RegistrationViewModel — Ошибка сети",
+    "attached_files": [
+      "app/src/test/java/com/example/chefstable/ui/auth/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Создать mock репозитория: repo → IOException",
+      "Вызвать метод ViewModel",
+      "Проверить LiveData состояние: errorMessage='Нет соединения. Проверьте подключение'"
+    ],
+    "data": {
+      "viewmodel": "RegistrationViewModel",
+      "input": "repo → IOException",
+      "expected": "errorMessage='Нет соединения. Проверьте подключение'"
+    }
+  },
+  {
+    "id": "FE-BOOK-01",
+    "description": "BookingViewModel: Успешное создание бронирования",
+    "labels": [
+      "frontend",
+      "component-test",
+      "viewmodel",
+      "booking",
+      "junit4",
+      "mockito"
+    ],
+    "goal": "Проверить ViewModel BookingViewModel — Успешное создание бронирования",
+    "attached_files": [
+      "app/src/test/java/com/example/chefstable/ui/booking/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Создать mock репозитория: repo → success",
+      "Вызвать метод ViewModel",
+      "Проверить LiveData состояние: bookingSuccess содержит BookingDto"
+    ],
+    "data": {
+      "viewmodel": "BookingViewModel",
+      "input": "repo → success",
+      "expected": "bookingSuccess содержит BookingDto"
+    }
+  },
+  {
+    "id": "FE-BOOK-02",
+    "description": "BookingViewModel: Нет мест (400)",
+    "labels": [
+      "frontend",
+      "component-test",
+      "viewmodel",
+      "booking",
+      "junit4",
+      "mockito"
+    ],
+    "goal": "Проверить ViewModel BookingViewModel — Нет мест (400)",
+    "attached_files": [
+      "app/src/test/java/com/example/chefstable/ui/booking/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Создать mock репозитория: repo → HttpException(400)",
+      "Вызвать метод ViewModel",
+      "Проверить LiveData состояние: errorMessage='Нет доступных мест'"
+    ],
+    "data": {
+      "viewmodel": "BookingViewModel",
+      "input": "repo → HttpException(400)",
+      "expected": "errorMessage='Нет доступных мест'"
+    }
+  },
+  {
+    "id": "FE-BOOK-03",
+    "description": "BookingViewModel: Конфликт бронирования (409)",
+    "labels": [
+      "frontend",
+      "component-test",
+      "viewmodel",
+      "booking",
+      "junit4",
+      "mockito"
+    ],
+    "goal": "Проверить ViewModel BookingViewModel — Конфликт бронирования (409)",
+    "attached_files": [
+      "app/src/test/java/com/example/chefstable/ui/booking/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Создать mock репозитория: repo → HttpException(409)",
+      "Вызвать метод ViewModel",
+      "Проверить LiveData состояние: errorMessage='Бронирование конфликтует с существующим'"
+    ],
+    "data": {
+      "viewmodel": "BookingViewModel",
+      "input": "repo → HttpException(409)",
+      "expected": "errorMessage='Бронирование конфликтует с существующим'"
+    }
+  },
+  {
+    "id": "FE-BOOK-04",
+    "description": "BookingViewModel: Загрузка пакетов проката",
+    "labels": [
+      "frontend",
+      "component-test",
+      "viewmodel",
+      "booking",
+      "junit4",
+      "mockito"
+    ],
+    "goal": "Проверить ViewModel BookingViewModel — Загрузка пакетов проката",
+    "attached_files": [
+      "app/src/test/java/com/example/chefstable/ui/booking/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Создать mock репозитория: repo → список пакетов",
+      "Вызвать метод ViewModel",
+      "Проверить LiveData состояние: rentalPackages содержит список"
+    ],
+    "data": {
+      "viewmodel": "BookingViewModel",
+      "input": "repo → список пакетов",
+      "expected": "rentalPackages содержит список"
+    }
+  },
+  {
+    "id": "FE-BOOK-05",
+    "description": "BookingViewModel: Загрузка аллергий из профиля",
+    "labels": [
+      "frontend",
+      "component-test",
+      "viewmodel",
+      "booking",
+      "junit4",
+      "mockito"
+    ],
+    "goal": "Проверить ViewModel BookingViewModel — Загрузка аллергий из профиля",
+    "attached_files": [
+      "app/src/test/java/com/example/chefstable/ui/booking/"
+    ],
+    "priority": "medium",
+    "estimated_minutes": 8,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Создать mock репозитория: profile → allergies='Орехи'",
+      "Вызвать метод ViewModel",
+      "Проверить LiveData состояние: allergies='Орехи'"
+    ],
+    "data": {
+      "viewmodel": "BookingViewModel",
+      "input": "profile → allergies='Орехи'",
+      "expected": "allergies='Орехи'"
+    }
+  },
+  {
+    "id": "FE-BOOK-06",
+    "description": "BookingViewModel: Ошибка загрузки пакетов — не критична",
+    "labels": [
+      "frontend",
+      "component-test",
+      "viewmodel",
+      "booking",
+      "junit4",
+      "mockito"
+    ],
+    "goal": "Проверить ViewModel BookingViewModel — Ошибка загрузки пакетов — не критична",
+    "attached_files": [
+      "app/src/test/java/com/example/chefstable/ui/booking/"
+    ],
+    "priority": "medium",
+    "estimated_minutes": 8,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Создать mock репозитория: repo → IOException",
+      "Вызвать метод ViewModel",
+      "Проверить LiveData состояние: rentalPackages остаётся пустым, ошибка не показана"
+    ],
+    "data": {
+      "viewmodel": "BookingViewModel",
+      "input": "repo → IOException",
+      "expected": "rentalPackages остаётся пустым, ошибка не показана"
+    }
+  },
+  {
+    "id": "FE-BOOK-07",
+    "description": "BookingViewModel: onBookingSuccessHandled сбрасывает состояние",
+    "labels": [
+      "frontend",
+      "component-test",
+      "viewmodel",
+      "booking",
+      "junit4",
+      "mockito"
+    ],
+    "goal": "Проверить ViewModel BookingViewModel — onBookingSuccessHandled сбрасывает состояние",
+    "attached_files": [
+      "app/src/test/java/com/example/chefstable/ui/booking/"
+    ],
+    "priority": "medium",
+    "estimated_minutes": 8,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Создать mock репозитория: вызван после успеха",
+      "Вызвать метод ViewModel",
+      "Проверить LiveData состояние: bookingSuccess=null"
+    ],
+    "data": {
+      "viewmodel": "BookingViewModel",
+      "input": "вызван после успеха",
+      "expected": "bookingSuccess=null"
+    }
+  },
+  {
+    "id": "FE-MB-01",
+    "description": "MyBookingsViewModel: Загрузка при инициализации",
+    "labels": [
+      "frontend",
+      "component-test",
+      "viewmodel",
+      "my-bookings",
+      "junit4",
+      "mockito"
+    ],
+    "goal": "Проверить ViewModel MyBookingsViewModel — Загрузка при инициализации",
+    "attached_files": [
+      "app/src/test/java/com/example/chefstable/ui/mybookings/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Создать mock репозитория: —",
+      "Вызвать метод ViewModel",
+      "Проверить LiveData состояние: state=Loading → state=Content(bookings)"
+    ],
+    "data": {
+      "viewmodel": "MyBookingsViewModel",
+      "input": "—",
+      "expected": "state=Loading → state=Content(bookings)"
+    }
+  },
+  {
+    "id": "FE-MB-02",
+    "description": "MyBookingsViewModel: Пустой список бронирований",
+    "labels": [
+      "frontend",
+      "component-test",
+      "viewmodel",
+      "my-bookings",
+      "junit4",
+      "mockito"
+    ],
+    "goal": "Проверить ViewModel MyBookingsViewModel — Пустой список бронирований",
+    "attached_files": [
+      "app/src/test/java/com/example/chefstable/ui/mybookings/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Создать mock репозитория: repo → empty list",
+      "Вызвать метод ViewModel",
+      "Проверить LiveData состояние: state=Empty"
+    ],
+    "data": {
+      "viewmodel": "MyBookingsViewModel",
+      "input": "repo → empty list",
+      "expected": "state=Empty"
+    }
+  },
+  {
+    "id": "FE-MB-03",
+    "description": "MyBookingsViewModel: Фильтрация по статусу",
+    "labels": [
+      "frontend",
+      "component-test",
+      "viewmodel",
+      "my-bookings",
+      "junit4",
+      "mockito"
+    ],
+    "goal": "Проверить ViewModel MyBookingsViewModel — Фильтрация по статусу",
+    "attached_files": [
+      "app/src/test/java/com/example/chefstable/ui/mybookings/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Создать mock репозитория: filterBy('upcoming')",
+      "Вызвать метод ViewModel",
+      "Проверить LiveData состояние: repo вызван с фильтром, результат обновлён"
+    ],
+    "data": {
+      "viewmodel": "MyBookingsViewModel",
+      "input": "filterBy('upcoming')",
+      "expected": "repo вызван с фильтром, результат обновлён"
+    }
+  },
+  {
+    "id": "FE-MB-04",
+    "description": "MyBookingsViewModel: Успешная отмена бронирования",
+    "labels": [
+      "frontend",
+      "component-test",
+      "viewmodel",
+      "my-bookings",
+      "junit4",
+      "mockito"
+    ],
+    "goal": "Проверить ViewModel MyBookingsViewModel — Успешная отмена бронирования",
+    "attached_files": [
+      "app/src/test/java/com/example/chefstable/ui/mybookings/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Создать mock репозитория: cancelBooking(id) → success",
+      "Вызвать метод ViewModel",
+      "Проверить LiveData состояние: loadBookings() вызван повторно, список обновлён"
+    ],
+    "data": {
+      "viewmodel": "MyBookingsViewModel",
+      "input": "cancelBooking(id) → success",
+      "expected": "loadBookings() вызван повторно, список обновлён"
+    }
+  },
+  {
+    "id": "FE-MB-05",
+    "description": "MyBookingsViewModel: Отмена: ошибка 400 (менее 24ч)",
+    "labels": [
+      "frontend",
+      "component-test",
+      "viewmodel",
+      "my-bookings",
+      "junit4",
+      "mockito"
+    ],
+    "goal": "Проверить ViewModel MyBookingsViewModel — Отмена: ошибка 400 (менее 24ч)",
+    "attached_files": [
+      "app/src/test/java/com/example/chefstable/ui/mybookings/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Создать mock репозитория: cancelBooking → HttpException(400)",
+      "Вызвать метод ViewModel",
+      "Проверить LiveData состояние: cancelMessage='Невозможно отменить... менее чем за 24 часа'"
+    ],
+    "data": {
+      "viewmodel": "MyBookingsViewModel",
+      "input": "cancelBooking → HttpException(400)",
+      "expected": "cancelMessage='Невозможно отменить... менее чем за 24 часа'"
+    }
+  },
+  {
+    "id": "FE-MB-06",
+    "description": "MyBookingsViewModel: Отмена: ошибка сети",
+    "labels": [
+      "frontend",
+      "component-test",
+      "viewmodel",
+      "my-bookings",
+      "junit4",
+      "mockito"
+    ],
+    "goal": "Проверить ViewModel MyBookingsViewModel — Отмена: ошибка сети",
+    "attached_files": [
+      "app/src/test/java/com/example/chefstable/ui/mybookings/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Создать mock репозитория: cancelBooking → IOException",
+      "Вызвать метод ViewModel",
+      "Проверить LiveData состояние: cancelMessage='Нет соединения. Проверьте подключение'"
+    ],
+    "data": {
+      "viewmodel": "MyBookingsViewModel",
+      "input": "cancelBooking → IOException",
+      "expected": "cancelMessage='Нет соединения. Проверьте подключение'"
+    }
+  },
+  {
+    "id": "FE-MB-07",
+    "description": "MyBookingsViewModel: Ошибка загрузки: 401 → требуется авторизация",
+    "labels": [
+      "frontend",
+      "component-test",
+      "viewmodel",
+      "my-bookings",
+      "junit4",
+      "mockito"
+    ],
+    "goal": "Проверить ViewModel MyBookingsViewModel — Ошибка загрузки: 401 → требуется авторизация",
+    "attached_files": [
+      "app/src/test/java/com/example/chefstable/ui/mybookings/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Создать mock репозитория: repo → HttpException(401)",
+      "Вызвать метод ViewModel",
+      "Проверить LiveData состояние: state=Error('Необходима авторизация')"
+    ],
+    "data": {
+      "viewmodel": "MyBookingsViewModel",
+      "input": "repo → HttpException(401)",
+      "expected": "state=Error('Необходима авторизация')"
+    }
+  },
+  {
+    "id": "FE-REV-01",
+    "description": "ReviewViewModel: Успешная отправка отзыва",
+    "labels": [
+      "frontend",
+      "component-test",
+      "viewmodel",
+      "review",
+      "junit4",
+      "mockito"
+    ],
+    "goal": "Проверить ViewModel ReviewViewModel — Успешная отправка отзыва",
+    "attached_files": [
+      "app/src/test/java/com/example/chefstable/ui/review/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Создать mock репозитория: rating=5, comment='Отлично'",
+      "Вызвать метод ViewModel",
+      "Проверить LiveData состояние: success=true, isLoading=false"
+    ],
+    "data": {
+      "viewmodel": "ReviewViewModel",
+      "input": "rating=5, comment='Отлично'",
+      "expected": "success=true, isLoading=false"
+    }
+  },
+  {
+    "id": "FE-REV-02",
+    "description": "ReviewViewModel: Отзыв уже оставлен (409)",
+    "labels": [
+      "frontend",
+      "component-test",
+      "viewmodel",
+      "review",
+      "junit4",
+      "mockito"
+    ],
+    "goal": "Проверить ViewModel ReviewViewModel — Отзыв уже оставлен (409)",
+    "attached_files": [
+      "app/src/test/java/com/example/chefstable/ui/review/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Создать mock репозитория: repo → HttpException(409)",
+      "Вызвать метод ViewModel",
+      "Проверить LiveData состояние: errorMessage='Отзыв уже оставлен для этого бронирования'"
+    ],
+    "data": {
+      "viewmodel": "ReviewViewModel",
+      "input": "repo → HttpException(409)",
+      "expected": "errorMessage='Отзыв уже оставлен для этого бронирования'"
+    }
+  },
+  {
+    "id": "FE-REV-03",
+    "description": "ReviewViewModel: Некорректные данные отзыва (400)",
+    "labels": [
+      "frontend",
+      "component-test",
+      "viewmodel",
+      "review",
+      "junit4",
+      "mockito"
+    ],
+    "goal": "Проверить ViewModel ReviewViewModel — Некорректные данные отзыва (400)",
+    "attached_files": [
+      "app/src/test/java/com/example/chefstable/ui/review/"
+    ],
+    "priority": "medium",
+    "estimated_minutes": 8,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Создать mock репозитория: repo → HttpException(400)",
+      "Вызвать метод ViewModel",
+      "Проверить LiveData состояние: errorMessage='Некорректные данные отзыва'"
+    ],
+    "data": {
+      "viewmodel": "ReviewViewModel",
+      "input": "repo → HttpException(400)",
+      "expected": "errorMessage='Некорректные данные отзыва'"
+    }
+  },
+  {
+    "id": "FE-REV-04",
+    "description": "ReviewViewModel: Ошибка сети",
+    "labels": [
+      "frontend",
+      "component-test",
+      "viewmodel",
+      "review",
+      "junit4",
+      "mockito"
+    ],
+    "goal": "Проверить ViewModel ReviewViewModel — Ошибка сети",
+    "attached_files": [
+      "app/src/test/java/com/example/chefstable/ui/review/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Создать mock репозитория: repo → IOException",
+      "Вызвать метод ViewModel",
+      "Проверить LiveData состояние: errorMessage='Нет соединения. Проверьте подключение'"
+    ],
+    "data": {
+      "viewmodel": "ReviewViewModel",
+      "input": "repo → IOException",
+      "expected": "errorMessage='Нет соединения. Проверьте подключение'"
+    }
+  },
+  {
+    "id": "FE-REV-05",
+    "description": "ReviewViewModel: Loading state при отправке",
+    "labels": [
+      "frontend",
+      "component-test",
+      "viewmodel",
+      "review",
+      "junit4",
+      "mockito"
+    ],
+    "goal": "Проверить ViewModel ReviewViewModel — Loading state при отправке",
+    "attached_files": [
+      "app/src/test/java/com/example/chefstable/ui/review/"
+    ],
+    "priority": "medium",
+    "estimated_minutes": 8,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Создать mock репозитория: submitReview вызван",
+      "Вызвать метод ViewModel",
+      "Проверить LiveData состояние: isLoading=true → false"
+    ],
+    "data": {
+      "viewmodel": "ReviewViewModel",
+      "input": "submitReview вызван",
+      "expected": "isLoading=true → false"
+    }
+  },
+  {
+    "id": "FE-PROF-01",
+    "description": "ProfileViewModel: Загрузка профиля при инициализации",
+    "labels": [
+      "frontend",
+      "component-test",
+      "viewmodel",
+      "profile",
+      "junit4",
+      "mockito"
+    ],
+    "goal": "Проверить ViewModel ProfileViewModel — Загрузка профиля при инициализации",
+    "attached_files": [
+      "app/src/test/java/com/example/chefstable/ui/profile/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Создать mock репозитория: repo → ClientDto",
+      "Вызвать метод ViewModel",
+      "Проверить LiveData состояние: state=Content(client)"
+    ],
+    "data": {
+      "viewmodel": "ProfileViewModel",
+      "input": "repo → ClientDto",
+      "expected": "state=Content(client)"
+    }
+  },
+  {
+    "id": "FE-PROF-02",
+    "description": "ProfileViewModel: Ошибка 401 при загрузке → logout",
+    "labels": [
+      "frontend",
+      "component-test",
+      "viewmodel",
+      "profile",
+      "junit4",
+      "mockito"
+    ],
+    "goal": "Проверить ViewModel ProfileViewModel — Ошибка 401 при загрузке → logout",
+    "attached_files": [
+      "app/src/test/java/com/example/chefstable/ui/profile/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Создать mock репозитория: repo → HttpException(401)",
+      "Вызвать метод ViewModel",
+      "Проверить LiveData состояние: logoutEvent=true"
+    ],
+    "data": {
+      "viewmodel": "ProfileViewModel",
+      "input": "repo → HttpException(401)",
+      "expected": "logoutEvent=true"
+    }
+  },
+  {
+    "id": "FE-PROF-03",
+    "description": "ProfileViewModel: Сохранение профиля: валидные данные",
+    "labels": [
+      "frontend",
+      "component-test",
+      "viewmodel",
+      "profile",
+      "junit4",
+      "mockito"
+    ],
+    "goal": "Проверить ViewModel ProfileViewModel — Сохранение профиля: валидные данные",
+    "attached_files": [
+      "app/src/test/java/com/example/chefstable/ui/profile/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Создать mock репозитория: firstName=Иван, phone=+79990000000",
+      "Вызвать метод ViewModel",
+      "Проверить LiveData состояние: repo вызван, state=Content(updatedClient), message='Профиль сохранен'"
+    ],
+    "data": {
+      "viewmodel": "ProfileViewModel",
+      "input": "firstName=Иван, phone=+79990000000",
+      "expected": "repo вызван, state=Content(updatedClient), message='Профиль сохранен'"
+    }
+  },
+  {
+    "id": "FE-PROF-04",
+    "description": "ProfileViewModel: Сохранение: невалидное имя",
+    "labels": [
+      "frontend",
+      "component-test",
+      "viewmodel",
+      "profile",
+      "junit4",
+      "mockito"
+    ],
+    "goal": "Проверить ViewModel ProfileViewModel — Сохранение: невалидное имя",
+    "attached_files": [
+      "app/src/test/java/com/example/chefstable/ui/profile/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Создать mock репозитория: firstName='А'",
+      "Вызвать метод ViewModel",
+      "Проверить LiveData состояние: message='Имя имеет неверный формат', repo не вызван"
+    ],
+    "data": {
+      "viewmodel": "ProfileViewModel",
+      "input": "firstName='А'",
+      "expected": "message='Имя имеет неверный формат', repo не вызван"
+    }
+  },
+  {
+    "id": "FE-PROF-05",
+    "description": "ProfileViewModel: Сохранение: невалидный телефон",
+    "labels": [
+      "frontend",
+      "component-test",
+      "viewmodel",
+      "profile",
+      "junit4",
+      "mockito"
+    ],
+    "goal": "Проверить ViewModel ProfileViewModel — Сохранение: невалидный телефон",
+    "attached_files": [
+      "app/src/test/java/com/example/chefstable/ui/profile/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Создать mock репозитория: phone='123'",
+      "Вызвать метод ViewModel",
+      "Проверить LiveData состояние: message='Телефон имеет неверный формат', repo не вызван"
+    ],
+    "data": {
+      "viewmodel": "ProfileViewModel",
+      "input": "phone='123'",
+      "expected": "message='Телефон имеет неверный формат', repo не вызван"
+    }
+  },
+  {
+    "id": "FE-PROF-06",
+    "description": "ProfileViewModel: Logout",
+    "labels": [
+      "frontend",
+      "component-test",
+      "viewmodel",
+      "profile",
+      "junit4",
+      "mockito"
+    ],
+    "goal": "Проверить ViewModel ProfileViewModel — Logout",
+    "attached_files": [
+      "app/src/test/java/com/example/chefstable/ui/profile/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Создать mock репозитория: logout() вызван",
+      "Вызвать метод ViewModel",
+      "Проверить LiveData состояние: logoutEvent=true"
+    ],
+    "data": {
+      "viewmodel": "ProfileViewModel",
+      "input": "logout() вызван",
+      "expected": "logoutEvent=true"
+    }
+  },
+  {
+    "id": "FE-PROF-07",
+    "description": "ProfileViewModel: Ошибка сети при загрузке",
+    "labels": [
+      "frontend",
+      "component-test",
+      "viewmodel",
+      "profile",
+      "junit4",
+      "mockito"
+    ],
+    "goal": "Проверить ViewModel ProfileViewModel — Ошибка сети при загрузке",
+    "attached_files": [
+      "app/src/test/java/com/example/chefstable/ui/profile/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Создать mock репозитория: repo → IOException",
+      "Вызвать метод ViewModel",
+      "Проверить LiveData состояние: state=Error('Нет соединения. Проверьте подключение')"
+    ],
+    "data": {
+      "viewmodel": "ProfileViewModel",
+      "input": "repo → IOException",
+      "expected": "state=Error('Нет соединения. Проверьте подключение')"
+    }
+  },
+  {
+    "id": "API-AUTH-01",
+    "description": "Auth API: Регистрация нового клиента",
+    "labels": [
+      "api",
+      "functional-test",
+      "auth",
+      "integration"
+    ],
+    "goal": "Функциональная проверка API — Регистрация нового клиента",
+    "attached_files": [
+      "03-qa/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Отправить запрос: POST /api/auth/register",
+      "Данные: email=new@test.com, phone=+79990000000, password=password123",
+      "Проверить ответ: 200, тело содержит accessToken, refreshToken, client"
+    ],
+    "data": {
+      "group": "Auth API",
+      "method": "POST /api/auth/register",
+      "input": "email=new@test.com, phone=+79990000000, password=password123",
+      "expected": "200, тело содержит accessToken, refreshToken, client"
+    }
+  },
+  {
+    "id": "API-AUTH-02",
+    "description": "Auth API: Регистрация: дубликат email",
+    "labels": [
+      "api",
+      "functional-test",
+      "auth",
+      "integration"
+    ],
+    "goal": "Функциональная проверка API — Регистрация: дубликат email",
+    "attached_files": [
+      "03-qa/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Отправить запрос: POST /api/auth/register",
+      "Данные: email уже в БД",
+      "Проверить ответ: 409, message содержит 'Email'"
+    ],
+    "data": {
+      "group": "Auth API",
+      "method": "POST /api/auth/register",
+      "input": "email уже в БД",
+      "expected": "409, message содержит 'Email'"
+    }
+  },
+  {
+    "id": "API-AUTH-03",
+    "description": "Auth API: Регистрация: дубликат телефона",
+    "labels": [
+      "api",
+      "functional-test",
+      "auth",
+      "integration"
+    ],
+    "goal": "Функциональная проверка API — Регистрация: дубликат телефона",
+    "attached_files": [
+      "03-qa/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Отправить запрос: POST /api/auth/register",
+      "Данные: phone уже в БД",
+      "Проверить ответ: 409, message содержит 'Phone'"
+    ],
+    "data": {
+      "group": "Auth API",
+      "method": "POST /api/auth/register",
+      "input": "phone уже в БД",
+      "expected": "409, message содержит 'Phone'"
+    }
+  },
+  {
+    "id": "API-AUTH-04",
+    "description": "Auth API: Логин по email",
+    "labels": [
+      "api",
+      "functional-test",
+      "auth",
+      "integration"
+    ],
+    "goal": "Функциональная проверка API — Логин по email",
+    "attached_files": [
+      "03-qa/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Отправить запрос: POST /api/auth/login",
+      "Данные: email + правильный пароль",
+      "Проверить ответ: 200, accessToken + refreshToken"
+    ],
+    "data": {
+      "group": "Auth API",
+      "method": "POST /api/auth/login",
+      "input": "email + правильный пароль",
+      "expected": "200, accessToken + refreshToken"
+    }
+  },
+  {
+    "id": "API-AUTH-05",
+    "description": "Auth API: Логин: неверный пароль",
+    "labels": [
+      "api",
+      "functional-test",
+      "auth",
+      "integration"
+    ],
+    "goal": "Функциональная проверка API — Логин: неверный пароль",
+    "attached_files": [
+      "03-qa/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Отправить запрос: POST /api/auth/login",
+      "Данные: email + неверный пароль",
+      "Проверить ответ: 401, message='Invalid credentials'"
+    ],
+    "data": {
+      "group": "Auth API",
+      "method": "POST /api/auth/login",
+      "input": "email + неверный пароль",
+      "expected": "401, message='Invalid credentials'"
+    }
+  },
+  {
+    "id": "API-AUTH-06",
+    "description": "Auth API: Refresh token",
+    "labels": [
+      "api",
+      "functional-test",
+      "auth",
+      "integration"
+    ],
+    "goal": "Функциональная проверка API — Refresh token",
+    "attached_files": [
+      "03-qa/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Отправить запрос: POST /api/auth/refresh",
+      "Данные: валидный refreshToken",
+      "Проверить ответ: 200, новая пара токенов"
+    ],
+    "data": {
+      "group": "Auth API",
+      "method": "POST /api/auth/refresh",
+      "input": "валидный refreshToken",
+      "expected": "200, новая пара токенов"
+    }
+  },
+  {
+    "id": "API-AUTH-07",
+    "description": "Auth API: Refresh: просроченный токен",
+    "labels": [
+      "api",
+      "functional-test",
+      "auth",
+      "integration"
+    ],
+    "goal": "Функциональная проверка API — Refresh: просроченный токен",
+    "attached_files": [
+      "03-qa/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Отправить запрос: POST /api/auth/refresh",
+      "Данные: просроченный refreshToken",
+      "Проверить ответ: 401"
+    ],
+    "data": {
+      "group": "Auth API",
+      "method": "POST /api/auth/refresh",
+      "input": "просроченный refreshToken",
+      "expected": "401"
+    }
+  },
+  {
+    "id": "API-AUTH-08",
+    "description": "Auth API: Logout",
+    "labels": [
+      "api",
+      "functional-test",
+      "auth",
+      "integration"
+    ],
+    "goal": "Функциональная проверка API — Logout",
+    "attached_files": [
+      "03-qa/"
+    ],
+    "priority": "medium",
+    "estimated_minutes": 8,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Отправить запрос: POST /api/auth/logout",
+      "Данные: валидный refreshToken",
+      "Проверить ответ: 200, refreshToken в БД = null"
+    ],
+    "data": {
+      "group": "Auth API",
+      "method": "POST /api/auth/logout",
+      "input": "валидный refreshToken",
+      "expected": "200, refreshToken в БД = null"
+    }
+  },
+  {
+    "id": "API-AUTH-09",
+    "description": "Auth API: Доступ без токена",
+    "labels": [
+      "api",
+      "functional-test",
+      "auth",
+      "integration"
+    ],
+    "goal": "Функциональная проверка API — Доступ без токена",
+    "attached_files": [
+      "03-qa/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Отправить запрос: GET /api/bookings",
+      "Данные: нет Authorization header",
+      "Проверить ответ: 401"
+    ],
+    "data": {
+      "group": "Auth API",
+      "method": "GET /api/bookings",
+      "input": "нет Authorization header",
+      "expected": "401"
+    }
+  },
+  {
+    "id": "API-AUTH-10",
+    "description": "Auth API: Доступ с истёкшим accessToken",
+    "labels": [
+      "api",
+      "functional-test",
+      "auth",
+      "integration"
+    ],
+    "goal": "Функциональная проверка API — Доступ с истёкшим accessToken",
+    "attached_files": [
+      "03-qa/"
+    ],
+    "priority": "medium",
+    "estimated_minutes": 8,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Отправить запрос: GET /api/bookings",
+      "Данные: истёкший accessToken, истёкший refreshToken",
+      "Проверить ответ: 401"
+    ],
+    "data": {
+      "group": "Auth API",
+      "method": "GET /api/bookings",
+      "input": "истёкший accessToken, истёкший refreshToken",
+      "expected": "401"
+    }
+  },
+  {
+    "id": "API-BOOK-01",
+    "description": "Bookings API: Создание бронирования",
+    "labels": [
+      "api",
+      "functional-test",
+      "bookings",
+      "integration"
+    ],
+    "goal": "Функциональная проверка API — Создание бронирования",
+    "attached_files": [
+      "03-qa/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Отправить запрос: POST /api/bookings",
+      "Данные: classId с местами, rentalPackageId",
+      "Проверить ответ: 200, статус=CONFIRMED, availableSeats уменьшен"
+    ],
+    "data": {
+      "group": "Bookings API",
+      "method": "POST /api/bookings",
+      "input": "classId с местами, rentalPackageId",
+      "expected": "200, статус=CONFIRMED, availableSeats уменьшен"
+    }
+  },
+  {
+    "id": "API-BOOK-02",
+    "description": "Bookings API: Дублирующее бронирование",
+    "labels": [
+      "api",
+      "functional-test",
+      "bookings",
+      "integration"
+    ],
+    "goal": "Функциональная проверка API — Дублирующее бронирование",
+    "attached_files": [
+      "03-qa/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Отправить запрос: POST /api/bookings",
+      "Данные: тот же classId",
+      "Проверить ответ: 409"
+    ],
+    "data": {
+      "group": "Bookings API",
+      "method": "POST /api/bookings",
+      "input": "тот же classId",
+      "expected": "409"
+    }
+  },
+  {
+    "id": "API-BOOK-03",
+    "description": "Bookings API: Бронирование на отменённый класс",
+    "labels": [
+      "api",
+      "functional-test",
+      "bookings",
+      "integration"
+    ],
+    "goal": "Функциональная проверка API — Бронирование на отменённый класс",
+    "attached_files": [
+      "03-qa/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Отправить запрос: POST /api/bookings",
+      "Данные: class CANCELLED",
+      "Проверить ответ: 409"
+    ],
+    "data": {
+      "group": "Bookings API",
+      "method": "POST /api/bookings",
+      "input": "class CANCELLED",
+      "expected": "409"
+    }
+  },
+  {
+    "id": "API-BOOK-04",
+    "description": "Bookings API: Бронирование без мест",
+    "labels": [
+      "api",
+      "functional-test",
+      "bookings",
+      "integration"
+    ],
+    "goal": "Функциональная проверка API — Бронирование без мест",
+    "attached_files": [
+      "03-qa/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Отправить запрос: POST /api/bookings",
+      "Данные: seats=0",
+      "Проверить ответ: 409"
+    ],
+    "data": {
+      "group": "Bookings API",
+      "method": "POST /api/bookings",
+      "input": "seats=0",
+      "expected": "409"
+    }
+  },
+  {
+    "id": "API-BOOK-05",
+    "description": "Bookings API: Получение списка бронирований",
+    "labels": [
+      "api",
+      "functional-test",
+      "bookings",
+      "integration"
+    ],
+    "goal": "Функциональная проверка API — Получение списка бронирований",
+    "attached_files": [
+      "03-qa/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Отправить запрос: GET /api/bookings",
+      "Данные: авторизованный клиент",
+      "Проверить ответ: 200, только бронирования текущего клиента"
+    ],
+    "data": {
+      "group": "Bookings API",
+      "method": "GET /api/bookings",
+      "input": "авторизованный клиент",
+      "expected": "200, только бронирования текущего клиента"
+    }
+  },
+  {
+    "id": "API-BOOK-06",
+    "description": "Bookings API: Фильтрация upcoming",
+    "labels": [
+      "api",
+      "functional-test",
+      "bookings",
+      "integration"
+    ],
+    "goal": "Функциональная проверка API — Фильтрация upcoming",
+    "attached_files": [
+      "03-qa/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Отправить запрос: GET /api/bookings?status=upcoming",
+      "Данные: авторизованный клиент",
+      "Проверить ответ: Только предстоящие CONFIRMED"
+    ],
+    "data": {
+      "group": "Bookings API",
+      "method": "GET /api/bookings?status=upcoming",
+      "input": "авторизованный клиент",
+      "expected": "Только предстоящие CONFIRMED"
+    }
+  },
+  {
+    "id": "API-BOOK-07",
+    "description": "Bookings API: Фильтрация cancelled",
+    "labels": [
+      "api",
+      "functional-test",
+      "bookings",
+      "integration"
+    ],
+    "goal": "Функциональная проверка API — Фильтрация cancelled",
+    "attached_files": [
+      "03-qa/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Отправить запрос: GET /api/bookings?status=cancelled",
+      "Данные: авторизованный клиент",
+      "Проверить ответ: Только отменённые"
+    ],
+    "data": {
+      "group": "Bookings API",
+      "method": "GET /api/bookings?status=cancelled",
+      "input": "авторизованный клиент",
+      "expected": "Только отменённые"
+    }
+  },
+  {
+    "id": "API-BOOK-08",
+    "description": "Bookings API: Отмена за 48 часов",
+    "labels": [
+      "api",
+      "functional-test",
+      "bookings",
+      "integration"
+    ],
+    "goal": "Функциональная проверка API — Отмена за 48 часов",
+    "attached_files": [
+      "03-qa/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Отправить запрос: PUT /api/bookings/{id}",
+      "Данные: action=cancel, dateTime=now+48h",
+      "Проверить ответ: 200, статус=CANCELLED_BY_CLIENT, место освобождено"
+    ],
+    "data": {
+      "group": "Bookings API",
+      "method": "PUT /api/bookings/{id}",
+      "input": "action=cancel, dateTime=now+48h",
+      "expected": "200, статус=CANCELLED_BY_CLIENT, место освобождено"
+    }
+  },
+  {
+    "id": "API-BOOK-09",
+    "description": "Bookings API: Поздняя отмена (< 24ч)",
+    "labels": [
+      "api",
+      "functional-test",
+      "bookings",
+      "integration"
+    ],
+    "goal": "Функциональная проверка API — Поздняя отмена (< 24ч)",
+    "attached_files": [
+      "03-qa/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Отправить запрос: PUT /api/bookings/{id}",
+      "Данные: action=cancel, dateTime=now+2h",
+      "Проверить ответ: 200, статус=CANCELLED_BY_CLIENT, penaltyPoints=1"
+    ],
+    "data": {
+      "group": "Bookings API",
+      "method": "PUT /api/bookings/{id}",
+      "input": "action=cancel, dateTime=now+2h",
+      "expected": "200, статус=CANCELLED_BY_CLIENT, penaltyPoints=1"
+    }
+  },
+  {
+    "id": "API-BOOK-10",
+    "description": "Bookings API: Отмена чужого бронирования",
+    "labels": [
+      "api",
+      "functional-test",
+      "bookings",
+      "integration"
+    ],
+    "goal": "Функциональная проверка API — Отмена чужого бронирования",
+    "attached_files": [
+      "03-qa/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Отправить запрос: PUT /api/bookings/{id}",
+      "Данные: другой клиент",
+      "Проверить ответ: 404"
+    ],
+    "data": {
+      "group": "Bookings API",
+      "method": "PUT /api/bookings/{id}",
+      "input": "другой клиент",
+      "expected": "404"
+    }
+  },
+  {
+    "id": "API-REV-01",
+    "description": "Reviews API: Создание отзыва после класса",
+    "labels": [
+      "api",
+      "functional-test",
+      "reviews",
+      "integration"
+    ],
+    "goal": "Функциональная проверка API — Создание отзыва после класса",
+    "attached_files": [
+      "03-qa/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Отправить запрос: POST /api/reviews",
+      "Данные: bookingId ATTENDED, rating=5",
+      "Проверить ответ: 200, рейтинг шефа обновлён"
+    ],
+    "data": {
+      "group": "Reviews API",
+      "method": "POST /api/reviews",
+      "input": "bookingId ATTENDED, rating=5",
+      "expected": "200, рейтинг шефа обновлён"
+    }
+  },
+  {
+    "id": "API-REV-02",
+    "description": "Reviews API: Повторный отзыв",
+    "labels": [
+      "api",
+      "functional-test",
+      "reviews",
+      "integration"
+    ],
+    "goal": "Функциональная проверка API — Повторный отзыв",
+    "attached_files": [
+      "03-qa/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Отправить запрос: POST /api/reviews",
+      "Данные: тот же bookingId",
+      "Проверить ответ: 409"
+    ],
+    "data": {
+      "group": "Reviews API",
+      "method": "POST /api/reviews",
+      "input": "тот же bookingId",
+      "expected": "409"
+    }
+  },
+  {
+    "id": "API-REV-03",
+    "description": "Reviews API: Отзыв до класса (будущее время)",
+    "labels": [
+      "api",
+      "functional-test",
+      "reviews",
+      "integration"
+    ],
+    "goal": "Функциональная проверка API — Отзыв до класса (будущее время)",
+    "attached_files": [
+      "03-qa/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Отправить запрос: POST /api/reviews",
+      "Данные: dateTime=now+48h",
+      "Проверить ответ: 400"
+    ],
+    "data": {
+      "group": "Reviews API",
+      "method": "POST /api/reviews",
+      "input": "dateTime=now+48h",
+      "expected": "400"
+    }
+  },
+  {
+    "id": "API-REV-04",
+    "description": "Reviews API: Chef ID не совпадает",
+    "labels": [
+      "api",
+      "functional-test",
+      "reviews",
+      "integration"
+    ],
+    "goal": "Функциональная проверка API — Chef ID не совпадает",
+    "attached_files": [
+      "03-qa/"
+    ],
+    "priority": "medium",
+    "estimated_minutes": 8,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Отправить запрос: POST /api/reviews",
+      "Данные: chefId ≠ booking chef",
+      "Проверить ответ: 400"
+    ],
+    "data": {
+      "group": "Reviews API",
+      "method": "POST /api/reviews",
+      "input": "chefId ≠ booking chef",
+      "expected": "400"
+    }
+  },
+  {
+    "id": "API-PROF-01",
+    "description": "Profile API: Получение профиля",
+    "labels": [
+      "api",
+      "functional-test",
+      "profile",
+      "integration"
+    ],
+    "goal": "Функциональная проверка API — Получение профиля",
+    "attached_files": [
+      "03-qa/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Отправить запрос: GET /api/profile",
+      "Данные: авторизованный клиент",
+      "Проверить ответ: 200, данные текущего клиента"
+    ],
+    "data": {
+      "group": "Profile API",
+      "method": "GET /api/profile",
+      "input": "авторизованный клиент",
+      "expected": "200, данные текущего клиента"
+    }
+  },
+  {
+    "id": "API-PROF-02",
+    "description": "Profile API: Обновление имени",
+    "labels": [
+      "api",
+      "functional-test",
+      "profile",
+      "integration"
+    ],
+    "goal": "Функциональная проверка API — Обновление имени",
+    "attached_files": [
+      "03-qa/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Отправить запрос: PUT /api/profile",
+      "Данные: firstName='Иван'",
+      "Проверить ответ: 200, firstName изменён"
+    ],
+    "data": {
+      "group": "Profile API",
+      "method": "PUT /api/profile",
+      "input": "firstName='Иван'",
+      "expected": "200, firstName изменён"
+    }
+  },
+  {
+    "id": "API-PROF-03",
+    "description": "Profile API: Обновление телефона на занятый",
+    "labels": [
+      "api",
+      "functional-test",
+      "profile",
+      "integration"
+    ],
+    "goal": "Функциональная проверка API — Обновление телефона на занятый",
+    "attached_files": [
+      "03-qa/"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Отправить запрос: PUT /api/profile",
+      "Данные: phone уже в БД",
+      "Проверить ответ: 409"
+    ],
+    "data": {
+      "group": "Profile API",
+      "method": "PUT /api/profile",
+      "input": "phone уже в БД",
+      "expected": "409"
+    }
+  },
+  {
+    "id": "API-PROF-04",
+    "description": "Profile API: Email в профиле нельзя изменить",
+    "labels": [
+      "api",
+      "functional-test",
+      "profile",
+      "integration"
+    ],
+    "goal": "Функциональная проверка API — Email в профиле нельзя изменить",
+    "attached_files": [
+      "03-qa/"
+    ],
+    "priority": "medium",
+    "estimated_minutes": 8,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Отправить запрос: PUT /api/profile",
+      "Данные: email в теле запроса",
+      "Проверить ответ: Поле email не обновляется"
+    ],
+    "data": {
+      "group": "Profile API",
+      "method": "PUT /api/profile",
+      "input": "email в теле запроса",
+      "expected": "Поле email не обновляется"
+    }
+  },
+  {
+    "id": "UC-001",
+    "description": "UC-001: Просмотр расписания классов",
+    "labels": [
+      "use-case",
+      "schedule",
+      "e2e",
+      "frontend"
+    ],
+    "goal": "Проверить сквозной сценарий «Просмотр расписания классов» от начала до конца",
+    "attached_files": [
+      "app/src/main/res/layout/fragment_schedule.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 15,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      {
+        "step": 1,
+        "action": "Открыть приложение после логина",
+        "expected": "Отображается Главная"
+      },
+      {
+        "step": 2,
+        "action": "Перейти на таб «Расписание»",
+        "expected": "Загружается список классов, видны карточки"
+      },
+      {
+        "step": 3,
+        "action": "Выбрать шефа из dropdown-фильтра",
+        "expected": "Список фильтруется"
+      },
+      {
+        "step": 4,
+        "action": "Нажать «Сбросить»",
+        "expected": "Фильтр сброшен, показаны все классы"
+      },
+      {
+        "step": 5,
+        "action": "Pull-to-refresh",
+        "expected": "Список обновляется"
+      },
+      {
+        "step": 6,
+        "action": "Тап по карточке класса",
+        "expected": "Переход на экран деталей класса"
+      }
+    ],
+    "data": {
+      "use_case_id": "UC-001",
+      "use_case_name": "Просмотр расписания классов"
+    }
+  },
+  {
+    "id": "UC-002",
+    "description": "UC-002: Бронирование класса",
+    "labels": [
+      "use-case",
+      "booking",
+      "e2e",
+      "frontend"
+    ],
+    "goal": "Проверить сквозной сценарий «Бронирование класса» от начала до конца",
+    "attached_files": [
+      "app/src/main/res/layout/fragment_booking.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 15,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      {
+        "step": 1,
+        "action": "Открыть детали класса",
+        "expected": "Видны все детали класса"
+      },
+      {
+        "step": 2,
+        "action": "Нажать «Забронировать»",
+        "expected": "Переход на экран подтверждения"
+      },
+      {
+        "step": 3,
+        "action": "Выбрать пакет проката из dropdown",
+        "expected": "Показаны описание и цена пакета"
+      },
+      {
+        "step": 4,
+        "action": "Указать аллергии (опционально)",
+        "expected": "Текст сохранён"
+      },
+      {
+        "step": 5,
+        "action": "Проверить итоговую сумму",
+        "expected": "Цена класса + цена пакета = итог"
+      },
+      {
+        "step": 6,
+        "action": "Нажать «Подтвердить бронирование»",
+        "expected": "Бронирование создано"
+      }
+    ],
+    "data": {
+      "use_case_id": "UC-002",
+      "use_case_name": "Бронирование класса"
+    }
+  },
+  {
+    "id": "UC-003",
+    "description": "UC-003: Отмена бронирования",
+    "labels": [
+      "use-case",
+      "booking",
+      "cancellation",
+      "e2e",
+      "frontend"
+    ],
+    "goal": "Проверить сквозной сценарий «Отмена бронирования» от начала до конца",
+    "attached_files": [
+      "app/src/main/res/layout/fragment_my_bookings.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 15,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      {
+        "step": 1,
+        "action": "Перейти в «Мои брони»",
+        "expected": "Список бронирований, фильтр «Все»"
+      },
+      {
+        "step": 2,
+        "action": "Выбрать предстоящее бронирование (> 24ч)",
+        "expected": "Видна кнопка «Отменить»"
+      },
+      {
+        "step": 3,
+        "action": "Нажать «Отменить»",
+        "expected": "Диалог подтверждения"
+      },
+      {
+        "step": 4,
+        "action": "Подтвердить отмену",
+        "expected": "Статус «Отменено клиентом», место освобождено"
+      }
+    ],
+    "data": {
+      "use_case_id": "UC-003",
+      "use_case_name": "Отмена бронирования"
+    }
+  },
+  {
+    "id": "UC-004",
+    "description": "UC-004: Регистрация пользователя",
+    "labels": [
+      "use-case",
+      "auth",
+      "registration",
+      "e2e",
+      "frontend"
+    ],
+    "goal": "Проверить сквозной сценарий «Регистрация пользователя» от начала до конца",
+    "attached_files": [
+      "app/src/main/res/layout/activity_registration.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 15,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      {
+        "step": 1,
+        "action": "Открыть приложение → нажать «Регистрация»",
+        "expected": "Экран регистрации"
+      },
+      {
+        "step": 2,
+        "action": "Заполнить все поля валидными данными",
+        "expected": "Ошибок под полями нет"
+      },
+      {
+        "step": 3,
+        "action": "Нажать «Зарегистрироваться»",
+        "expected": "Прогресс-бар, кнопка заблокирована"
+      },
+      {
+        "step": 4,
+        "action": "Успешная регистрация",
+        "expected": "Переход на экран логина"
+      }
+    ],
+    "data": {
+      "use_case_id": "UC-004",
+      "use_case_name": "Регистрация пользователя"
+    }
+  },
+  {
+    "id": "UC-005",
+    "description": "UC-005: Аутентификация",
+    "labels": [
+      "use-case",
+      "auth",
+      "login",
+      "e2e",
+      "frontend"
+    ],
+    "goal": "Проверить сквозной сценарий «Аутентификация» от начала до конца",
+    "attached_files": [
+      "app/src/main/res/layout/activity_login.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 15,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      {
+        "step": 1,
+        "action": "Ввести email + пароль → нажать «Войти»",
+        "expected": "Прогресс-бар, вход выполнен"
+      },
+      {
+        "step": 2,
+        "action": "Перейти на Главный экран",
+        "expected": "BottomNavigationView виден"
+      },
+      {
+        "step": 3,
+        "action": "Нажать ссылку «Регистрация»",
+        "expected": "Переход на RegistrationActivity"
+      },
+      {
+        "step": 4,
+        "action": "Нажать ссылку «Войти» на экране регистрации",
+        "expected": "Возврат на LoginActivity"
+      }
+    ],
+    "data": {
+      "use_case_id": "UC-005",
+      "use_case_name": "Аутентификация"
+    }
+  },
+  {
+    "id": "UC-006",
+    "description": "UC-006: Просмотр и редактирование профиля",
+    "labels": [
+      "use-case",
+      "profile",
+      "e2e",
+      "frontend"
+    ],
+    "goal": "Проверить сквозной сценарий «Просмотр и редактирование профиля» от начала до конца",
+    "attached_files": [
+      "app/src/main/res/layout/fragment_profile.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "high",
+    "estimated_minutes": 15,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      {
+        "step": 1,
+        "action": "Перейти в «Профиль»",
+        "expected": "Загружены данные"
+      },
+      {
+        "step": 2,
+        "action": "Изменить имя и телефон",
+        "expected": "Поля редактируемы"
+      },
+      {
+        "step": 3,
+        "action": "Нажать «Сохранить»",
+        "expected": "Тост «Профиль сохранен»"
+      },
+      {
+        "step": 4,
+        "action": "Нажать «Выйти из аккаунта»",
+        "expected": "Диалог → переход на экран логина"
+      }
+    ],
+    "data": {
+      "use_case_id": "UC-006",
+      "use_case_name": "Просмотр и редактирование профиля"
+    }
+  },
+  {
+    "id": "UC-007",
+    "description": "UC-007: Оценка шефа",
+    "labels": [
+      "use-case",
+      "review",
+      "e2e",
+      "frontend"
+    ],
+    "goal": "Проверить сквозной сценарий «Оценка шефа» от начала до конца",
+    "attached_files": [
+      "app/src/main/res/layout/dialog_review.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "medium",
+    "estimated_minutes": 10,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      {
+        "step": 1,
+        "action": "Открыть «Мои брони» → найти прошедшее бронирование",
+        "expected": "Видна кнопка «Оценить шефа»"
+      },
+      {
+        "step": 2,
+        "action": "Нажать «Оценить шефа»",
+        "expected": "Открыт диалог с RatingBar"
+      },
+      {
+        "step": 3,
+        "action": "Выбрать оценку, ввести комментарий, нажать «Отправить»",
+        "expected": "Отзыв создан, диалог закрыт, тост «Отзыв отправлен»"
+      }
+    ],
+    "data": {
+      "use_case_id": "UC-007",
+      "use_case_name": "Оценка шефа"
+    }
+  },
+  {
+    "id": "UC-008",
+    "description": "UC-008: Указание аллергий",
+    "labels": [
+      "use-case",
+      "profile",
+      "booking",
+      "e2e",
+      "frontend"
+    ],
+    "goal": "Проверить сквозной сценарий «Указание аллергий» от начала до конца",
+    "attached_files": [
+      "app/src/main/res/layout/fragment_profile.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "medium",
+    "estimated_minutes": 10,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      {
+        "step": 1,
+        "action": "Перейти в «Профиль»",
+        "expected": "Поле заполнено текущими данными"
+      },
+      {
+        "step": 2,
+        "action": "Ввести аллергии",
+        "expected": "Текст сохранён"
+      },
+      {
+        "step": 3,
+        "action": "Нажать «Сохранить»",
+        "expected": "Аллергии обновлены"
+      },
+      {
+        "step": 4,
+        "action": "При бронировании аллергии подтягиваются",
+        "expected": "Поле предзаполнено"
+      }
+    ],
+    "data": {
+      "use_case_id": "UC-008",
+      "use_case_name": "Указание аллергий"
+    }
+  },
+  {
+    "id": "UC-009",
+    "description": "UC-009: Выбор пакета проката",
+    "labels": [
+      "use-case",
+      "booking",
+      "rental",
+      "e2e",
+      "frontend"
+    ],
+    "goal": "Проверить сквозной сценарий «Выбор пакета проката» от начала до конца",
+    "attached_files": [
+      "app/src/main/res/layout/fragment_booking.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "medium",
+    "estimated_minutes": 10,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      {
+        "step": 1,
+        "action": "Перейти к бронированию",
+        "expected": "Dropdown содержит варианты"
+      },
+      {
+        "step": 2,
+        "action": "Выбрать пакет",
+        "expected": "Показаны описание и цена"
+      },
+      {
+        "step": 3,
+        "action": "Итоговая сумма обновляется",
+        "expected": "Итого = цена класса + цена пакета"
+      }
+    ],
+    "data": {
+      "use_case_id": "UC-009",
+      "use_case_name": "Выбор пакета проката"
+    }
+  },
+  {
+    "id": "UC-010",
+    "description": "UC-010: Уведомления",
+    "labels": [
+      "use-case",
+      "notifications",
+      "e2e",
+      "frontend"
+    ],
+    "goal": "Проверить сквозной сценарий «Уведомления» от начала до конца",
+    "attached_files": [
+      "app/src/main/res/layout/fragment_notifications.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "medium",
+    "estimated_minutes": 10,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      {
+        "step": 1,
+        "action": "Перейти в «Уведомления»",
+        "expected": "Список уведомлений, фильтр «Все»"
+      },
+      {
+        "step": 2,
+        "action": "Выбрать фильтр «Непрочитанные»",
+        "expected": "Показаны только непрочитанные"
+      },
+      {
+        "step": 3,
+        "action": "Нажать «Очистить уведомления»",
+        "expected": "Список очищен"
+      }
+    ],
+    "data": {
+      "use_case_id": "UC-010",
+      "use_case_name": "Уведомления"
+    }
+  },
+  {
+    "id": "UC-011",
+    "description": "UC-011: Просмотр отзывов о шефе",
+    "labels": [
+      "use-case",
+      "class-detail",
+      "review",
+      "frontend"
+    ],
+    "goal": "Проверить сквозной сценарий «Просмотр отзывов о шефе» от начала до конца",
+    "attached_files": [
+      "app/src/main/res/layout/fragment_class_detail.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "medium",
+    "estimated_minutes": 10,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      {
+        "step": 1,
+        "action": "Открыть детали класса",
+        "expected": "Карточка шефа: имя, специализация, рейтинг, био"
+      },
+      {
+        "step": 2,
+        "action": "Проверить отображение рейтинга",
+        "expected": "Формат: «Рейтинг: 4.8 (32 отзыва)»"
+      }
+    ],
+    "data": {
+      "use_case_id": "UC-011",
+      "use_case_name": "Просмотр отзывов о шефе"
+    }
+  },
+  {
+    "id": "UC-012",
+    "description": "UC-012: Повторная запись (постоянный клиент)",
+    "labels": [
+      "use-case",
+      "booking",
+      "returning-client",
+      "frontend"
+    ],
+    "goal": "Проверить сквозной сценарий «Повторная запись (постоянный клиент)» от начала до конца",
+    "attached_files": [
+      "app/src/main/res/layout/fragment_booking.xml",
+      "app/src/main/res/values/strings.xml"
+    ],
+    "priority": "low",
+    "estimated_minutes": 10,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      {
+        "step": 1,
+        "action": "Постоянный клиент открывает бронирование",
+        "expected": "Аллергии из профиля подтянуты"
+      },
+      {
+        "step": 2,
+        "action": "Подтвердить бронирование",
+        "expected": "Бронирование создано без повторного ввода"
+      }
+    ],
+    "data": {
+      "use_case_id": "UC-012",
+      "use_case_name": "Повторная запись (постоянный клиент)"
+    }
+  },
+  {
+    "id": "BD-VAL-01",
+    "description": "Validator boundary: Имя: пустая строка",
+    "labels": [
+      "boundary",
+      "validation",
+      "frontend",
+      "unit-test"
+    ],
+    "goal": "Проверить граничное значение валидатора: Имя: пустая строка",
+    "attached_files": [
+      "app/src/main/java/com/example/chefstable/util/Validator.kt",
+      "app/src/test/java/com/example/chefstable/util/ValidatorTest.kt"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Вызвать Validator метод с входным значением: ''",
+      "Проверить результат: ошибка = \"Имя обязательно\""
+    ],
+    "data": {
+      "field": "Имя",
+      "input": "",
+      "expected_error": "Имя обязательно"
+    }
+  },
+  {
+    "id": "BD-VAL-02",
+    "description": "Validator boundary: Имя: 1 символ",
+    "labels": [
+      "boundary",
+      "validation",
+      "frontend",
+      "unit-test"
+    ],
+    "goal": "Проверить граничное значение валидатора: Имя: 1 символ",
+    "attached_files": [
+      "app/src/main/java/com/example/chefstable/util/Validator.kt",
+      "app/src/test/java/com/example/chefstable/util/ValidatorTest.kt"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Вызвать Validator метод с входным значением: 'А'",
+      "Проверить результат: ошибка = \"Имя имеет неверный формат\""
+    ],
+    "data": {
+      "field": "Имя",
+      "input": "А",
+      "expected_error": "Имя имеет неверный формат"
+    }
+  },
+  {
+    "id": "BD-VAL-03",
+    "description": "Validator boundary: Имя: 2 символа (минимум)",
+    "labels": [
+      "boundary",
+      "validation",
+      "frontend",
+      "unit-test"
+    ],
+    "goal": "Проверить граничное значение валидатора: Имя: 2 символа (минимум)",
+    "attached_files": [
+      "app/src/main/java/com/example/chefstable/util/Validator.kt",
+      "app/src/test/java/com/example/chefstable/util/ValidatorTest.kt"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Вызвать Validator метод с входным значением: 'Ив'",
+      "Проверить результат: null (валидно)"
+    ],
+    "data": {
+      "field": "Имя",
+      "input": "Ив",
+      "expected_error": null
+    }
+  },
+  {
+    "id": "BD-VAL-04",
+    "description": "Validator boundary: Имя: 25 символов (максимум)",
+    "labels": [
+      "boundary",
+      "validation",
+      "frontend",
+      "unit-test"
+    ],
+    "goal": "Проверить граничное значение валидатора: Имя: 25 символов (максимум)",
+    "attached_files": [
+      "app/src/main/java/com/example/chefstable/util/Validator.kt",
+      "app/src/test/java/com/example/chefstable/util/ValidatorTest.kt"
+    ],
+    "priority": "medium",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Вызвать Validator метод с входным значением: 'ААААААААААААААААААААААААА'",
+      "Проверить результат: null (валидно)"
+    ],
+    "data": {
+      "field": "Имя",
+      "input": "ААААААААААААААААААААААААА",
+      "expected_error": null
+    }
+  },
+  {
+    "id": "BD-VAL-05",
+    "description": "Validator boundary: Имя: 26 символов",
+    "labels": [
+      "boundary",
+      "validation",
+      "frontend",
+      "unit-test"
+    ],
+    "goal": "Проверить граничное значение валидатора: Имя: 26 символов",
+    "attached_files": [
+      "app/src/main/java/com/example/chefstable/util/Validator.kt",
+      "app/src/test/java/com/example/chefstable/util/ValidatorTest.kt"
+    ],
+    "priority": "medium",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Вызвать Validator метод с входным значением: 'АААААААААААААААААААААААААА'",
+      "Проверить результат: ошибка = \"Имя имеет неверный формат\""
+    ],
+    "data": {
+      "field": "Имя",
+      "input": "АААААААААААААААААААААААААА",
+      "expected_error": "Имя имеет неверный формат"
+    }
+  },
+  {
+    "id": "BD-VAL-06",
+    "description": "Validator boundary: Имя: содержит цифры",
+    "labels": [
+      "boundary",
+      "validation",
+      "frontend",
+      "unit-test"
+    ],
+    "goal": "Проверить граничное значение валидатора: Имя: содержит цифры",
+    "attached_files": [
+      "app/src/main/java/com/example/chefstable/util/Validator.kt",
+      "app/src/test/java/com/example/chefstable/util/ValidatorTest.kt"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Вызвать Validator метод с входным значением: 'Иван123'",
+      "Проверить результат: ошибка = \"Имя имеет неверный формат\""
+    ],
+    "data": {
+      "field": "Имя",
+      "input": "Иван123",
+      "expected_error": "Имя имеет неверный формат"
+    }
+  },
+  {
+    "id": "BD-VAL-07",
+    "description": "Validator boundary: Email: пустая строка",
+    "labels": [
+      "boundary",
+      "validation",
+      "frontend",
+      "unit-test"
+    ],
+    "goal": "Проверить граничное значение валидатора: Email: пустая строка",
+    "attached_files": [
+      "app/src/main/java/com/example/chefstable/util/Validator.kt",
+      "app/src/test/java/com/example/chefstable/util/ValidatorTest.kt"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Вызвать Validator метод с входным значением: ''",
+      "Проверить результат: ошибка = \"Email обязателен\""
+    ],
+    "data": {
+      "field": "Email",
+      "input": "",
+      "expected_error": "Email обязателен"
+    }
+  },
+  {
+    "id": "BD-VAL-08",
+    "description": "Validator boundary: Email: валидный минимальный",
+    "labels": [
+      "boundary",
+      "validation",
+      "frontend",
+      "unit-test"
+    ],
+    "goal": "Проверить граничное значение валидатора: Email: валидный минимальный",
+    "attached_files": [
+      "app/src/main/java/com/example/chefstable/util/Validator.kt",
+      "app/src/test/java/com/example/chefstable/util/ValidatorTest.kt"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Вызвать Validator метод с входным значением: 'a@b.c'",
+      "Проверить результат: null (валидно)"
+    ],
+    "data": {
+      "field": "Email",
+      "input": "a@b.c",
+      "expected_error": null
+    }
+  },
+  {
+    "id": "BD-VAL-09",
+    "description": "Validator boundary: Email: без домена",
+    "labels": [
+      "boundary",
+      "validation",
+      "frontend",
+      "unit-test"
+    ],
+    "goal": "Проверить граничное значение валидатора: Email: без домена",
+    "attached_files": [
+      "app/src/main/java/com/example/chefstable/util/Validator.kt",
+      "app/src/test/java/com/example/chefstable/util/ValidatorTest.kt"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Вызвать Validator метод с входным значением: 'test@'",
+      "Проверить результат: ошибка = \"Email имеет неверный формат\""
+    ],
+    "data": {
+      "field": "Email",
+      "input": "test@",
+      "expected_error": "Email имеет неверный формат"
+    }
+  },
+  {
+    "id": "BD-VAL-10",
+    "description": "Validator boundary: Email: без имени",
+    "labels": [
+      "boundary",
+      "validation",
+      "frontend",
+      "unit-test"
+    ],
+    "goal": "Проверить граничное значение валидатора: Email: без имени",
+    "attached_files": [
+      "app/src/main/java/com/example/chefstable/util/Validator.kt",
+      "app/src/test/java/com/example/chefstable/util/ValidatorTest.kt"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Вызвать Validator метод с входным значением: '@mail.com'",
+      "Проверить результат: ошибка = \"Email имеет неверный формат\""
+    ],
+    "data": {
+      "field": "Email",
+      "input": "@mail.com",
+      "expected_error": "Email имеет неверный формат"
+    }
+  },
+  {
+    "id": "BD-VAL-11",
+    "description": "Validator boundary: Телефон: пустая строка",
+    "labels": [
+      "boundary",
+      "validation",
+      "frontend",
+      "unit-test"
+    ],
+    "goal": "Проверить граничное значение валидатора: Телефон: пустая строка",
+    "attached_files": [
+      "app/src/main/java/com/example/chefstable/util/Validator.kt",
+      "app/src/test/java/com/example/chefstable/util/ValidatorTest.kt"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Вызвать Validator метод с входным значением: ''",
+      "Проверить результат: ошибка = \"Телефон обязателен\""
+    ],
+    "data": {
+      "field": "Телефон",
+      "input": "",
+      "expected_error": "Телефон обязателен"
+    }
+  },
+  {
+    "id": "BD-VAL-12",
+    "description": "Validator boundary: Телефон: валидный +71234567890",
+    "labels": [
+      "boundary",
+      "validation",
+      "frontend",
+      "unit-test"
+    ],
+    "goal": "Проверить граничное значение валидатора: Телефон: валидный +71234567890",
+    "attached_files": [
+      "app/src/main/java/com/example/chefstable/util/Validator.kt",
+      "app/src/test/java/com/example/chefstable/util/ValidatorTest.kt"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Вызвать Validator метод с входным значением: '+71234567890'",
+      "Проверить результат: null (валидно)"
+    ],
+    "data": {
+      "field": "Телефон",
+      "input": "+71234567890",
+      "expected_error": null
+    }
+  },
+  {
+    "id": "BD-VAL-13",
+    "description": "Validator boundary: Телефон: короткий",
+    "labels": [
+      "boundary",
+      "validation",
+      "frontend",
+      "unit-test"
+    ],
+    "goal": "Проверить граничное значение валидатора: Телефон: короткий",
+    "attached_files": [
+      "app/src/main/java/com/example/chefstable/util/Validator.kt",
+      "app/src/test/java/com/example/chefstable/util/ValidatorTest.kt"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Вызвать Validator метод с входным значением: '+7123'",
+      "Проверить результат: ошибка = \"Телефон имеет неверный формат\""
+    ],
+    "data": {
+      "field": "Телефон",
+      "input": "+7123",
+      "expected_error": "Телефон имеет неверный формат"
+    }
+  },
+  {
+    "id": "BD-VAL-14",
+    "description": "Validator boundary: Телефон: без +7",
+    "labels": [
+      "boundary",
+      "validation",
+      "frontend",
+      "unit-test"
+    ],
+    "goal": "Проверить граничное значение валидатора: Телефон: без +7",
+    "attached_files": [
+      "app/src/main/java/com/example/chefstable/util/Validator.kt",
+      "app/src/test/java/com/example/chefstable/util/ValidatorTest.kt"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Вызвать Validator метод с входным значением: '89990000000'",
+      "Проверить результат: ошибка = \"Телефон имеет неверный формат\""
+    ],
+    "data": {
+      "field": "Телефон",
+      "input": "89990000000",
+      "expected_error": "Телефон имеет неверный формат"
+    }
+  },
+  {
+    "id": "BD-VAL-15",
+    "description": "Validator boundary: Пароль (рег): пустая строка",
+    "labels": [
+      "boundary",
+      "validation",
+      "frontend",
+      "unit-test"
+    ],
+    "goal": "Проверить граничное значение валидатора: Пароль (рег): пустая строка",
+    "attached_files": [
+      "app/src/main/java/com/example/chefstable/util/Validator.kt",
+      "app/src/test/java/com/example/chefstable/util/ValidatorTest.kt"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Вызвать Validator метод с входным значением: ''",
+      "Проверить результат: ошибка = \"Пароль не может быть пустым\""
+    ],
+    "data": {
+      "field": "Пароль (рег)",
+      "input": "",
+      "expected_error": "Пароль не может быть пустым"
+    }
+  },
+  {
+    "id": "BD-VAL-16",
+    "description": "Validator boundary: Пароль (рег): 7 символов",
+    "labels": [
+      "boundary",
+      "validation",
+      "frontend",
+      "unit-test"
+    ],
+    "goal": "Проверить граничное значение валидатора: Пароль (рег): 7 символов",
+    "attached_files": [
+      "app/src/main/java/com/example/chefstable/util/Validator.kt",
+      "app/src/test/java/com/example/chefstable/util/ValidatorTest.kt"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Вызвать Validator метод с входным значением: '1234567'",
+      "Проверить результат: ошибка = \"Пароль слишком короткий\""
+    ],
+    "data": {
+      "field": "Пароль (рег)",
+      "input": "1234567",
+      "expected_error": "Пароль слишком короткий"
+    }
+  },
+  {
+    "id": "BD-VAL-17",
+    "description": "Validator boundary: Пароль (рег): 8 символов",
+    "labels": [
+      "boundary",
+      "validation",
+      "frontend",
+      "unit-test"
+    ],
+    "goal": "Проверить граничное значение валидатора: Пароль (рег): 8 символов",
+    "attached_files": [
+      "app/src/main/java/com/example/chefstable/util/Validator.kt",
+      "app/src/test/java/com/example/chefstable/util/ValidatorTest.kt"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Вызвать Validator метод с входным значением: '12345678'",
+      "Проверить результат: null (валидно)"
+    ],
+    "data": {
+      "field": "Пароль (рег)",
+      "input": "12345678",
+      "expected_error": null
+    }
+  },
+  {
+    "id": "BD-VAL-18",
+    "description": "Validator boundary: Пароль (логин): пустая строка",
+    "labels": [
+      "boundary",
+      "validation",
+      "frontend",
+      "unit-test"
+    ],
+    "goal": "Проверить граничное значение валидатора: Пароль (логин): пустая строка",
+    "attached_files": [
+      "app/src/main/java/com/example/chefstable/util/Validator.kt",
+      "app/src/test/java/com/example/chefstable/util/ValidatorTest.kt"
+    ],
+    "priority": "high",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Вызвать Validator метод с входным значением: ''",
+      "Проверить результат: ошибка = \"Пароль не может быть пустым\""
+    ],
+    "data": {
+      "field": "Пароль (логин)",
+      "input": "",
+      "expected_error": "Пароль не может быть пустым"
+    }
+  },
+  {
+    "id": "BD-VAL-19",
+    "description": "Validator boundary: Пароль (логин): 1 символ",
+    "labels": [
+      "boundary",
+      "validation",
+      "frontend",
+      "unit-test"
+    ],
+    "goal": "Проверить граничное значение валидатора: Пароль (логин): 1 символ",
+    "attached_files": [
+      "app/src/main/java/com/example/chefstable/util/Validator.kt",
+      "app/src/test/java/com/example/chefstable/util/ValidatorTest.kt"
+    ],
+    "priority": "medium",
+    "estimated_minutes": 3,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Вызвать Validator метод с входным значением: '1'",
+      "Проверить результат: null (валидно)"
+    ],
+    "data": {
+      "field": "Пароль (логин)",
+      "input": "1",
+      "expected_error": null
+    }
+  },
+  {
+    "id": "BD-CANC-01",
+    "description": "Cancellation boundary: Ровно 24 часа до начала",
+    "labels": [
+      "boundary",
+      "booking",
+      "cancellation",
+      "backend"
+    ],
+    "goal": "Проверить границу 24-часовой отмены: Ровно 24 часа",
+    "attached_files": [
+      "02-development/backend/src/main/java/com/chefstable/backend/bookings/BookingService.java"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Создать бронирование с dateTime = now + 24h 0min",
+      "Выполнить отмену (action=cancel)",
+      "Проверить: Бесплатная отмена (penaltyPoints=0)"
+    ],
+    "data": {
+      "time_to_start": "now + 24h 0min",
+      "expected_penalty": "Бесплатная отмена (penaltyPoints=0)"
+    }
+  },
+  {
+    "id": "BD-CANC-02",
+    "description": "Cancellation boundary: 23 часа 59 минут до начала",
+    "labels": [
+      "boundary",
+      "booking",
+      "cancellation",
+      "backend"
+    ],
+    "goal": "Проверить границу 24-часовой отмены: 23 часа 59 минут",
+    "attached_files": [
+      "02-development/backend/src/main/java/com/chefstable/backend/bookings/BookingService.java"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Создать бронирование с dateTime = now + 23h 59min",
+      "Выполнить отмену (action=cancel)",
+      "Проверить: Поздняя отмена (penaltyPoints=1)"
+    ],
+    "data": {
+      "time_to_start": "now + 23h 59min",
+      "expected_penalty": "Поздняя отмена (penaltyPoints=1)"
+    }
+  },
+  {
+    "id": "BD-CANC-03",
+    "description": "Cancellation boundary: 25 часов до начала",
+    "labels": [
+      "boundary",
+      "booking",
+      "cancellation",
+      "backend"
+    ],
+    "goal": "Проверить границу 24-часовой отмены: 25 часов",
+    "attached_files": [
+      "02-development/backend/src/main/java/com/chefstable/backend/bookings/BookingService.java"
+    ],
+    "priority": "medium",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Создать бронирование с dateTime = now + 25h",
+      "Выполнить отмену (action=cancel)",
+      "Проверить: Бесплатная отмена"
+    ],
+    "data": {
+      "time_to_start": "now + 25h",
+      "expected_penalty": "Бесплатная отмена"
+    }
+  },
+  {
+    "id": "BD-CANC-04",
+    "description": "Cancellation boundary: 1 час до начала",
+    "labels": [
+      "boundary",
+      "booking",
+      "cancellation",
+      "backend"
+    ],
+    "goal": "Проверить границу 24-часовой отмены: 1 час",
+    "attached_files": [
+      "02-development/backend/src/main/java/com/chefstable/backend/bookings/BookingService.java"
+    ],
+    "priority": "high",
+    "estimated_minutes": 5,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Создать бронирование с dateTime = now + 1h",
+      "Выполнить отмену (action=cancel)",
+      "Проверить: Поздняя отмена"
+    ],
+    "data": {
+      "time_to_start": "now + 1h",
+      "expected_penalty": "Поздняя отмена"
+    }
+  },
+  {
+    "id": "BD-RACE-01",
+    "description": "Race condition: Два клиента одновременно бронируют последнее место",
+    "labels": [
+      "race-condition",
+      "concurrency",
+      "backend",
+      "integration"
+    ],
+    "goal": "Проверить поведение при конкуренции: Два клиента одновременно бронируют последнее место",
+    "attached_files": [
+      "02-development/backend/src/main/java/com/chefstable/backend/bookings/BookingService.java"
+    ],
+    "priority": "high",
+    "estimated_minutes": 15,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Подготовить данные: Два параллельных запроса на класс с 1 местом",
+      "Выполнить параллельные запросы",
+      "Проверить: Один получает CONFIRMED, второй — 409"
+    ],
+    "data": {
+      "scenario": "Два клиента одновременно бронируют последнее место",
+      "expected": "Один получает CONFIRMED, второй — 409"
+    }
+  },
+  {
+    "id": "BD-RACE-02",
+    "description": "Race condition: Одновременная отмена и просмотр бронирования",
+    "labels": [
+      "race-condition",
+      "concurrency",
+      "backend",
+      "integration"
+    ],
+    "goal": "Проверить поведение при конкуренции: Одновременная отмена и просмотр бронирования",
+    "attached_files": [
+      "02-development/backend/src/main/java/com/chefstable/backend/bookings/BookingService.java"
+    ],
+    "priority": "medium",
+    "estimated_minutes": 15,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Подготовить данные: Параллельные cancel и get",
+      "Выполнить параллельные запросы",
+      "Проверить: Отмена атомарна, просмотр видит актуальный статус"
+    ],
+    "data": {
+      "scenario": "Одновременная отмена и просмотр бронирования",
+      "expected": "Отмена атомарна, просмотр видит актуальный статус"
+    }
+  },
+  {
+    "id": "BD-RACE-03",
+    "description": "Race condition: Быстрый двойной тап «Забронировать»",
+    "labels": [
+      "race-condition",
+      "concurrency",
+      "backend",
+      "integration"
+    ],
+    "goal": "Проверить поведение при конкуренции: Быстрый двойной тап «Забронировать»",
+    "attached_files": [
+      "02-development/backend/src/main/java/com/chefstable/backend/bookings/BookingService.java"
+    ],
+    "priority": "high",
+    "estimated_minutes": 15,
+    "path": "03-qa/prompts/component-functional-uc-tests-prompt.md",
+    "steps": [
+      "Подготовить данные: Два последовательных POST /api/bookings",
+      "Выполнить параллельные запросы",
+      "Проверить: Второй запрос отклонён (дубль)"
+    ],
+    "data": {
+      "scenario": "Быстрый двойной тап «Забронировать»",
+      "expected": "Второй запрос отклонён (дубль)"
+    }
+  }
+]
